@@ -105,3 +105,25 @@ a {
     color-scheme: dark;
   }
 }
+
+article {
+  background-color: #fff;
+  border: 1px solid #999;
+  margin-bottom: 100px;
+  padding: 1vw;
+}
+time {
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 2rem;
+}
+img {
+  display: block;
+  max-width: 90vw;
+  margin: auto;
+  height: auto;
+}
+pre {
+  padding: 2rem;
+  background: #ccc  ;
+}

@@ -228,3 +228,10 @@
     transform: rotate(0deg);
   }
 }
+
+img {
+  max-width: 90vw;
+  height: auto;
+  display: auto;
+  margin: auto;
+}

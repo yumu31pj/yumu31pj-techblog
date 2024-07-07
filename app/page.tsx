@@ -29,6 +29,7 @@ const Home = () => {
         {response.contents && response.contents.map((item:any, key:number) => (
           <article key={key}>
             <h3>{item.title}</h3>
+            <time>{item.publishedAt}</time>
             <div>{parse(item.content)}</div>
             {item.categories ? (
               item.categories.map((category: string, key: number) => (
