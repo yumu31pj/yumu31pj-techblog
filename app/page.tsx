@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1>This is Home</h1>
       <Suspense>
         {response.contents && response.contents.map((item:any, key:number) => (
           <article key={key}>
