@@ -1,8 +1,9 @@
+import { microCMSAuth } from "@/app/_configs/microCMSApi";
 import { createClient } from "microcms-js-sdk";
 
 export const getMicroCMSConnection = () => {
   return createClient({
-    serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN || '',
-    apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY || '',
+    serviceDomain: microCMSAuth.serviceDomain || '',
+    apiKey: microCMSAuth.apiKey || '',
   });
 }
