@@ -20,8 +20,6 @@ const Home = () => {
     )
   }
 
-  console.log(JSON.stringify(response.contents));
-
   return (
     <>
       <h1>This is Home</h1>
