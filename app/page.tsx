@@ -1,8 +1,8 @@
 'use client';
 
-import useFetchContens from "@/_libs/hooks/useFetchContens.hooks";
 import parse from "html-react-parser";
 import { Suspense } from "react";
+import useFetchContens from "../_libs/hooks/useFetchContens.hooks";
 
 const Home = () => {
   const endpoint = 'blog';
