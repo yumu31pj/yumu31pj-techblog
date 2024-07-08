@@ -3,4 +3,8 @@ export const SiteInfo = {
   siteUrl: 'https://blog.yumu31pj.tech/',
   siteDescription: "yumu31pj's tech blog mainly about Web",
   gtmId: "GTM-W7CP5MKZ",
+  logoImage: {
+    png: "/images/common/brand_logo.png",
+    webp: "/images/common/brand_logo.png.webp"
+  }
 }

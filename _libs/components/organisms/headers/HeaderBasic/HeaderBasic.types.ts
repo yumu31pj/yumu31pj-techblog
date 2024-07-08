@@ -1,5 +1,5 @@
-import { HeaderInnerBasicType } from "@/_libs/components/layouts/headers/HeaderInnerBasic/HeaderInnerBasic.types";
+import { ResponsiveImageType } from "@/_libs/components/atoms/images/ResponsiveImage/ResponsiveImage.types";
 
 export type HeaderBasicType = {
-  headerInnterItem: HeaderInnerBasicType;
+  logoImageItem: ResponsiveImageType;
 }

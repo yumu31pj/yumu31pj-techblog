@@ -1,10 +1,11 @@
 import BodyWrapper from "@/_libs/components/layouts/BodyWrapper/BodyWrapper";
+import HeaderBasic from "@/_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import "../_libs/scss/styles.scss";
+import { SiteInfo } from "./_common/configs/siteInfo";
+import { HeaderContexts } from "./_common/contexts/HeaderContexts";
 import Footer from "./_common_components/Footer/Footer";
-import Header from "./_common_components/Header/Header";
-import { SiteInfo } from "./_configs/siteInfo";
 
 export const metadata: Metadata = {
   title: SiteInfo.siteTitle,
@@ -23,7 +24,11 @@ export default function RootLayout({
     <html lang="ja">
       <GoogleTagManager gtmId={SiteInfo.gtmId}/>
       <BodyWrapper>
-       <Header />
+      <HeaderBasic
+          logoImageItem={
+            HeaderContexts.logoImageItem
+          }
+        />
         <main>
           {children}
         </main>

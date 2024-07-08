@@ -1,5 +1,5 @@
 import FooterBasicWrapper from "@/_libs/components/layouts/footers/FooterBasicWrapper/FooterBasicWrapper";
-import { SiteInfo } from "@/app/_configs/siteInfo";
+import { SiteInfo } from "@/app/_common/configs/siteInfo";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
