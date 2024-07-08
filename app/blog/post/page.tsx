@@ -1,8 +1,8 @@
 'use client';
+import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import styles from "./page.module.scss";
 
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import useFetchContentDetail from "@/_libs/hooks/useFetchContentDetail.hooks";
 import parse from "html-react-parser";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";

@@ -1,5 +1,5 @@
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import useFetchContens from "@/_libs/hooks/useFetchContens.hooks";
+import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
 import parse from 'html-react-parser';
 import { Suspense } from "react";
 import styles from "./HomeBlogList.module.scss";
