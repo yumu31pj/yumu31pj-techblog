@@ -29,7 +29,7 @@ const HomeBlogList = () => {
             <div className={styles['articles']}>
               {response.contents && response.contents.map((item:any, key:number) => (
                 <article key={key} className={styles['article']}>
-                  <h3>{item.title}</h3>
+                  <h3><a href={`/blog/post/?id=${item.id}`}>{item.title}</a></h3>
                   <time>{item.publishedAt}</time>
                   <div className={styles['article__content']}>{parse(item.content)}</div>
                   {item.categories ? (

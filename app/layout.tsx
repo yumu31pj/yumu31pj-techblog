@@ -1,4 +1,5 @@
 import BodyWrapper from "@/_libs/components/layouts/BodyWrapper/BodyWrapper";
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import "../_libs/scss/styles.scss";
 import Footer from "./_common_components/Footer/Footer";
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <GoogleTagManager gtmId={SiteInfo.gtmId}/>
       <BodyWrapper>
        <Header />
         <main>

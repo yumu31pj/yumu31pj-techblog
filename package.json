@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.4",
     "firebase": "^10.12.3",
     "firebase-tools": "^13.13.0",
     "html-react-parser": "^5.1.10",
