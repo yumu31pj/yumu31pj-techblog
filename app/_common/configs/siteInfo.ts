@@ -5,6 +5,8 @@ export const SiteInfo = {
   gtmId: "GTM-W7CP5MKZ",
   logoImage: {
     png: "/images/common/brand_logo.png",
-    webp: "/images/common/brand_logo.png.webp"
+    webp: "/images/common/brand_logo.png.webp",
+    width: 115,
+    height: 45
   }
 }
