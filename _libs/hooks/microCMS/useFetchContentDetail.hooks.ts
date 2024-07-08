@@ -1,6 +1,5 @@
+import { getMicroCMSConnection } from "@/_libs/utils/getMicroCMSClient";
 import { useEffect, useState } from "react";
-import { getMicroCMSConnection } from "../utils/getMicroCMSClient";
-
 
 const useFetchContentDetail = (contentId: string, endpointId: string) => {
   const [isLoading, setIsLoading] = useState(true);
