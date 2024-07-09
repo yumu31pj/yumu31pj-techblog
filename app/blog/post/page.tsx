@@ -41,6 +41,13 @@ const BlogContent = () => {
       {response ? (
         <section className={styles['article']}>
           <h2>{response.title}</h2>
+          {response.categories ? (
+            <ul>
+              {response.categories.map((item:string, key:number) => (
+                <li key={key}>{item}</li>
+              ))}
+            </ul>
+          ) : null}
           <time className={styles['published']}>{response.publishedAt}</time>
           <div className={styles['content-body']}>{parse(response.content)}</div>
           <a href="/" className={styles['back-to-top']}>トップに戻る</a>
