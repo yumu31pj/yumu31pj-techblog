@@ -15,6 +15,11 @@
     font-size: 1.4rem;
   }
 
+  & a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
   & .content-body {
     margin-top: 50px;
 
