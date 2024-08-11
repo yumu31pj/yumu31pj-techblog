@@ -1,0 +1,11 @@
+@use '@globals' as g;
+
+.c-link-button-size-fixed {
+  border-radius: 30px;
+  max-width: 320px;
+  height: 50px;
+
+  &__simple {
+    text-align: center;
+  }
+}

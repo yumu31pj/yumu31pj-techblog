@@ -1,8 +1,10 @@
 'use client';
-import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
+import useFetchContentDetail from "@/app/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import styles from "./page.module.scss";
 
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
+import { Category } from "@/app/_common/types/microCMS/Category.types";
+import Loader from "@/app/_libs/components/atoms/images/Loader/Loader";
+import { getFormatedDateString } from "@/app/_libs/utils/getFormatedDateString";
 import parse from "html-react-parser";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -43,12 +45,12 @@ const BlogContent = () => {
           <h2>{response.title}</h2>
           {response.categories ? (
             <ul>
-              {response.categories.map((item:string, key:number) => (
-                <li key={key}>{item}</li>
+              {response.categories.map((item:Category, key:number) => (
+                <li key={key}>{item.name}</li>
               ))}
             </ul>
           ) : null}
-          <time className={styles['published']}>{response.publishedAt}</time>
+          <span className={styles['published']}>{getFormatedDateString(response.publishedAt)}</span>
           <div className={styles['content-body']}>{parse(response.content)}</div>
           <a href="/" className={styles['back-to-top']}>トップに戻る</a>
         </section>

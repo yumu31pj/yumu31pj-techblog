@@ -1,11 +1,11 @@
-import BodyWrapper from "@/_libs/components/layouts/BodyWrapper/BodyWrapper";
-import HeaderBasic from "@/_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
+import BodyWrapper from "@/app/_libs/components/layouts/BodyWrapper/BodyWrapper";
+import HeaderBasic from "@/app/_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import "../_libs/scss/styles.scss";
 import { SiteInfo } from "./_common/configs/siteInfo";
 import { HeaderContexts } from "./_common/contexts/HeaderContexts";
 import Footer from "./_common_components/Footer/Footer";
+import "./_libs/scss/styles.scss";
 
 export const metadata: Metadata = {
   title: SiteInfo.siteTitle,
@@ -28,6 +28,7 @@ export default function RootLayout({
           logoImageItem={
             HeaderContexts.logoImageItem
           }
+          topLinkUrl={HeaderContexts.topLinkUrl}
         />
         <main>
           {children}

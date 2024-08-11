@@ -30,7 +30,7 @@
         "./*"
       ],
       "@globals": [
-        "_libs/scss/globals/"
+        "app/_libs/scss/globals"
       ]
     },
     "moduleResolution": "node"
@@ -40,7 +40,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "_libs/**/*"
+    "app/_libs/**/*"
   ],
   "exclude": [
     "node_modules"

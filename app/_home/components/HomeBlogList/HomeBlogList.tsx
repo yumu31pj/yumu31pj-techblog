@@ -1,5 +1,7 @@
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
+import { Category } from "@/app/_common/types/microCMS/Category.types";
+import Loader from "@/app/_libs/components/atoms/images/Loader/Loader";
+import useFetchContens from "@/app/_libs/hooks/microCMS/useFetchContens.hooks";
+import { getFormatedDateString } from "@/app/_libs/utils/getFormatedDateString";
 import { Suspense } from "react";
 import styles from "./HomeBlogList.module.scss";
 
@@ -29,15 +31,14 @@ const HomeBlogList = () => {
               {response.contents && response.contents.map((item:any, key:number) => (
                 <article key={key} className={styles['article']}>
                   <h3><a href={`/blog/post/?id=${item.id}`}>{item.title}</a></h3>
-                  <span className={styles['article__date']}>{item.publishedAt}</span>
-                  {/* <div className={styles['article__content']}>{parse(item.content)}</div>*/}
+                  <span className={styles['article__date']}>{getFormatedDateString(item.publishedAt)}</span>
                   {item.categories ? (
                     <ul className={styles['article__categories']}>
-                      {item.categories.map((category: string, key: number) => (
-                        <li key={key} className={styles['article__category']}>{category}</li>
+                      {item.categories.map((category: Category, key: number) => (
+                        <li key={key} className={styles['article__category']}>{category.name}</li>
                       ))}
                     </ul>
-                  ) : null} 
+                  ) : null}
                 </article>
               ))}
             </div>

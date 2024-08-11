@@ -1,4 +1,4 @@
-import { getMicroCMSConnection } from "@/_libs/utils/getMicroCMSClient";
+import { getMicroCMSConnection } from "@/app/_libs/utils/getMicroCMSClient";
 import { useEffect, useState } from "react";
 const useFetchContens = (
   endpointId: string,

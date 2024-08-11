@@ -9,5 +9,7 @@ export const HeaderContexts = {
     widthSP: SiteInfo.logoImage.width,
     heightSP: SiteInfo.logoImage.height,
     breakpointPC: 1024
-  }
+  },
+  // topLinkUrl: SiteInfo.siteUrl
+  topLinkUrl: "/",
 }
