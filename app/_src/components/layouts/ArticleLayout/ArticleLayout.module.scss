@@ -1,0 +1,33 @@
+@use "@globals" as g;
+
+.article-layout {
+  display: flex;
+    flex-direction: column;
+  width: 100%;
+
+  @include g.media('pc') {
+    flex-direction: row;
+  }
+
+  &--reverse {
+    flex-direction: column-reverse;
+    @include g.media('pc') {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__first {
+    width: 100%;
+    @include g.media('pc') {
+      width: 80%;
+    }
+  } 
+
+  &__second {
+    width: 100%;
+    @include g.media('pc') {
+      width: 20%;
+    }
+  }
+
+}

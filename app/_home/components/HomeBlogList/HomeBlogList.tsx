@@ -3,9 +3,9 @@ import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import Label from "@/_libs/components/atoms/texts/Label/Label";
 import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
-import { Category } from "@/_src/_common/types/microCMS/Category.types";
-import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
 import { microCMSAuth } from "@/_src/configs/microCMSApi";
+import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
+import { Category } from "@/_src/types/microCMS/Category.types";
 import { Suspense } from "react";
 import styles from "./HomeBlogList.module.scss";
 

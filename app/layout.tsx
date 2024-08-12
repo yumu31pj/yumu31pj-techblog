@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import BodyWrapper from "./_libs/components/layouts/BodyWrapper/BodyWrapper";
 import HeaderBasic from "./_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
 import "./_libs/scss/styles.scss";
-import { HeaderContexts } from "./_src/_common/contexts/HeaderContexts";
+import Footer from "./_src/components/organisms/Footer/Footer";
 import { SiteInfo } from "./_src/configs/siteInfo";
-import Footer from "./_src/Footer/Footer";
+import { HeaderContexts } from "./_src/contexts/HeaderContexts";
 
 export const metadata: Metadata = {
   title: SiteInfo.siteTitle,

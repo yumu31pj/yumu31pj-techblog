@@ -7,3 +7,10 @@ export const BlogQuery: MicroCMSQueryBasicType = {
   slug: PageMap["blog"].slug,
   order: '-publishedAt'
 }
+
+export const CategoryQuery: MicroCMSQueryBasicType = {
+  endpointId: "blog_categories",
+  postsPerPage: 100,
+  slug: "",
+  order: ""
+}

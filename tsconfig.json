@@ -40,7 +40,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/_libs/**/*"
-  ],
+, "app/_src/components/layouts/BoxDevidedTwo"  ],
   "exclude": [
     "node_modules"
   ]

@@ -43,7 +43,7 @@ const ArchiveBox = (props: ArchiveBoxType) => {
             <li key={key} className={styles['archive-box__item']}>
               <ArticleCard
                 title={item.title}
-                linkTo={microCMSQuery.slug + "post/?id=" + item.id}
+                linkTo={"post/?id=" + item.id}
                 date={getFormatedDateString(item.publishedAt)}
                 categories={item.categories}
               />
@@ -53,7 +53,7 @@ const ArchiveBox = (props: ArchiveBoxType) => {
         <div className={styles['archive-box__pagination-wrappper']}>
           <Pagination
             totalCount={response.totalCount}
-            url={microCMSQuery.slug}
+            url={""}
             postsPerPage={microCMSQuery.postsPerPage}
             pageNumber={currentPageNum}
           />

@@ -3,19 +3,14 @@ import { MicroCMSAuthType } from "@/_libs/types/MicroCMSAuth.types";
 import { MicroCMSQueryBasicType } from "@/_libs/types/MicroCMSQueries.types";
 import { getMicroCMSConnection } from "@/_libs/utils/getMicroCMSClient";
 import { useEffect, useState } from "react";
-const useFetchContens = (
+const useFetchTotalCountByEndpoint = (
   microCMSAuth: MicroCMSAuthType, 
   microCMSQuery: MicroCMSQueryBasicType, 
-  offset: number = 0,
-
 ) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [response, setResponse] = useState<any>();
+  const [totalCount, setTotalCount] = useState<any>();
   const [hasError, setHasError] = useState(false);
-  const errorMessage = "Failed to fetch contents";
-
-  const postsPerPage = microCMSQuery.postsPerPage ? microCMSQuery.postsPerPage: 10;
-  const orderType = microCMSQuery.order ? microCMSQuery.order : '-publishedAt'
+  const errorMessage = "Failed to fetch totalCount";
 
   useEffect(() => {
     const client = getMicroCMSConnection(microCMSAuth);
@@ -25,12 +20,10 @@ const useFetchContens = (
         const apiResponse = await client.get({
           endpoint: microCMSQuery.endpointId,
           queries: {
-            orders: orderType,
-            offset: offset,
-            limit: postsPerPage
+            limit: 1
           }
         });
-        setResponse(apiResponse)
+        setTotalCount(apiResponse.totalCount)
       } catch (e) {
         console.error(e);
         setHasError(true);
@@ -40,7 +33,7 @@ const useFetchContens = (
     };
     getContentsList();
   },[])
-  return {isLoading, response, hasError, errorMessage};
+  return {isLoading, totalCount, hasError, errorMessage};
 }
 
-export default useFetchContens;
+export default useFetchTotalCountByEndpoint;

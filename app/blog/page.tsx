@@ -1,20 +1,28 @@
 import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
 import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
-import ArchiveBox from "@/_src/_common/components/organisms/ArchiveBox/ArchiveBox";
+import ArticleLayout from "@/_src/components/layouts/ArticleLayout/ArticleLayout";
+import ArchiveBox from "@/_src/components/organisms/ArchiveBox/ArchiveBox";
+import CategoryList from "@/_src/components/organisms/CategoryList/CategoryList";
 import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
-import { Suspense } from "react";
+import { BlogCategoryListProvider } from "@/_src/contexts/BlogCategoryListContext.provider";
 
 const PageBlog = () => {
   return (
     <SectionWrapper id="blog">
       <SimpleTitleH2 title="Blog Archive" />
-      <Suspense>
-        <ArchiveBox
-          microCMSAuth={microCMSAuth}
-          microCMSQuery={BlogQuery}
-        />
-      </Suspense>
+      <ArticleLayout
+        firstComponent={
+          <ArchiveBox 
+            microCMSAuth={microCMSAuth}
+            microCMSQuery={BlogQuery} />
+        }
+        secondComponent={
+          <BlogCategoryListProvider>
+            <CategoryList />
+          </BlogCategoryListProvider>
+        }
+      />
     </SectionWrapper>
   )
 }

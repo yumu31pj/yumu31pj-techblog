@@ -1,5 +1,5 @@
 import Label from "@/_libs/components/atoms/texts/Label/Label";
-import { Category } from "@/_src/_common/types/microCMS/Category.types";
+import { Category } from "@/_src/types/microCMS/Category.types";
 import styles from "./ArticleCard.module.scss";
 import { ArticleCardType } from "./ArticleCard.types";
 

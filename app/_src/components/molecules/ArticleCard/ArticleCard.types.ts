@@ -1,4 +1,4 @@
-import { Category } from "@/_src/_common/types/microCMS/Category.types";
+import { Category } from "@/_src/types/microCMS/Category.types";
 
 export type ArticleCardType = {
   title: string;

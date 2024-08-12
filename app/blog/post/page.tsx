@@ -3,7 +3,7 @@
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
-import { Category } from "@/_src/_common/types/microCMS/Category.types";
+import { Category } from "@/_src/types/microCMS/Category.types";
 import parse from "html-react-parser";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";

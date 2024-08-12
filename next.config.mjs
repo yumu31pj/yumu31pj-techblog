@@ -7,6 +7,9 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'app');
     config.resolve.alias['~'] = path.join(__dirname, 'app');

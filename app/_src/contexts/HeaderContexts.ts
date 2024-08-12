@@ -1,4 +1,4 @@
-import { SiteInfo } from "../../configs/siteInfo"
+import { SiteInfo } from "../configs/siteInfo"
 
 SiteInfo
 export const HeaderContexts = {
