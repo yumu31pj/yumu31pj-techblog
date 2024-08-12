@@ -8,5 +8,16 @@ export const SiteInfo = {
     webp: "/images/common/brand_logo.png.webp",
     width: 115,
     height: 45
+  },
+}
+
+export const PageMap = {
+  "home": {
+    title: "Home",
+    slug: ""
+  },
+  "blog": {
+    title: "Blog",
+    slug: "blog/"
   }
 }

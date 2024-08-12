@@ -1,11 +1,12 @@
-import BodyWrapper from "@/app/_libs/components/layouts/BodyWrapper/BodyWrapper";
-import HeaderBasic from "@/app/_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
+
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { SiteInfo } from "./_common/configs/siteInfo";
-import { HeaderContexts } from "./_common/contexts/HeaderContexts";
-import Footer from "./_common_components/Footer/Footer";
+import BodyWrapper from "./_libs/components/layouts/BodyWrapper/BodyWrapper";
+import HeaderBasic from "./_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
 import "./_libs/scss/styles.scss";
+import { HeaderContexts } from "./_src/_common/contexts/HeaderContexts";
+import { SiteInfo } from "./_src/configs/siteInfo";
+import Footer from "./_src/Footer/Footer";
 
 export const metadata: Metadata = {
   title: SiteInfo.siteTitle,

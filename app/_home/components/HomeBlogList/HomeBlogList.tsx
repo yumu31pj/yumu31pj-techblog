@@ -1,14 +1,16 @@
-import { Category } from "@/app/_common/types/microCMS/Category.types";
-import Loader from "@/app/_libs/components/atoms/images/Loader/Loader";
-import useFetchContens from "@/app/_libs/hooks/microCMS/useFetchContens.hooks";
-import { getFormatedDateString } from "@/app/_libs/utils/getFormatedDateString";
+
+import Loader from "@/_libs/components/atoms/images/Loader/Loader";
+import Label from "@/_libs/components/atoms/texts/Label/Label";
+import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
+import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
+import { Category } from "@/_src/_common/types/microCMS/Category.types";
+import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
+import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { Suspense } from "react";
 import styles from "./HomeBlogList.module.scss";
 
 const HomeBlogList = () => {
-  const endpoint = 'blog';
-
-  const {isLoading, response, hasError, errorMessage} = useFetchContens(endpoint);
+  const {isLoading, response, hasError, errorMessage} = useFetchContens(microCMSAuth, BlogQuery);
 
   if (isLoading) {
     return (
@@ -35,7 +37,9 @@ const HomeBlogList = () => {
                   {item.categories ? (
                     <ul className={styles['article__categories']}>
                       {item.categories.map((category: Category, key: number) => (
-                        <li key={key} className={styles['article__category']}>{category.name}</li>
+                        <li key={key}>
+                          <Label text={category.name} />
+                        </li>
                       ))}
                     </ul>
                   ) : null}

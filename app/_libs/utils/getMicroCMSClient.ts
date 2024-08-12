@@ -1,6 +1,6 @@
 
+import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { createClient } from "microcms-js-sdk";
-import { microCMSAuth } from "../../_common/configs/microCMSApi";
 
 export const getMicroCMSConnection = () => {
   return createClient({

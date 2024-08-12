@@ -26,9 +26,8 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
+      "@/*": ["./app/*"],
+      "~/*": ["./app/*"],
       "@globals": [
         "app/_libs/scss/globals"
       ]
