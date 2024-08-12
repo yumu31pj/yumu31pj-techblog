@@ -3,7 +3,7 @@ import { PageMap } from "./siteInfo";
 
 export const BlogQuery: MicroCMSQueryBasicType = {
   endpointId: "blog",
-  postsPerPage: 5,
+  postsPerPage: 10,
   slug: PageMap["blog"].slug,
   order: '-publishedAt'
 }

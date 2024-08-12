@@ -3,6 +3,7 @@
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
+import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { Category } from "@/_src/types/microCMS/Category.types";
 import parse from "html-react-parser";
 import { useSearchParams } from "next/navigation";
@@ -24,7 +25,7 @@ const BlogContent = () => {
   const contentId = searchParams.get("id") || "";
   const endpointId = "blog";
 
-  const {isLoading, response, hasError, errorMessage} = useFetchContentDetail(contentId, endpointId);
+  const {isLoading, response, hasError, errorMessage} = useFetchContentDetail(microCMSAuth, contentId, endpointId);
 
   if (isLoading) {
     return (

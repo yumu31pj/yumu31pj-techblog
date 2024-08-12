@@ -1,0 +1,10 @@
+@use "@globals" as g;
+
+.simple-title--h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+
+  @include g.media('tb') {
+    font-size: g.auto_clamp(24, 521, 28, 1440);
+  }
+}
