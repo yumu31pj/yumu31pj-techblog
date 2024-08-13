@@ -6,11 +6,13 @@ import CategoryList from "@/_src/components/organisms/CategoryList/CategoryList"
 import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
 import { BlogCategoryListProvider } from "@/_src/contexts/BlogCategoryListContext.provider";
+import { Suspense } from "react";
 
 const PageBlog = () => {
   return (
     <SectionWrapper id="blog">
       <SimpleTitleH2 title="Blog Archive" />
+      <Suspense>
       <ArticleLayout
         firstComponent={
           <ArchiveBox 
@@ -23,6 +25,7 @@ const PageBlog = () => {
           </BlogCategoryListProvider>
         }
       />
+      </Suspense>
     </SectionWrapper>
   )
 }

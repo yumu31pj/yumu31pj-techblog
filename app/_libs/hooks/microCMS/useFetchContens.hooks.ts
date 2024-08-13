@@ -3,6 +3,7 @@ import { MicroCMSAuthType } from "@/_libs/types/MicroCMSAuth.types";
 import { MicroCMSQueryBasicType } from "@/_libs/types/MicroCMSQueries.types";
 import { getMicroCMSConnection } from "@/_libs/utils/getMicroCMSClient";
 import { useEffect, useState } from "react";
+
 const useFetchContens = (
   microCMSAuth: MicroCMSAuthType, 
   microCMSQuery: MicroCMSQueryBasicType, 

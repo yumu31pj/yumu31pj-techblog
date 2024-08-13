@@ -14,10 +14,14 @@ export const SiteInfo = {
 export const PageMap = {
   "home": {
     title: "Home",
-    slug: ""
+    slug: "/"
   },
   "blog": {
     title: "Blog",
-    slug: "blog/"
+    slug: "/blog/"
+  },
+  "about": {
+    title: "About Us",
+    slug: "/about/"
   }
 }
