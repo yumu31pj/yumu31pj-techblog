@@ -3,6 +3,7 @@
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
+import PageFlip from "@/_src/components/molecules/PageFlip/PageFlip";
 import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { SiteInfo } from "@/_src/configs/siteInfo";
 import { Category } from "@/_src/types/microCMS/Category.types";
@@ -56,6 +57,11 @@ const BlogContent = () => {
           </section>
         ) : null}
       </div>
+      <PageFlip
+        microCMSAuth={microCMSAuth}
+        endpointId={endpointId}
+        contentId={contentId}
+      />
     </Suspense>
   );
 }
