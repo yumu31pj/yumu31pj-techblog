@@ -7,6 +7,13 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <FooterBasicWrapper>
+      <ul className={styles['footer-sitemap']}>
+        {Object.entries(PageMap).map(([key, item]) => (
+          <li key={key}>
+            <a href={item.slug}>{item.title}</a>
+          </li>
+        ))}
+      </ul>
       <small className={styles['footer']}>copyright: {SiteInfo.siteTitle}</small>
       <FooterJsonLDWrapper>
         <BreadcrumbJsonLD sitemap={PageMap}/>

@@ -20,8 +20,8 @@ export const PageMap = {
     title: "Blog",
     slug: "/blog/"
   },
-  "about": {
-    title: "About Us",
-    slug: "/about/"
-  }
+  // "about": {
+  //   title: "About Us",
+  //   slug: "/about/"
+  // }
 }
