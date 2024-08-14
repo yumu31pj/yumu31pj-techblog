@@ -17,10 +17,11 @@ const ArchiveBox = (props: ArchiveBoxType) => {
 
   const searchParams = useSearchParams();
   const currentPageNum = searchParams.get("page") || "1";
+  const categoryId = searchParams.get("cat") || "";
 
   const offset = getOffset(Number(currentPageNum), microCMSQuery.postsPerPage);
 
-  const {isLoading, response, hasError, errorMessage} = useFetchContens(microCMSAuth, microCMSQuery, offset);
+  const {isLoading, response, hasError, errorMessage} = useFetchContens(microCMSAuth, microCMSQuery, offset, categoryId);
 
   if (isLoading) {
     return (

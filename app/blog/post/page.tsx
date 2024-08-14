@@ -4,8 +4,8 @@ import { Suspense } from "react";
 import BlogContent from "./BlogContent";
 
 export const metadata: Metadata = {
-  title: "Tech Blog posted",
-  description: "Post Detail",
+  title: "Tech Blog",
+  description: "Tech Blog || yumu31pj",
   // },
 };
 

@@ -1,6 +1,7 @@
 'use client';
 
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
+import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
 import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
 import PageFlip from "@/_src/components/molecules/PageFlip/PageFlip";
@@ -47,21 +48,27 @@ const BlogContent = () => {
             {response.categories ? (
               <ul>
                 {response.categories.map((item:Category, key:number) => (
-                  <li key={key}>{item.name}</li>
+                  <li key={key}>
+                    <LabelLink 
+                      linkText={item.name}
+                      linkTo={`/blog/?cat=${item.slug}`}
+                    />
+                  </li>
                 ))}
               </ul>
             ) : null}
             <span className={styles['published']}>{getFormatedDateString(response.publishedAt)}</span>
             <div className={styles['content-body']}>{parse(response.content)}</div>
-            <a href="/" className={styles['back-to-top']}>トップに戻る</a>
           </section>
         ) : null}
+
+        <PageFlip
+          microCMSAuth={microCMSAuth}
+          endpointId={endpointId}
+          contentId={contentId}
+        />
       </div>
-      <PageFlip
-        microCMSAuth={microCMSAuth}
-        endpointId={endpointId}
-        contentId={contentId}
-      />
+      
     </Suspense>
   );
 }

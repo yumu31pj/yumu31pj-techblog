@@ -1,6 +1,6 @@
 
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import Label from "@/_libs/components/atoms/texts/Label/Label";
+import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
 import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
 import { microCMSAuth } from "@/_src/configs/microCMSApi";
@@ -38,7 +38,10 @@ const HomeBlogList = () => {
                     <ul className={styles['article__categories']}>
                       {item.categories.map((category: Category, key: number) => (
                         <li key={key}>
-                          <Label text={category.name} />
+                          <LabelLink
+                            linkText={category.name} 
+                            linkTo={`/blog/?cat=${category.slug}`}
+                          />
                         </li>
                       ))}
                     </ul>

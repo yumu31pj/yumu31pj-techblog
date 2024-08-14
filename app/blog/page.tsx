@@ -13,18 +13,18 @@ const PageBlog = () => {
     <SectionWrapper id="blog">
       <SimpleTitleH2 title="Blog Archive" />
       <Suspense>
-      <ArticleLayout
-        firstComponent={
-          <ArchiveBox 
-            microCMSAuth={microCMSAuth}
-            microCMSQuery={BlogQuery} />
-        }
-        secondComponent={
-          <BlogCategoryListProvider>
-            <CategoryList />
-          </BlogCategoryListProvider>
-        }
-      />
+        <ArticleLayout
+          firstComponent={
+            <ArchiveBox 
+              microCMSAuth={microCMSAuth}
+              microCMSQuery={BlogQuery} />
+          }
+          secondComponent={
+            <BlogCategoryListProvider>
+              <CategoryList />
+            </BlogCategoryListProvider>
+          }
+        />
       </Suspense>
     </SectionWrapper>
   )

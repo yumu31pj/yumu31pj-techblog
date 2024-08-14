@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import styles from "./PageFlip.module.scss";
 import PageFlipType from "./PageFlipType";
 
+/**
+ * Pagination for MicroCMS contents 
+ */
 const PageFlip = (props: PageFlipType) => {
   const { microCMSAuth, endpointId, contentId } = props;
   const [postList, setPostList] = useState<any>();

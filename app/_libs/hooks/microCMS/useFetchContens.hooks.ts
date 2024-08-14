@@ -8,7 +8,7 @@ const useFetchContens = (
   microCMSAuth: MicroCMSAuthType, 
   microCMSQuery: MicroCMSQueryBasicType, 
   offset: number = 0,
-
+  category?: string
 ) => {
   const [isLoading, setIsLoading] = useState(true);
   const [response, setResponse] = useState<any>();
@@ -22,15 +22,28 @@ const useFetchContens = (
     const client = getMicroCMSConnection(microCMSAuth);
 
     const getContentsList = async() => {
+      let apiResponse;
       try {
-        const apiResponse = await client.get({
-          endpoint: microCMSQuery.endpointId,
-          queries: {
-            orders: orderType,
-            offset: offset,
-            limit: postsPerPage
-          }
-        });
+        if (!category) {
+          apiResponse = await client.get({
+            endpoint: microCMSQuery.endpointId,
+            queries: {
+              orders: orderType,
+              offset: offset,
+              limit: postsPerPage
+            }
+          });
+        } else {
+          apiResponse = await client.get({
+            endpoint: microCMSQuery.endpointId,
+            queries: {
+              orders: orderType,
+              offset: offset,
+              limit: postsPerPage,
+              filters: `categories[contains]${category}`
+            }
+          });
+        }
         setResponse(apiResponse)
       } catch (e) {
         console.error(e);
