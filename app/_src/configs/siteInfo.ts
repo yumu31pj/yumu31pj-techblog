@@ -16,12 +16,16 @@ export const PageMap = {
     title: "Home",
     slug: "/"
   },
+  "about": {
+    title: "About",
+    slug: "/about/"
+  },
   "blog": {
     title: "Blog",
     slug: "/blog/"
   },
-  // "about": {
-  //   title: "About Us",
-  //   slug: "/about/"
-  // }
+  "github": {
+    title: "GitHub",
+    slug: "https://github.com/yumu31pj?tab=repositories"
+  }
 }
