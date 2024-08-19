@@ -2,7 +2,17 @@
 
 import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
 import SimpleTitleH3 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH3/SimpleTitleH3";
+import { SiteInfo } from "@/_src/configs/siteInfo";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
+
+export const metadata: Metadata = {
+  title: "About Me" + " | " + SiteInfo.siteTitle,
+  description: "About Me Page" + " | " + SiteInfo.siteDescription,
+  // robots: {
+  //   index: false, // set noindex
+  // },
+};
 
 const PageAbout = () => {
 

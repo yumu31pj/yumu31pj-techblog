@@ -5,8 +5,18 @@ import ArchiveBox from "@/_src/components/organisms/ArchiveBox/ArchiveBox";
 import CategoryList from "@/_src/components/organisms/CategoryList/CategoryList";
 import { microCMSAuth } from "@/_src/configs/microCMSApi";
 import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
+import { SiteInfo } from "@/_src/configs/siteInfo";
 import { BlogCategoryListProvider } from "@/_src/contexts/BlogCategoryListContext.provider";
+import { Metadata } from "next";
 import { Suspense } from "react";
+
+export const metadata: Metadata = {
+  title: "My blog list" + " | " + SiteInfo.siteTitle,
+  description: "My blog list" + " | " + SiteInfo.siteDescription,
+  // robots: {
+  //   index: false, // set noindex
+  // },
+};
 
 const PageBlog = () => {
   return (
