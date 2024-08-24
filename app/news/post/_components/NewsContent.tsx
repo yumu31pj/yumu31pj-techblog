@@ -47,7 +47,7 @@ const NewsContent = () => {
             <div className={styles['article-section__title']}>
               <SimpleTitleH2 title={response.title} />
             </div>
-            <span className={styles['article_section__published']}>{getFormatedDateString(response.publishedAt)}</span>
+            <span className={styles['article-section__published']}>{getFormatedDateString(response.publishedAt)}</span>
 
             <div className={`p-microcms-single__body ${styles['article-section__body']}`}>
               {parse(response.body)}

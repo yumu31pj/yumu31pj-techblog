@@ -1,0 +1,45 @@
+.flip-link-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  font-weight: 700;
+  padding: 15px;
+  width: 250px;
+  position: relative;
+
+  &::after {
+    background-color: var(--color-white);
+    content: "";
+    transition: all .3s ease;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+
+    &::after {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-primary);
+      width: 250px;
+    }
+
+    & span {
+      color: var(--color-primary);
+      z-index: 10;
+    }
+
+    & svg {
+      fill: var(--color-primary);
+      z-index: 10;
+    }
+  }
+
+  & svg {
+    fill: var(--color-white);
+  }
+}

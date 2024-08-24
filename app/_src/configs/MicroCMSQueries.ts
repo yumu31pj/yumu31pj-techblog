@@ -24,3 +24,11 @@ export const NewsQuery: MicroCMSQueryBasicType = {
   singlePath: PageMap["news"].slug + "post/?id=",
   order: ""
 }
+
+export const NewsLatestQuery: MicroCMSQueryBasicType = {
+  endpointId: "news",
+  postsPerPage: 3,
+  slug: PageMap["news"].slug,
+  singlePath: PageMap["news"].slug + "post/?id=",
+  order: ""
+}
