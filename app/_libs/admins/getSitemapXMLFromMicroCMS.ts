@@ -9,18 +9,13 @@ interface ContentType {
   publishedAt: string;
 }
 
-const getXMLFormat = (url: string, path: string, posts: ContentType[]) => {
-  const fullPath = url.replace(/\/$/, '') + (path.startsWith('/') ? '' : '/') + path;
-
-  const sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${posts.map(post => `<url><loc>${fullPath}${post.id}</loc><lastmod>${post.publishedAt}</lastmod></url>`).join('\n')}
-</urlset>`;
-
-  return sitemapXML;
+const getXMLFormat = (posts: ContentType[], fullPath: string) => {
+  return posts.map(post => 
+    `<url><loc>${fullPath}${post.id}</loc><lastmod>${post.publishedAt}</lastmod></url>`
+  ).join('\n');
 }
 
-const generateXMLFile = (xml: string) => {
+const generateXMLFile = (xmlContent: string) => {
   const outDir = path.join(process.cwd(), 'out');
   const sitemapPath = path.join(outDir, 'sitemap-microcms-posts.xml');
 
@@ -28,7 +23,12 @@ const generateXMLFile = (xml: string) => {
     fs.mkdirSync(outDir, { recursive: true });
   }
 
-  fs.writeFileSync(sitemapPath, xml, 'utf8');
+  const fullXML = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${xmlContent}
+</urlset>`;
+
+  fs.writeFileSync(sitemapPath, fullXML, 'utf8');
   console.log(`Sitemap of microCMS contents has been generated at: ${sitemapPath}`);
 }
 
@@ -54,19 +54,19 @@ const getSitemapXMLFromMicroCMS = async (
     }
   };
 
-  // 各クエリの結果を取得し、XMLに変換する
-  let allXML = '';
+  let allXMLContent = '';
 
   for (const query of microCMSQueries) {
     const response = await getAllContents(query);
 
     if (response.length > 0) {
-      const sitemapXML = getXMLFormat(url, query.singlePath, response);
-      allXML += sitemapXML;
+      const fullPath = url.replace(/\/$/, '') + (query.singlePath.startsWith('/') ? '' : '/') + query.singlePath;
+      const sitemapXMLPart = getXMLFormat(response, fullPath);
+      allXMLContent += sitemapXMLPart + '\n';
     }
   }
 
-  generateXMLFile(allXML);
+  generateXMLFile(allXMLContent);
 }
 
 export default getSitemapXMLFromMicroCMS;

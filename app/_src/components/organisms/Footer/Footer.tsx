@@ -1,6 +1,6 @@
 import BreadcrumbJsonLD from "@/_libs/components/atoms/texts/BreadcrumbJsonLD/BreadcrumbJsonLD";
 import FooterBasicWrapper from "@/_libs/components/layouts/footers/FooterBasicWrapper/FooterBasicWrapper";
-import { PageMap, SiteInfo } from "@/_src/configs/siteInfo";
+import { PageMap } from "@/_src/configs/siteInfo";
 import FooterJsonLDWrapper from "../../layouts/FooterJsonLDWrapper/FooterJsonLDWrapper";
 import styles from "./Footer.module.scss";
 
@@ -14,7 +14,7 @@ const Footer = () => {
           </li>
         ))}
       </ul>
-      <small className={styles['footer']}>copyright: {SiteInfo.copyright}</small>
+      <small className={styles['footer']}>e.ron@yumu31pj</small>
       <FooterJsonLDWrapper>
         <BreadcrumbJsonLD sitemap={PageMap}/>
       </FooterJsonLDWrapper>
