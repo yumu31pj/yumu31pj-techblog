@@ -3,14 +3,14 @@ import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
 import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
-import { microCMSAuth } from "@/_src/configs/microCMSApi";
+import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
 import { Category } from "@/_src/types/microCMS/Category.types";
 import { Suspense } from "react";
 import styles from "./HomeBlogList.module.scss";
 
 const HomeBlogList = () => {
-  const {isLoading, response, hasError, errorMessage} = useFetchContens(microCMSAuth, BlogQuery);
+  const {isLoading, response, hasError, errorMessage} = useFetchContens(MicroCMSAuth, BlogQuery);
 
   if (isLoading) {
     return (

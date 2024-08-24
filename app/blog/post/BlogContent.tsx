@@ -2,15 +2,18 @@
 
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
+import Mokuji from "@/_libs/components/molecules/Mokuji/Mokuji";
+import { MokujiListType } from "@/_libs/components/molecules/Mokuji/Mokuji.types";
 import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
+import getMokuji from "@/_libs/utils/getMokuji";
 import PageFlip from "@/_src/components/molecules/PageFlip/PageFlip";
-import { microCMSAuth } from "@/_src/configs/microCMSApi";
+import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { SiteInfo } from "@/_src/configs/siteInfo";
 import { Category } from "@/_src/types/microCMS/Category.types";
 import parse from "html-react-parser";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import styles from './page.module.scss';
 
 const BlogContent = () => {
@@ -18,14 +21,21 @@ const BlogContent = () => {
   const contentId = searchParams.get("id") || "";
   const endpointId = "blog";
 
-  const {isLoading, response, hasError, errorMessage} = useFetchContentDetail(microCMSAuth, contentId, endpointId);
+  const {isLoading, response, hasError, errorMessage} = useFetchContentDetail(MicroCMSAuth, contentId, endpointId);
+  const [mokujiList, setMokujiList] = useState<MokujiListType>();
 
   useEffect(() => {
     if (response) {
       document.title = response.title + " | " + SiteInfo.siteTitle;
       document.querySelector('meta[name="description"]')?.setAttribute("content", response.title + " | " + SiteInfo.siteTitle);
+      const mokuji = getMokuji(response.content);
+      if (mokuji.mokujiList.length > 0) {
+        setMokujiList(mokuji);
+      } else {
+        setMokujiList({mokujiList: []})
+      }
     }
-  }, [response])
+  }, [response, searchParams, contentId])
 
   if (isLoading) {
     return (
@@ -41,6 +51,12 @@ const BlogContent = () => {
 
   return (
     <Suspense>
+      {mokujiList && mokujiList.mokujiList && mokujiList.mokujiList.length > 0 && 
+        <div>
+          <Mokuji mokujiList={mokujiList.mokujiList} />
+        </div>
+      }
+
       <div className={styles['aritcle-wrapper']}>
         {response ? (
           <section className={styles['article']}>
@@ -63,7 +79,7 @@ const BlogContent = () => {
         ) : null}
 
         <PageFlip
-          microCMSAuth={microCMSAuth}
+          microCMSAuth={MicroCMSAuth}
           endpointId={endpointId}
           contentId={contentId}
         />

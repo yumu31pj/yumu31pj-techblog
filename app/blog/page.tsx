@@ -3,7 +3,7 @@ import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/S
 import ArticleLayout from "@/_src/components/layouts/ArticleLayout/ArticleLayout";
 import ArchiveBox from "@/_src/components/organisms/ArchiveBox/ArchiveBox";
 import CategoryList from "@/_src/components/organisms/CategoryList/CategoryList";
-import { microCMSAuth } from "@/_src/configs/microCMSApi";
+import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
 import { SiteInfo } from "@/_src/configs/siteInfo";
 import { BlogCategoryListProvider } from "@/_src/contexts/BlogCategoryListContext.provider";
@@ -26,7 +26,7 @@ const PageBlog = () => {
         <ArticleLayout
           firstComponent={
             <ArchiveBox 
-              microCMSAuth={microCMSAuth}
+              microCMSAuth={MicroCMSAuth}
               microCMSQuery={BlogQuery} />
           }
           secondComponent={

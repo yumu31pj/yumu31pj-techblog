@@ -11,6 +11,7 @@ import { HeaderContexts } from "./_src/contexts/HeaderContexts";
 export const metadata: Metadata = {
   title: SiteInfo.siteTitle,
   description: SiteInfo.siteDescription,
+  keywords: SiteInfo.siteKeywords
   // robots: {
   //   index: false, // set noindex
   // },

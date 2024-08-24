@@ -1,5 +1,3 @@
-'use client';
-
 import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
 import SimpleTitleH3 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH3/SimpleTitleH3";
 import { SiteInfo } from "@/_src/configs/siteInfo";

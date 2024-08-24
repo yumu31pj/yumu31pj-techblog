@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import { SiteInfo } from "../../_src/configs/siteInfo";
 
-async function generateSitemap(appDirectory: string) {
+export default async function getSitemap(appDirectory: string) {
   // Define the URL as SiteInfo.siteUrl in /app/_common/configs/siteInfo.ts or wherever for the baseUrl and import before using.
   let baseUrl = SiteInfo.siteUrl;
 
@@ -61,8 +61,8 @@ function formatLastmodDate(date: Date): string {
   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+09:00`;
 }
 
-const appDirectory = path.join(process.cwd(), 'app');
-generateSitemap(appDirectory).catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+// const appDirectory = path.join(process.cwd(), 'app');
+// getSitemap(appDirectory).catch(err => {
+//   console.error(err);
+//   process.exit(1);
+// });

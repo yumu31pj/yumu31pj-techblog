@@ -28,7 +28,7 @@ const useFetchContentDetail = (microCMSAuth: MicroCMSAuthType, contentId: string
       }
     }
     getContent()
-  },[])
+  },[contentId])
   return {isLoading, response, hasError, errorMessage}
 }
 

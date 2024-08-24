@@ -2,7 +2,7 @@
 
 import useFetchCategoryList from "@/_libs/hooks/microCMS/useFetchCategoryList.hooks";
 import { createContext, useEffect, useMemo, useState } from "react";
-import { microCMSAuth } from "../configs/microCMSApi";
+import { MicroCMSAuth } from "../configs/microCMSApi";
 import { CategoryQuery } from "../configs/MicroCMSQueries";
 
 const BlogCategoryListContext = createContext<any>(null);
@@ -10,7 +10,7 @@ const BlogCategoryListContext = createContext<any>(null);
 const BlogCategoryListProvider = ({children}: {children: React.ReactNode}) => {
   const [blogCategoryList, setBlogCategoryList] = useState();
 
-  const {isLoading, response, hasError, errorMessage} = useFetchCategoryList(microCMSAuth, CategoryQuery)
+  const {isLoading, response, hasError, errorMessage} = useFetchCategoryList(MicroCMSAuth, CategoryQuery)
 
   useEffect(() => {
     if (response && response.contents) {
