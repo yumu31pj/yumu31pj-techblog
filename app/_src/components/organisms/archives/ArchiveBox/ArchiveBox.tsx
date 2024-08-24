@@ -5,7 +5,7 @@ import useFetchContens from '@/_libs/hooks/microCMS/useFetchContens.hooks';
 import { getFormatedDateString } from '@/_libs/utils/getFormatedDateString';
 import getOffset from '@/_libs/utils/getOffset';
 import { useSearchParams } from 'next/navigation';
-import ArticleCard from '../../molecules/ArticleCard/ArticleCard';
+import ArticleCard from '../../../molecules/ArticleCard/ArticleCard';
 import styles from './ArchiveBox.module.scss';
 import { ArchiveBoxType } from './ArchiveBox.types';
 

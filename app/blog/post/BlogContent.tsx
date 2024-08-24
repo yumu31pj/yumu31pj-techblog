@@ -2,6 +2,7 @@
 
 import Loader from "@/_libs/components/atoms/images/Loader/Loader";
 import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
+import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
 import getMokuji from "@/_libs/components/molecules/Mokuji/getMokuji";
 import Mokuji from "@/_libs/components/molecules/Mokuji/Mokuji";
 import { MokujiListType } from "@/_libs/components/molecules/Mokuji/Mokuji.types";
@@ -53,8 +54,8 @@ const BlogContent = () => {
     <Suspense>
       <div className={styles['aritcle-wrapper']}>
         {response ? (
-          <section className={styles['article']}>
-            <h2>{response.title}</h2>
+          <section className={`p-microcms-single ${styles['article']}`}>
+            <SimpleTitleH2 title={response.title} />
             {response.categories ? (
               <ul className={styles['article__categories']}>
                 {response.categories.map((item:Category, key:number) => (
@@ -76,7 +77,7 @@ const BlogContent = () => {
               </div>
             }
             
-            <div className={styles['content-body']}>{parse(response.content)}</div>
+            <div className={`p-microcms-single__body ${styles['content-body']}`}>{parse(response.content)}</div>
           </section>
         ) : null}
 

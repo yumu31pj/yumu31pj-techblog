@@ -26,6 +26,10 @@ export const PageMap = {
     title: "Blog",
     slug: "/blog/"
   },
+  "news": {
+    title: "News",
+    slug: "/news/"
+  },
   "github": {
     title: "GitHub",
     slug: "https://github.com/yumu31pj?tab=repositories"

@@ -1,0 +1,58 @@
+@use "@globals" as g;
+
+.p-microcms-single {
+  width: 100%;
+
+  &__body {
+    & h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin: 30px 0 15px;
+  
+      @include g.media('tb') {
+        font-size: 3.2rem;
+        margin: 50px 0 30px;
+      }
+    }
+  
+    & h3 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin: 20px 0 10px;
+  
+      @include g.media('tb') {
+        font-size: 2.4rem;
+        margin: 30px 0 15px;
+      }
+    }
+  
+    & h4 {
+      font-size: 2rem;
+  
+      @include g.media('tb') {
+        font-size: 2.4rem;
+      }
+    }
+
+    & a {
+      color: var(--color-primary);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    & img {
+      margin: 30px auto;
+      max-width: 100%;
+    }
+
+    & pre {
+      background-color: #999;
+      width: 100%;
+      margin: .5rem auto;
+      padding: .5rem;
+      overflow-x: scroll;
+    }
+  }
+}

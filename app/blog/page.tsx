@@ -1,7 +1,7 @@
 import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
 import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
 import ArticleLayout from "@/_src/components/layouts/ArticleLayout/ArticleLayout";
-import ArchiveBox from "@/_src/components/organisms/ArchiveBox/ArchiveBox";
+import ArchiveBox from "@/_src/components/organisms/archives/ArchiveBox/ArchiveBox";
 import CategoryList from "@/_src/components/organisms/CategoryList/CategoryList";
 import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
@@ -25,7 +25,7 @@ const PageBlog = () => {
       <Suspense>
         <ArticleLayout
           firstComponent={
-            <ArchiveBox 
+            <ArchiveBox
               microCMSAuth={MicroCMSAuth}
               microCMSQuery={BlogQuery} />
           }
