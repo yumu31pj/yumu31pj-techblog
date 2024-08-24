@@ -13,9 +13,9 @@ const getMokuji = (content: string): MokujiListType => {
     const text = heading.innerHTML; // テキストとHTML要素を含む全体を取得
 
     mokujiList.push({
-      mokujiType: `h${level}`,
-      mokujiText: text,
-      mokujiUrl: `#${id}`,
+      tagType: `h${level}`,
+      title: text,
+      linkTo: `#${id}`,
     });
   });
 

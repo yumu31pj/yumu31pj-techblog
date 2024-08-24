@@ -1,7 +1,7 @@
 export type MokujiItemType = {
-  mokujiText: string;
-  mokujiUrl: string;
-  mokujiType: string;
+  title: string;
+  linkTo: string;
+  tagType: string;
 }
 
 export type MokujiListType = {

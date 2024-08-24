@@ -1,91 +1,91 @@
 @use "@globals" as g;
 
 .mokuji {
-  border: 1px solid var(--color-primary);
-  width: 80%;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  width: 100%;
   margin: 30px auto;
-  padding: 20px;
 
-  @media screen and (min-width: 757px) {
-    margin: 50px auto;
-    padding: 40px;
-  }
-}
+  &__title {
+    background: var(--color-primary);
+    color: var(--color-white);  
+    font-size: 2.4rem;
+    padding: 5px 15px;
 
-.mokuji__title {
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 15px;
-
-  @include g.media('tb') {
-    font-size: 2.8rem;
-    margin-bottom: 30px;
+    @include g.media('tb') {
+      font-size: 2.8rem;
+    }
   }
 
-  & span {
-    font-weight: 700;
-    padding-bottom: 15px;
+  &__list {
+    counter-reset: count subcount;
+    display: flex;
+      flex-direction: column;
+      gap: 10px;
+    padding: 10px 15px;
+  }
+
+  &__item {
+    display: inline-block;
     position: relative;
+    color: var(--color-black);
+    counter-reset: subcount;
+    font-weight: 700;
+    line-height: 1.6;
+    text-indent: -1rem;
+    padding-left: 1rem;
 
     &::after {
-      background: var(--color-primary);
+      background-color: var(--color-primary);
       content: '';
-      display: block;
-      width: 80%;
+      transition: all .3s ease-out;
+      width: 0;
       height: 1px;
-      margin: auto;
       position: absolute;
-      right: 0;
       bottom: 0;
       left: 0;
     }
+
+    &:hover {
+      transition: all .3s ease-out;
+      position: relative;
+
+      & a {
+        color: var(--color-primary);
+      }
+
+      &::before {
+        color: var(--color-primary);
+      }
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    & a {
+      color: var(--color-black);
+    }
+
+    &--type-h2 {
+      font-size: 2rem;
+      @include g.media('tb') {
+        font-size: 2.4rem;
+      }
+    }
+    &--type-h3 {
+      font-size: 1.8rem;
+      margin-left: 1em;
+      @include g.media('tb') {
+        font-size: 2rem;
+      }
+    }
+    &--type-h4 {
+      font-size: 1.6rem;
+      margin-left: 1.5em;
+      @include g.media('tb') {
+        font-size: 1.8rem;
+      }
+    }
   }
 }
-
-.mokuji__list {
-  counter-reset: count subcount;
-}
-
-.mokuji__item {
-  position: relative;
-  color: var(--color-black);
-  counter-reset: subcount;
-  font-weight: 700;
-  line-height: 1.6;
-  text-indent: -1rem;
-  margin-bottom: 15px;
-  padding-left: 1rem;
-
-  &::before {
-    counter-increment: count;
-    content: counter(count) ". ";
-  }
-
-  &:hover::before {
-    color: var(--color-primary);
-    text-decoration: underline;
-    transition: .3s;
-  }
-  
-  & a span {
-    color: inherit;
-  }
-
-  &:hover a span {
-    color: var(--color-primary);
-    text-decoration: underline;
-    transition: .3s;
-  }
-
-  &__type--h1 {
-    text-decoration: underline;
-  }
-  &__type--h2 {
-    text-decoration: underline;
-  }
-  &__type--h3 {
-    text-decoration: underline;
-  }
-}
-
-
