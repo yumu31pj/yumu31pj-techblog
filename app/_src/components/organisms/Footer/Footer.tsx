@@ -14,7 +14,7 @@ const Footer = () => {
           </li>
         ))}
       </ul>
-      <small className={styles['footer']}>copyright: {SiteInfo.siteTitle}</small>
+      <small className={styles['footer']}>copyright: {SiteInfo.copyright}</small>
       <FooterJsonLDWrapper>
         <BreadcrumbJsonLD sitemap={PageMap}/>
       </FooterJsonLDWrapper>
