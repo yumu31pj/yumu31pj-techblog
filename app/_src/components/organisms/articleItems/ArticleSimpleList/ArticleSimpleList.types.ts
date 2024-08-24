@@ -1,4 +1,5 @@
-import { ArticleSimpleItemType } from "@/_libs/components/molecules/articleItems/ArticleSimpleItem/ArticleSimpleItem.types";
+import { ArticleSimpleItemType } from "@/_src/components/molecules/articleItems/ArticleSimpleItem/ArticleSimpleItem.types";
+
 
 export type ArticleSimpleListType = {
   articles: ArticleSimpleItemType[];

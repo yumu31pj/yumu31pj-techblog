@@ -4,6 +4,7 @@ import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { NewsQuery } from "@/_src/configs/MicroCMSQueries";
 import { SiteInfo } from "@/_src/configs/siteInfo";
 import { Metadata } from "next";
+import { Suspense } from "react";
 import NewsArchive from "./_components/NewsArchive";
 import styles from "./page.module.scss";
 
@@ -15,15 +16,17 @@ export const metadata: Metadata = {
 
 const PageNews = () => {
   return (
-    <SectionWrapper id="news">
-      <div className={styles["news-archive-title"]}>
-        <SimpleTitleH2 title="News Archive" />
-      </div>
-      <NewsArchive
-        microCMSAuth={MicroCMSAuth}
-        microCMSQuery={NewsQuery}
-      />
-    </SectionWrapper>
+    <Suspense>
+      <SectionWrapper id="news">
+        <div className={styles["news-archive-title"]}>
+          <SimpleTitleH2 title="News Archive" />
+        </div>
+        <NewsArchive
+          microCMSAuth={MicroCMSAuth}
+          microCMSQuery={NewsQuery}
+        />
+      </SectionWrapper>
+    </Suspense>
   )
 }
 

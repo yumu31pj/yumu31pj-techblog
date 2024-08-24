@@ -1,5 +1,5 @@
 import path from 'path';
-import { BlogQuery } from "../../_src/configs/MicroCMSQueries";
+import { BlogQuery, QueryForSitemap } from "../../_src/configs/MicroCMSQueries";
 import { MicroCMSAuth } from "../../_src/configs/microCMSApi";
 import { SiteInfo } from "../../_src/configs/siteInfo";
 import getSitemap from "./getSitemapXML";
@@ -13,7 +13,7 @@ const generateSitemapXML = () => {
   const microCMSAuth = MicroCMSAuth;
   const microCMSQuery = BlogQuery;
 
-  getSitemapXMLFromMicroCMS(url, microCMSAuth, microCMSQuery);
+  getSitemapXMLFromMicroCMS(url, microCMSAuth, QueryForSitemap.endpoints);
 }
 
 generateSitemapXML();

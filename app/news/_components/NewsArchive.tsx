@@ -6,6 +6,7 @@ import getOffset from "@/_libs/utils/getOffset";
 import { ArchiveBoxType } from "@/_src/components/organisms/archives/ArchiveBox/ArchiveBox.types";
 import ArticleSimpleList from "@/_src/components/organisms/articleItems/ArticleSimpleList/ArticleSimpleList";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import styles from "./NewsArchive.module.scss";
 
 const NewsArchive = (props: ArchiveBoxType) => {
@@ -31,22 +32,23 @@ const NewsArchive = (props: ArchiveBoxType) => {
   }
 
   return (
-    <div className={styles["news-archive"]}>
-      <div className={styles["news-archive__body"]}>
-        <ArticleSimpleList
-          articles={response.contents}
-        />
+    <Suspense>
+      <div className={styles["news-archive"]}>
+        <div className={styles["news-archive__body"]}>
+          <ArticleSimpleList
+            articles={response.contents}
+          />
+        </div>
+        <div className={styles['news-archive__pagination']}>
+          <Pagination
+            totalCount={response.totalCount}
+            url={""}
+            postsPerPage={microCMSQuery.postsPerPage}
+            pageNumber={currentPageNum}
+          />
+        </div>
       </div>
-      <div className={styles['news-archive__pagination']}>
-        <Pagination
-          totalCount={response.totalCount}
-          url={""}
-          postsPerPage={microCMSQuery.postsPerPage}
-          pageNumber={currentPageNum}
-        />
-      </div>
-
-    </div>
+    </Suspense>
   )
 }
 
