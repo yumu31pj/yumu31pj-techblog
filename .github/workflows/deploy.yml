@@ -1,0 +1,28 @@
+name: Deploy website on push
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [newposts]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 21
+        uses: actions/setup-node@v3
+        with:
+          node-version: "21"
+
+      - name: Build Project
+        run: |
+          npm install
+          npm run build
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
