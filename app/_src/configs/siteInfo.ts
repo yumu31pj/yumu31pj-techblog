@@ -32,6 +32,7 @@ export const PageMap = {
   },
   "github": {
     title: "GitHub",
-    slug: "https://github.com/yumu31pj?tab=repositories"
+    slug: "https://github.com/yumu31pj?tab=repositories",
+    isExternal: true
   }
 }

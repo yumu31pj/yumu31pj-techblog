@@ -2,6 +2,8 @@
 import ResponsiveImage from "@/_libs/components/atoms/images/ResponsiveImage/ResponsiveImage";
 import HeaderBasicWrapper from "@/_libs/components/layouts/headers/HeaderBasicWrapper/HeaderBasicWrapper";
 import HeaderInnerBasic from "@/_libs/components/layouts/headers/HeaderInnerBasic/HeaderInnerBasicBasic";
+import { PageMap } from "@/_src/configs/siteInfo";
+import HamburgerNavigationTypeA from "../../hamburgerNavigation/HamburgerNavigationTypeA/HamburgerNavigationTypeA";
 import { HeaderBasicType } from "./HeaderBasic.types";
 
 const HeaderBasic = (props: HeaderBasicType) => {
@@ -26,6 +28,11 @@ const HeaderBasic = (props: HeaderBasicType) => {
             />
           </a>
         </h1>
+        <div>
+          <HamburgerNavigationTypeA 
+            linkItems={PageMap}
+          />
+        </div>
       </HeaderInnerBasic>
     </HeaderBasicWrapper>
   )

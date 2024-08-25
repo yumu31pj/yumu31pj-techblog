@@ -1,0 +1,60 @@
+@use '@globals' as g;
+
+.hamburger {
+  background-color: var(--color-primary);
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 60px;
+  height: 60px;
+
+  &:hover {
+    .hamburger__bar-top {
+      width: 50%;
+    }
+    .hamburger__bar-bottom {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+    width: 30%;
+  }
+
+  @include g.media('tb') {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__bar-top, &__bar-bottom {
+    background: var(--color-white);
+    transition: all 0.3s ease;
+    height: 2px;
+  }
+
+  &__bar-top {
+    width: 100%;
+  }
+
+  &__bar-bottom {
+    width: 50%;
+  }
+
+  &[aria-expanded="true"] .hamburger__inner {
+    gap: 0;
+  }
+
+  &[aria-expanded="true"] .hamburger__bar-top {
+    transform: translate(0, 0) rotate(-45deg);
+    width: 100%;
+  }
+  &[aria-expanded="true"] .hamburger__bar-bottom {
+    transform: translate(0, 0) rotate(45deg);
+    width: 100%;
+  }
+}
