@@ -13,7 +13,7 @@ import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { SiteInfo } from "@/_src/configs/siteInfo";
 import { Category } from "@/_src/types/microCMS/Category.types";
 import parse from "html-react-parser";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import styles from './page.module.scss';
 
@@ -21,6 +21,10 @@ const BlogContent = () => {
   const searchParams = useSearchParams();
   const contentId = searchParams.get("id") || "";
   const endpointId = "blog";
+
+  if (!contentId) {
+    redirect('/blog/');
+  }
 
   const {isLoading, response, hasError, errorMessage} = useFetchContentDetail(MicroCMSAuth, contentId, endpointId);
   const [mokujiList, setMokujiList] = useState<MokujiListType>();

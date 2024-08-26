@@ -89,7 +89,7 @@ const PageFlip = (props: PageFlipType) => {
       }
     };
     updatePrevNext();
-  }, [contentId, endpointId, isPostListFetched, postList, client]);
+  }, [contentId, endpointId, isPostListFetched]);
 
   return (
     <ul className={styles.prevNext}>

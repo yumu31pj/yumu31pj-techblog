@@ -9,7 +9,7 @@ import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { NewsQuery } from "@/_src/configs/MicroCMSQueries";
 import { SiteInfo } from "@/_src/configs/siteInfo";
 import parse from "html-react-parser";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
 import styles from "./NewsContent.module.scss";
 
@@ -17,6 +17,10 @@ const NewsContent = () => {
   const searchParams = useSearchParams();
   const contentId = searchParams.get("id") || "";
   const endpointId = NewsQuery.endpointId;
+
+  if (!contentId) {
+    redirect('/news/');
+  }
 
   const {isLoading, response, hasError, errorMessage} = useFetchContentDetail(MicroCMSAuth, contentId, endpointId);
 
