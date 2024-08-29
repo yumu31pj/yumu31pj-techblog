@@ -8,6 +8,7 @@ import Mokuji from "@/_libs/components/molecules/Mokuji/Mokuji";
 import { MokujiListType } from "@/_libs/components/molecules/Mokuji/Mokuji.types";
 import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
 import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
+import getModifiedImgPathOfRichEditor from "@/_libs/utils/getModifiedImgPathOfRichEditor";
 import PageFlip from "@/_src/components/molecules/PageFlip/PageFlip";
 import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
 import { SiteInfo } from "@/_src/configs/siteInfo";
@@ -40,7 +41,7 @@ const BlogContent = () => {
         setMokujiList({mokujiList: []})
       }
     }
-  }, [response, searchParams, contentId])
+  }, [response, searchParams, contentId, isLoading])
 
   if (isLoading) {
     return (
@@ -81,7 +82,7 @@ const BlogContent = () => {
               </div>
             }
             
-            <div className={`p-microcms-single__body ${styles['content-body']}`}>{parse(response.content)}</div>
+            <div className={`p-microcms-single__body ${styles['content-body']}`}>{parse(getModifiedImgPathOfRichEditor(response.content))}</div>
           </section>
         ) : null}
 

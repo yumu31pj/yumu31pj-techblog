@@ -8,7 +8,7 @@ export const SiteInfo = {
   logoImage: {
     png: "/images/common/brand_logo.png",
     webp: "/images/common/brand_logo.png.webp",
-    width: 115,
+    width: 45,
     height: 45
   },
 }

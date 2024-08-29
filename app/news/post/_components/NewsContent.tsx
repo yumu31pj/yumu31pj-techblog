@@ -29,7 +29,7 @@ const NewsContent = () => {
       document.title = response.title + " | " + SiteInfo.siteTitle;
       document.querySelector('meta[name="description"]')?.setAttribute("content", response.title + " | " + SiteInfo.siteTitle);
     }
-  }, [response, searchParams, contentId])
+  }, [response, searchParams, contentId, isLoading])
 
   if (isLoading) {
     return (
