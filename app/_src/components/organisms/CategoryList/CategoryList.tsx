@@ -1,8 +1,8 @@
 'use client';
 
-import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
-import SimpleTitleH3 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH3/SimpleTitleH3";
-import { BlogCategoryListContext } from "@/_src/contexts/BlogCategoryListContext.provider";
+import LabelLink from "@/components/atoms/links/LabelLink/LabelLink";
+import SimpleTitleH3 from "@/components/atoms/titles/SimpleTitle/SimpleTitleH3/SimpleTitleH3";
+import { BlogCategoryListContext } from "app/_src/contexts/BlogCategoryListContext.provider";
 import { useContext } from "react";
 import styles from "./CategoryList.module.scss";
 import { CategoryLinkType } from "./CategoryList.types";

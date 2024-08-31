@@ -1,8 +1,8 @@
-import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
-import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
-import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
-import { NewsQuery } from "@/_src/configs/MicroCMSQueries";
-import { SiteInfo } from "@/_src/configs/siteInfo";
+import SimpleTitleH2 from "@/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
+import SectionWrapper from "@/components/layouts/wrappers/SectionWrapper/SectionWrapper";
+import { MicroCMSAuth } from "app/_src/configs/microCMSApi";
+import { NewsQuery } from "app/_src/configs/MicroCMSQueries";
+import { SiteInfo } from "app/_src/configs/siteInfo";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import NewsArchive from "./_components/NewsArchive";

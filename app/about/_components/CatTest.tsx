@@ -1,4 +1,4 @@
-import { BlogCategoryListContext } from "@/_src/contexts/BlogCategoryListContext.provider";
+import { BlogCategoryListContext } from "app/_src/contexts/BlogCategoryListContext.provider";
 import { useContext } from "react";
 
 const CatTest = () => {

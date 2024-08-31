@@ -1,10 +1,10 @@
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
-import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
-import useFetchContens from "@/_libs/hooks/microCMS/useFetchCategoryList.hooks";
-import ArticleSimpleList from "@/_src/components/organisms/articleItems/ArticleSimpleList/ArticleSimpleList";
-import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
-import { NewsLatestQuery } from "@/_src/configs/MicroCMSQueries";
+import Loader from "@/components/atoms/images/Loader/Loader";
+import SimpleTitleH2 from "@/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
+import SectionWrapper from "@/components/layouts/wrappers/SectionWrapper/SectionWrapper";
+import useFetchContens from "@/hooks/microCMS/useFetchCategoryList.hooks";
+import ArticleSimpleList from "app/_src/components/organisms/articleItems/ArticleSimpleList/ArticleSimpleList";
+import { MicroCMSAuth } from "app/_src/configs/microCMSApi";
+import { NewsLatestQuery } from "app/_src/configs/MicroCMSQueries";
 import { Suspense } from "react";
 import styles from "./HomeLatestNews.module.scss";
 

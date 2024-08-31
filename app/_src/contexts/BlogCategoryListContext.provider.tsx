@@ -1,6 +1,6 @@
 'use client';
 
-import useFetchCategoryList from "@/_libs/hooks/microCMS/useFetchCategoryList.hooks";
+import useFetchCategoryList from "@/hooks/microCMS/useFetchCategoryList.hooks";
 import { createContext, useEffect, useMemo, useState } from "react";
 import { MicroCMSAuth } from "../configs/microCMSApi";
 import { CategoryQuery } from "../configs/MicroCMSQueries";

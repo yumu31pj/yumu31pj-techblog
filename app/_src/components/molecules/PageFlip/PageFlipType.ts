@@ -1,4 +1,5 @@
-import { MicroCMSAuthType } from "@/_libs/types/MicroCMSAuth.types";
+import { MicroCMSAuthType } from "@/types/MicroCMSAuth.types";
+
 
 type PageFlipType = {
   microCMSAuth: MicroCMSAuthType

@@ -1,4 +1,4 @@
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
+import Loader from "@/components/atoms/images/Loader/Loader";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import BlogContent from "./BlogContent";

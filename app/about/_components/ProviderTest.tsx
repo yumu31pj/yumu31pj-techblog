@@ -1,4 +1,4 @@
-import { BlogTotalCountContext } from "@/_src/contexts/BlogTotalCountContext.provider";
+import { BlogTotalCountContext } from "app/_src/contexts/BlogTotalCountContext.provider";
 import { useContext } from "react";
 
 const ProviderTest = () => {

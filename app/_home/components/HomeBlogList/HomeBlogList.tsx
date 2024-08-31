@@ -1,15 +1,14 @@
-
-import FlipLinkButton from "@/_libs/components/atoms/buttons/FlipLinkButton/FlipLinkButton";
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
-import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
-import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
-import useFetchContens from "@/_libs/hooks/microCMS/useFetchContens.hooks";
-import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
-import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
-import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
-import { PageMap } from "@/_src/configs/siteInfo";
-import { Category } from "@/_src/types/microCMS/Category.types";
+import Loader from "@/components/atoms/images/Loader/Loader";
+import LabelLink from "@/components/atoms/links/LabelLink/LabelLink";
+import SimpleTitleH2 from "@/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
+import SectionWrapper from "@/components/layouts/wrappers/SectionWrapper/SectionWrapper";
+import { FlipLinkButton } from "@/components/ui";
+import useFetchContens from "@/hooks/microCMS/useFetchCategoryList.hooks";
+import { getFormatedDateString } from "@/utils/getFormatedDateString";
+import { MicroCMSAuth } from "app/_src/configs/microCMSApi";
+import { BlogQuery } from "app/_src/configs/MicroCMSQueries";
+import { PageMap } from "app/_src/configs/siteInfo";
+import { Category } from "app/_src/types/microCMS/Category.types";
 import { Suspense } from "react";
 import styles from "./HomeBlogList.module.scss";
 

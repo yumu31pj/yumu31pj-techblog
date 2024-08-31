@@ -1,12 +1,12 @@
-import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
-import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
-import ArticleLayout from "@/_src/components/layouts/ArticleLayout/ArticleLayout";
-import ArchiveBox from "@/_src/components/organisms/archives/ArchiveBox/ArchiveBox";
-import CategoryList from "@/_src/components/organisms/CategoryList/CategoryList";
-import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
-import { BlogQuery } from "@/_src/configs/MicroCMSQueries";
-import { SiteInfo } from "@/_src/configs/siteInfo";
-import { BlogCategoryListProvider } from "@/_src/contexts/BlogCategoryListContext.provider";
+import SimpleTitleH2 from "@/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
+import SectionWrapper from "@/components/layouts/wrappers/SectionWrapper/SectionWrapper";
+import ArticleLayout from "app/_src/components/layouts/ArticleLayout/ArticleLayout";
+import ArchiveBox from "app/_src/components/organisms/archives/ArchiveBox/ArchiveBox";
+import CategoryList from "app/_src/components/organisms/CategoryList/CategoryList";
+import { MicroCMSAuth } from "app/_src/configs/microCMSApi";
+import { BlogQuery } from "app/_src/configs/MicroCMSQueries";
+import { SiteInfo } from "app/_src/configs/siteInfo";
+import { BlogCategoryListProvider } from "app/_src/contexts/BlogCategoryListContext.provider";
 import { Metadata } from "next";
 import { Suspense } from "react";
 

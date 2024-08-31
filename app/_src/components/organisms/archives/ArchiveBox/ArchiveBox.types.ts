@@ -1,5 +1,6 @@
-import { MicroCMSAuthType } from "@/_libs/types/MicroCMSAuth.types";
-import { MicroCMSQueryBasicType } from "@/_libs/types/MicroCMSQueries.types";
+import { MicroCMSAuthType } from "@/types/MicroCMSAuth.types";
+import { MicroCMSQueryBasicType } from "@/types/MicroCMSQueries.types";
+
 
 export type ArchiveBoxType = {
   microCMSAuth: MicroCMSAuthType;

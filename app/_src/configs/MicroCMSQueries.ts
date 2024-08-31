@@ -1,4 +1,5 @@
-import { MicroCMSQueryBasicType } from "@/_libs/types/MicroCMSQueries.types";
+
+import { MicroCMSQueryBasicType } from "@/types/MicroCMSQueries.types";
 import { PageMap } from "./siteInfo";
 
 export const BlogQuery: MicroCMSQueryBasicType = {

@@ -1,9 +1,9 @@
 'use client';
 
-import Pagination from '@/_libs/components/molecules/Pagination/Pagination';
-import useFetchContens from '@/_libs/hooks/microCMS/useFetchContens.hooks';
-import { getFormatedDateString } from '@/_libs/utils/getFormatedDateString';
-import getOffset from '@/_libs/utils/getOffset';
+import Pagination from '@/components/molecules/Pagination/Pagination';
+import useFetchContens from '@/hooks/microCMS/useFetchCategoryList.hooks';
+import { getFormatedDateString } from '@/utils/getFormatedDateString';
+import getOffset from '@/utils/getOffset';
 import { useSearchParams } from 'next/navigation';
 import ArticleCard from '../../../molecules/ArticleCard/ArticleCard';
 import styles from './ArchiveBox.module.scss';
@@ -21,7 +21,7 @@ const ArchiveBox = (props: ArchiveBoxType) => {
 
   const offset = getOffset(Number(currentPageNum), microCMSQuery.postsPerPage);
 
-  const {isLoading, response, hasError, errorMessage} = useFetchContens(microCMSAuth, microCMSQuery, offset, categoryId);
+  const {isLoading, response, hasError, errorMessage} = useFetchContens(microCMSAuth, microCMSQuery, offset);
 
   if (isLoading) {
     return (

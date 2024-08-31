@@ -1,10 +1,10 @@
 'use client';
 
-import Pagination from "@/_libs/components/molecules/Pagination/Pagination";
-import useFetchContens from "@/_libs/hooks/microCMS/useFetchCategoryList.hooks";
-import getOffset from "@/_libs/utils/getOffset";
-import { ArchiveBoxType } from "@/_src/components/organisms/archives/ArchiveBox/ArchiveBox.types";
-import ArticleSimpleList from "@/_src/components/organisms/articleItems/ArticleSimpleList/ArticleSimpleList";
+import Pagination from "@/components/molecules/Pagination/Pagination";
+import useFetchContens from "@/hooks/microCMS/useFetchContens.hooks";
+import getOffset from "@/utils/getOffset";
+import { ArchiveBoxType } from "app/_src/components/organisms/archives/ArchiveBox/ArchiveBox.types";
+import ArticleSimpleList from "app/_src/components/organisms/articleItems/ArticleSimpleList/ArticleSimpleList";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import styles from "./NewsArchive.module.scss";

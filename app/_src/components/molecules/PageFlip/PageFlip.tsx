@@ -1,4 +1,4 @@
-import { getMicroCMSConnection } from "@/_libs/utils/getMicroCMSClient";
+import { getMicroCMSConnection } from "@/utils/getMicroCMSClient";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./PageFlip.module.scss";

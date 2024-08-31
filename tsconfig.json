@@ -26,10 +26,10 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./app/*"],
-      "~/*": ["./app/*"],
+      "@/*": ["./src/*"],
+      "~/*": ["./src/*"],
       "@globals": [
-        "app/_libs/scss/globals"
+        "src/scss/globals"
       ]
     },
     "moduleResolution": "node"
@@ -39,8 +39,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_libs/**/*"
-, "app/_src/components/layouts/BoxDevidedTwo"  ],
+    "srclibs/**/*"
+, "src/components/layouts/BoxDevidedTwo"],
   "exclude": [
     "node_modules"
   ]

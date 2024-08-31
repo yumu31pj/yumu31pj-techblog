@@ -1,18 +1,18 @@
 'use client';
 
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
-import SimpleTitleH2 from "@/_libs/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
-import getMokuji from "@/_libs/components/molecules/Mokuji/getMokuji";
-import Mokuji from "@/_libs/components/molecules/Mokuji/Mokuji";
-import { MokujiListType } from "@/_libs/components/molecules/Mokuji/Mokuji.types";
-import useFetchContentDetail from "@/_libs/hooks/microCMS/useFetchContentDetail.hooks";
-import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
-import getModifiedImgPathOfRichEditor from "@/_libs/utils/getModifiedImgPathOfRichEditor";
-import PageFlip from "@/_src/components/molecules/PageFlip/PageFlip";
-import { MicroCMSAuth } from "@/_src/configs/microCMSApi";
-import { SiteInfo } from "@/_src/configs/siteInfo";
-import { Category } from "@/_src/types/microCMS/Category.types";
+import Loader from "@/components/atoms/images/Loader/Loader";
+import LabelLink from "@/components/atoms/links/LabelLink/LabelLink";
+import SimpleTitleH2 from "@/components/atoms/titles/SimpleTitle/SimpleTitleH2/SimpleTitleH2";
+import getMokuji from "@/components/molecules/Mokuji/getMokuji";
+import Mokuji from "@/components/molecules/Mokuji/Mokuji";
+import { MokujiListType } from "@/components/molecules/Mokuji/Mokuji.types";
+import useFetchContentDetail from "@/hooks/microCMS/useFetchContentDetail.hooks";
+import { getFormatedDateString } from "@/utils/getFormatedDateString";
+import getModifiedImgPathOfRichEditor from "@/utils/getModifiedImgPathOfRichEditor";
+import PageFlip from "app/_src/components/molecules/PageFlip/PageFlip";
+import { MicroCMSAuth } from "app/_src/configs/microCMSApi";
+import { SiteInfo } from "app/_src/configs/siteInfo";
+import { Category } from "app/_src/types/microCMS/Category.types";
 import parse from "html-react-parser";
 import { redirect, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
@@ -65,7 +65,7 @@ const BlogContent = () => {
               <ul className={styles['article__categories']}>
                 {response.categories.map((item:Category, key:number) => (
                   <li key={key}>
-                    <LabelLink 
+                    <LabelLink
                       linkText={item.name}
                       linkTo={`/blog/?cat=${item.slug}`}
                     />

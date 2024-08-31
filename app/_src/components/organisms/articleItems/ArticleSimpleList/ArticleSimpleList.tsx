@@ -1,7 +1,6 @@
-
-import { getFormatedDateString } from "@/_libs/utils/getFormatedDateString";
-import ArticleSimpleItem from "@/_src/components/molecules/articleItems/ArticleSimpleItem/ArticleSimpleItem";
-import { NewsQuery } from "@/_src/configs/MicroCMSQueries";
+import { getFormatedDateString } from "@/utils/getFormatedDateString";
+import ArticleSimpleItem from "app/_src/components/molecules/articleItems/ArticleSimpleItem/ArticleSimpleItem";
+import { NewsQuery } from "app/_src/configs/MicroCMSQueries";
 import styles from "./ArticleSimpleList.module.scss";
 import { ArticleSimpleListType } from "./ArticleSimpleList.types";
 

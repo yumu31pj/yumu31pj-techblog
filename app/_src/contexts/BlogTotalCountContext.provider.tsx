@@ -1,4 +1,4 @@
-import useFetchTotalCountByEndpoint from "@/_libs/hooks/microCMS/useFetchTotalCountByEndpoint.hooks";
+import useFetchTotalCountByEndpoint from "@/hooks/microCMS/useFetchTotalCountByEndpoint.hooks";
 import { createContext, ReactNode, useEffect, useMemo, useState } from "react";
 import { MicroCMSAuth } from "../configs/microCMSApi";
 import { BlogQuery } from "../configs/MicroCMSQueries";

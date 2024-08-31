@@ -1,9 +1,9 @@
 
+import BodyWrapper from "@/components/layouts/BodyWrapper/BodyWrapper";
+import HeaderBasic from "@/components/organisms/headers/HeaderBasic/HeaderBasic";
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import BodyWrapper from "./_libs/components/layouts/BodyWrapper/BodyWrapper";
-import HeaderBasic from "./_libs/components/organisms/headers/HeaderBasic/HeaderBasic";
-import "./_libs/scss/styles.scss";
+import "../src/scss/styles.scss";
 import Footer from "./_src/components/organisms/Footer/Footer";
 import { SiteInfo } from "./_src/configs/siteInfo";
 import { HeaderContexts } from "./_src/contexts/HeaderContexts";

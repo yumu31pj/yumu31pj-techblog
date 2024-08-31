@@ -1,5 +1,5 @@
-import LabelLink from "@/_libs/components/atoms/links/LabelLink/LabelLink";
-import { Category } from "@/_src/types/microCMS/Category.types";
+import LabelLink from "@/components/atoms/links/LabelLink/LabelLink";
+import { Category } from "app/_src/types/microCMS/Category.types";
 import styles from "./ArticleCard.module.scss";
 import { ArticleCardType } from "./ArticleCard.types";
 
@@ -18,7 +18,7 @@ const ArticleCard = (props: ArticleCardType) => {
       <ul className={styles['article-card-categories']}>
         {categories.map((category: Category, key: number) => (
           <li key={key} className={styles['article-card-categories__item']}>
-            <LabelLink 
+            <LabelLink
               linkText={category.name} 
               linkTo={`/blog/?cat=${category.slug}`}
             />

@@ -1,6 +1,7 @@
-import BreadcrumbJsonLD from "@/_libs/components/atoms/texts/BreadcrumbJsonLD/BreadcrumbJsonLD";
-import FooterBasicWrapper from "@/_libs/components/layouts/footers/FooterBasicWrapper/FooterBasicWrapper";
-import { PageMap } from "@/_src/configs/siteInfo";
+
+import BreadcrumbJsonLD from "@/components/atoms/texts/BreadcrumbJsonLD/BreadcrumbJsonLD";
+import FooterBasicWrapper from "@/components/layouts/footers/FooterBasicWrapper/FooterBasicWrapper";
+import { PageMap } from "app/_src/configs/siteInfo";
 import FooterJsonLDWrapper from "../../layouts/FooterJsonLDWrapper/FooterJsonLDWrapper";
 import styles from "./Footer.module.scss";
 

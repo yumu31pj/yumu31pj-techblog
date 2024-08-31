@@ -1,6 +1,6 @@
-import Loader from "@/_libs/components/atoms/images/Loader/Loader";
-import SectionWrapper from "@/_libs/components/layouts/wrappers/SectionWrapper/SectionWrapper";
-import { SiteInfo } from "@/_src/configs/siteInfo";
+import Loader from "@/components/atoms/images/Loader/Loader";
+import SectionWrapper from "@/components/layouts/wrappers/SectionWrapper/SectionWrapper";
+import { SiteInfo } from "app/_src/configs/siteInfo";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import NewsContent from "./_components/NewsContent";
