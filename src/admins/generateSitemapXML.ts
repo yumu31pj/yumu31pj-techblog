@@ -1,7 +1,7 @@
-import { MicroCMSAuth } from 'app/_src/configs/microCMSApi';
-import { BlogQuery, QueryForSitemap } from 'app/_src/configs/MicroCMSQueries';
-import { SiteInfo } from 'app/_src/configs/siteInfo';
 import path from 'path';
+import { MicroCMSAuth } from '../../app/_src/configs/microCMSApi';
+import { BlogQuery, QueryForSitemap } from '../../app/_src/configs/MicroCMSQueries';
+import { SiteInfo } from '../../app/_src/configs/siteInfo';
 import getSitemap from "./getSitemapXML";
 import getSitemapXMLFromMicroCMS from "./getSitemapXMLFromMicroCMS";
 

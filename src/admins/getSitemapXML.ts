@@ -1,6 +1,6 @@
-import { SiteInfo } from 'app/_src/configs/siteInfo';
 import fs from 'fs-extra';
 import path from 'path';
+import { SiteInfo } from "../../app/_src/configs/siteInfo";
 
 export default async function getSitemap(appDirectory: string) {
   // Define the URL as SiteInfo.siteUrl in /app/_common/configs/siteInfo.ts or wherever for the baseUrl and import before using.

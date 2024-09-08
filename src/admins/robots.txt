@@ -1,0 +1,2 @@
+User-Agent:* Disallow: Sitemap:https://blog.yumu31pj.tech/sitemap.xml
+User-Agent:* Disallow: Sitemap:https://blog.yumu31pj.tech/sitemap-microcms-posts.xml

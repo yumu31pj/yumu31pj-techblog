@@ -28,7 +28,7 @@ const PageAbout = () => {
           <SimpleTitleH3 title="My Main Github Repositories" />
           <ul className={styles['link-list']}>
             <li className={styles['link-list__item']}>
-              <a href="https://github.com/yumu31pj/yumu31pj-nextjs-library" target="_blank" rel="noopener noreferer">yumu31pj-nextjs-library</a>
+              <a href="https://github.com/yumu31pj/yumu31pj-react-bootstrap" target="_blank" rel="noopener noreferer">React Component Library</a>
             </li>
           </ul>
         </div>
