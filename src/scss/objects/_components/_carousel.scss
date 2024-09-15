@@ -1,0 +1,24 @@
+@use "@globals" as g;
+
+.embla {
+  overflow: hidden;
+  &__container {
+    display: flex;
+      // flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    height: 70px;
+
+    @include g.media('tb') {
+      height: 50px;
+    }
+
+    // &--vertical {
+    //   flex-direction: column;
+    // }
+  }
+  &__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+}

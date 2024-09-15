@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@next/third-parties": "^14.2.4",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "firebase": "^10.12.3",
     "firebase-tools": "^13.13.0",
     "fs-extra": "^11.2.0",
