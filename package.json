@@ -8,14 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "generate-sitemap": "npx ts-node src/admins/generateSitemapXML.ts",
-    "export": "npm run build && npm run generate-sitemap && firebase deploy"
+    "export": "npm run build && npm run generate-sitemap"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.4",
     "firebase": "^10.12.3",
     "firebase-tools": "^13.13.0",
     "fs-extra": "^11.2.0",
-    "html-react-parser": "^5.1.10",
+    "html-react-parser": "^5.1.16",
     "microcms-js-sdk": "^3.1.2",
     "next": "14.2.4",
     "path": "^0.12.7",
