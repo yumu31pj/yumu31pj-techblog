@@ -26,7 +26,7 @@ const OneLineCarouseWrapper = (props: FlashPostCarousel) => {
     <div className={styles['embla']} ref={emblaRef}>
        <div className={`${styles['embla__container']} ${styles[modifierClass]}`}>
         {carouselItems.map((post: React.ReactNode, key: number) => (
-          <div className={`${styles['embla__slide']} ${styles['carousel-item']}`}>
+          <div className={`${styles['embla__slide']} ${styles['carousel-item']}`} key={key}>
             {post}
           </div>
         ))}
