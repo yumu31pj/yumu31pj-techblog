@@ -1,9 +1,17 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { SiteInfo } from "../../app/_src/configs/siteInfo";
+import { MicroCMSAuthType } from '../types/MicroCMSAuth.types';
+import { MicroCMSQueryBasicType } from '../types/MicroCMSQueries.types';
+import { getMicroCMSConnection } from '../utils/getMicroCMSClient';
 
-export default async function getSitemap(appDirectory: string) {
-  // Define the URL as SiteInfo.siteUrl in /app/_common/configs/siteInfo.ts or wherever for the baseUrl and import before using.
+interface ContentType {
+  id: string;
+  publishedAt: string;
+}
+
+// ローカルファイルのsitemap生成関数
+export default async function getSitemap(appDirectory: string, microCMSAuth: MicroCMSAuthType, microCMSQueries: MicroCMSQueryBasicType[]) {
   let baseUrl = SiteInfo.siteUrl;
 
   // Add trailing slash to baseUrl if it's missing
@@ -13,7 +21,6 @@ export default async function getSitemap(appDirectory: string) {
 
   const outDir = path.join(process.cwd(), 'out');
   const sitemapPath = path.join(outDir, 'sitemap.xml');
-
   const urls: { loc: string, lastmod: string }[] = [];
 
   async function traverseDir(currentPath: string, currentUrl: string) {
@@ -41,6 +48,9 @@ export default async function getSitemap(appDirectory: string) {
 
   await traverseDir(appDirectory, baseUrl);
 
+  // microCMSからのデータを結合
+  await getSitemapXMLFromMicroCMS(baseUrl, microCMSAuth, microCMSQueries, urls);
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(url => `  <url><loc>${url.loc}</loc><lastmod>${url.lastmod}</lastmod></url>`).join('\n')}
@@ -51,6 +61,46 @@ ${urls.map(url => `  <url><loc>${url.loc}</loc><lastmod>${url.lastmod}</lastmod>
   console.log(`Sitemap has been generated at ${sitemapPath}`);
 }
 
+// microCMSからデータを取得し、urls配列に追加する関数
+const getSitemapXMLFromMicroCMS = async (
+  url: string,
+  microCMSAuth: MicroCMSAuthType,
+  microCMSQueries: MicroCMSQueryBasicType[],
+  urls: { loc: string, lastmod: string }[]
+) => {
+  const client = getMicroCMSConnection(microCMSAuth);
+
+  const getAllContents = async (query: MicroCMSQueryBasicType) => {
+    try {
+      const apiResponse = await client.getAllContents({
+        endpoint: query.endpointId,
+        queries: {
+          fields: "id,publishedAt"
+        }
+      });
+      return apiResponse;
+    } catch (err) {
+      console.error(err);
+      return [];
+    }
+  };
+
+  for (const query of microCMSQueries) {
+    const response = await getAllContents(query);
+
+    if (response.length > 0) {
+      const fullPath = url.replace(/\/$/, '') + (query.singlePath.startsWith('/') ? '' : '/') + query.singlePath;
+      response.forEach((post: ContentType) => {
+        urls.push({
+          loc: `${fullPath}${post.id}`,
+          lastmod: post.publishedAt
+        });
+      });
+    }
+  }
+}
+
+// lastmodフォーマット関数
 function formatLastmodDate(date: Date): string {
   const year = date.getUTCFullYear();
   const month = `0${date.getUTCMonth() + 1}`.slice(-2);
@@ -60,9 +110,3 @@ function formatLastmodDate(date: Date): string {
   const seconds = `0${date.getUTCSeconds()}`.slice(-2);
   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+09:00`;
 }
-
-// const appDirectory = path.join(process.cwd(), 'app');
-// getSitemap(appDirectory).catch(err => {
-//   console.error(err);
-//   process.exit(1);
-// });

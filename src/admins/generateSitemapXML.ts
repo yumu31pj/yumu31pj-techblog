@@ -1,19 +1,17 @@
 import path from 'path';
 import { MicroCMSAuth } from '../../app/_src/configs/microCMSApi';
-import { BlogQuery, QueryForSitemap } from '../../app/_src/configs/MicroCMSQueries';
+import { QueryForSitemap } from '../../app/_src/configs/MicroCMSQueries';
 import { SiteInfo } from '../../app/_src/configs/siteInfo';
 import getSitemap from "./getSitemapXML";
-import getSitemapXMLFromMicroCMS from "./getSitemapXMLFromMicroCMS";
 
-const generateSitemapXML = () => {
+const generateSitemapXML = async () => {
   const appDirectory = path.join(process.cwd(), 'app');
-  getSitemap(appDirectory);
-
   const url = SiteInfo.siteUrl;
   const microCMSAuth = MicroCMSAuth;
-  const microCMSQuery = BlogQuery;
+  const microCMSQueries = QueryForSitemap.endpoints;
 
-  getSitemapXMLFromMicroCMS(url, microCMSAuth, QueryForSitemap.endpoints);
+  // getSitemapに必要な引数をすべて渡す
+  await getSitemap(appDirectory, microCMSAuth, microCMSQueries);
 }
 
 generateSitemapXML();
