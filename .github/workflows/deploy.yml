@@ -14,43 +14,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out the repository
-      uses: actions/checkout@v3
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-    - name: Cache Node.js modules
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm            # npmのキャッシュも保存するためのパスを追加
+            node_modules      # 依存関係のキャッシュを保存するパス
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }} # キャッシュキーの生成
+          restore-keys: |
+            ${{ runner.os }}-node- # 再利用可能なキャッシュのキー
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install # 依存関係をインストール
 
-    - name: Build the project
-      env:
-        MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-        MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-        PUBLIC_SITE_URL: ${{ secrets.PUBLIC_SITE_URL }}
-      run: npm run export
+      - name: Build the project
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          PUBLIC_SITE_URL: ${{ secrets.PUBLIC_SITE_URL }}
+        run: npm run export # プロジェクトをビルド
 
-    - name: Install lftp
-      run: sudo apt-get install -y lftp
+      - name: Install lftp
+        run: sudo apt-get install -y lftp # lftpをインストール
 
-    - name: Deploy to Xserver Static
-      env:
-        FTP_SERVER: ${{ secrets.FTP_HOST }}
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-      run: |
-        lftp -d -c "
-        open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
-        mirror -R --delete -x \".htaccess\" ./out /
-        bye
-        " || true
+      - name: Deploy to Xserver Static
+        env:
+          FTP_SERVER: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -d -c "
+          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
+          mirror -R --delete -x \".htaccess\" ./out /
+          bye
+          " || true
