@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-sitemap": "npx ts-node src/admins/generateSitemapXML.ts",
-    "export": "npm run build && npm run generate-sitemap"
+    "export": "npm run build && npm run generate-sitemap && ts-node _project/utils/generate_robotsTxt.ts"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.4",

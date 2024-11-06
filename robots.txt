@@ -1,4 +1,3 @@
 User-agent: *
 Disallow:
 Sitemap: https://blog.yumu31pj.tech/sitemap.xml
-Sitemap: https://blog.yumu31pj.tech/sitemap-microcms-posts.xml
