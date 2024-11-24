@@ -7,9 +7,10 @@ const SearchQueryChecker = () => {
     const referrer = document.referrer;
 
     if (referrer.includes("google.com")) {
-      console.log(referrer);
+      console.log("Google: " + referrer);
+    } else {
+      console.log("Not Google: " + referrer);;
     }
-    setReferrerData(referrer);
   }, []);
 
   return null; // dont't be rendered
