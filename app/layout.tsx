@@ -24,6 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+      </head>
       <GoogleTagManager gtmId={SiteInfo.gtmId}/>
       <BodyWrapper>
       <HeaderBasic
