@@ -6,7 +6,7 @@ const SearchQueryChecker = () => {
   useEffect(() => {
     const referrer = document.referrer;
 
-    if (referrer.includes("google.com")) {
+    if (referrer.includes("google.co.jp")) {
       console.log("Google: " + referrer);
     } else {
       console.log("Not Google: " + referrer);;
