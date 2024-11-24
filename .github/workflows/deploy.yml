@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-node- # 再利用可能なキャッシュのキー
 
       - name: Install dependencies
-        run: npm install # 依存関係をインストール
+        run: npm install --legacy-peer-dep # 依存関係をインストール
 
       - name: Build the project
         env:
