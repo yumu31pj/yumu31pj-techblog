@@ -1,6 +1,7 @@
 
 import BreadcrumbJsonLD from "@/components/atoms/texts/BreadcrumbJsonLD/BreadcrumbJsonLD";
 import FooterBasicWrapper from "@/components/layouts/footers/FooterBasicWrapper/FooterBasicWrapper";
+import SearchQueryChecker from "_project/components/SearchQueryChecker";
 import { PageMap } from "app/_src/configs/siteInfo";
 import FooterJsonLDWrapper from "../../layouts/FooterJsonLDWrapper/FooterJsonLDWrapper";
 import styles from "./Footer.module.scss";
@@ -19,6 +20,7 @@ const Footer = () => {
       <FooterJsonLDWrapper>
         <BreadcrumbJsonLD sitemap={PageMap}/>
       </FooterJsonLDWrapper>
+      <SearchQueryChecker />
     </FooterBasicWrapper>
   )
 }
