@@ -1,9 +1,0 @@
-@use "@globals" as g;
-
-.news-archive-title {
-  margin-bottom: 30px;
-
-  @include g.media('tb') {
-    margin-bottom: 50px;
-  }
-}

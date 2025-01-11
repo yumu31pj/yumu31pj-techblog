@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// ES モジュールで __dirname を模倣するための変数
+// Variables to mimic __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -9,6 +9,9 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  images: {
+    loader: 'custom',  // to use Image component of Next.js with SSG
+  },
   
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'app');

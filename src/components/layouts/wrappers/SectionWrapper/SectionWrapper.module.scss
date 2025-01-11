@@ -1,9 +1,0 @@
-@use "@globals" as g;
-
-.section-wrapper {
-  padding: 15px;
-
-  @include g.media('tb') {
-    padding: 5vw;
-  }
-}

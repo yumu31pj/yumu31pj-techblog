@@ -1,12 +1,9 @@
-
-import BodyWrapper from "@/components/layouts/BodyWrapper/BodyWrapper";
-import HeaderBasic from "@/components/organisms/headers/HeaderBasic/HeaderBasic";
 import { GoogleTagManager } from "@next/third-parties/google";
+import HeaderBasic from "_31pr-bootstrap/src/features/headers/header-basic/header-basic";
+import { SiteInfo } from "app/_project/configs/siteInfo";
+import { HeaderContexts } from "app/_project/contexts/HeaderContexts";
 import type { Metadata } from "next";
-import "../src/scss/styles.scss";
-import Footer from "./_src/components/organisms/Footer/Footer";
-import { SiteInfo } from "./_src/configs/siteInfo";
-import { HeaderContexts } from "./_src/contexts/HeaderContexts";
+import "../_31pr-bootstrap/src/scss/styles.scss";
 
 export const metadata: Metadata = {
   title: SiteInfo.siteTitle,
@@ -22,24 +19,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ja">
-      <head>
-        <meta name="referrer" content="no-referrer-when-downgrade" />
-      </head>
       <GoogleTagManager gtmId={SiteInfo.gtmId}/>
-      <BodyWrapper>
-      <HeaderBasic
-          logoImageItem={
-            HeaderContexts.logoImageItem
-          }
-          topLinkUrl={HeaderContexts.topLinkUrl}
+      <body>
+        <HeaderBasic
+          headerItems={HeaderContexts.headerItems}
         />
-        <main>
-          {children}
-        </main>
-        <Footer />
-      </BodyWrapper>
+        {children}
+      </body>
     </html>
   );
 }

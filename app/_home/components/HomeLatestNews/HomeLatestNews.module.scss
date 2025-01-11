@@ -1,9 +1,0 @@
-@use "@globals" as g;
-
-.latest-news-title {
-  margin-bottom: 15px;
-
-  @include g.media('tb') {
-    margin-bottom: 30px;
-  }
-}
