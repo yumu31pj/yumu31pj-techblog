@@ -2,6 +2,7 @@ import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapp
 import HomeLatestBlogs from "~/src/components/pages/home/HomeLatestBlogs/HomeLatestBlogs";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import { SiteInfo } from "~/src/configs/SiteInfo";
+import getAllContentIds from "~/src/utils/microcms/getAllContentIds";
 import ssf_getBlogContents from "~/src/utils/microcms/ssf_getBlogContents";
 import type { Route } from "./+types/home";
 
@@ -24,7 +25,11 @@ export async function loader({ params }: Route.LoaderArgs) {
   };
 
   const apiResponse = await ssf_getBlogContents(endpoint, auth, perPage);
-  return apiResponse;
+
+  const ids = await getAllContentIds(endpoint, auth);
+  console.log('ids: ' + ids);
+
+  return apiResponse.contents;
 }
 
 const Home = ({loaderData,}: Route.ComponentProps) => {
@@ -33,7 +38,7 @@ const Home = ({loaderData,}: Route.ComponentProps) => {
     <>
       <SectionWrapper>
         <SimpleTitle text="最新のブログ" tag="h2" />
-        <HomeLatestBlogs posts={loaderData.contents} />
+        <HomeLatestBlogs posts={loaderData} />
       </SectionWrapper>
     </>
   );

@@ -5,7 +5,7 @@ import { getMicroCMSClient } from "~/src/utils/microcms/getMicroCMSClient";
  * 
  * @param endpoint 
  * @param auth : サービスドメインとAPIキー
- * @param id 
+ * @param id : 投稿ID
  * @returns 
  */
 const ssf_getContentByID = async (endpoint: string, auth: MicroCMSAuthType, id: string) => {

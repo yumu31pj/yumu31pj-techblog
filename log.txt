@@ -1,0 +1,39 @@
+
+> build
+> react-router build
+
+vite v5.4.14 building for production...
+transforming...
+✓ 261 modules transformed.
+rendering chunks...
+computing gzip size...
+build/client/.vite/manifest.json                       3.12 kB │ gzip:  0.60 kB
+build/client/assets/SimpleTitle-DDI-O2Kh.css           0.45 kB │ gzip:  0.19 kB
+build/client/assets/DivContentsWrapper-DtgXD9c-.css    1.15 kB │ gzip:  0.46 kB
+build/client/assets/root-3FrII6qr.css                  3.79 kB │ gzip:  1.50 kB
+build/client/assets/SiteInfo-01pxK4R4.js               0.17 kB │ gzip:  0.17 kB
+build/client/assets/with-props-C3dX45Ai.js             0.35 kB │ gzip:  0.21 kB
+build/client/assets/home-BZZDuke6.js                   0.58 kB │ gzip:  0.40 kB
+build/client/assets/blogs-archive-CDalVRv_.js          0.61 kB │ gzip:  0.45 kB
+build/client/assets/root-CsPjnmMZ.js                   1.59 kB │ gzip:  0.82 kB
+build/client/assets/SimpleTitle-BMwLj-p2.js           10.08 kB │ gzip:  2.94 kB
+build/client/assets/blogs-single-DZWJ0_1V.js          22.84 kB │ gzip:  8.57 kB
+build/client/assets/chunk-K6CSEXPM-BZLHGLn7.js       111.51 kB │ gzip: 37.45 kB
+build/client/assets/entry.client-DNtOYoyA.js         179.08 kB │ gzip: 56.80 kB
+build/client/assets/DivContentsWrapper-Bvsal1VY.js   186.24 kB │ gzip: 85.40 kB
+✓ built in 1.42s
+vite v5.4.14 building SSR bundle for production...
+transforming...
+✓ 28 modules transformed.
+rendering chunks...
+build/server/.vite/manifest.json                0.23 kB
+build/server/assets/server-build-CiD62rz-.css   5.39 kB
+build/server/index.js                          17.01 kB
+0
+Prerender (data): / -> build/client/_root.data
+Prerender (html): / -> build/client/index.html
+params.page undefined
+0
+Prerender (data): /blogs -> build/client/blogs.data
+Prerender (html): /blogs -> build/client/blogs/index.html
+✓ built in 513ms

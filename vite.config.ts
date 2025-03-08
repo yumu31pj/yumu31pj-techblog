@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@globals': path.resolve(__dirname, 'app/src/sass/globals/'),
+      "~": path.resolve(__dirname, "app"),
     },
   },
 });
