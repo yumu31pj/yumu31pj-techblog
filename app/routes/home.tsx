@@ -1,5 +1,5 @@
-import BlogArchiveCards from "~/src/components/features/BlogArchiveCards/BlogArchiveCards";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
+import HomeLatestBlogs from "~/src/components/pages/home/HomeLatestBlogs/HomeLatestBlogs";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import { SiteInfo } from "~/src/configs/SiteInfo";
 import ssf_getBlogContents from "~/src/utils/microcms/ssf_getBlogContents";
@@ -33,7 +33,7 @@ const Home = ({loaderData,}: Route.ComponentProps) => {
     <>
       <SectionWrapper>
         <SimpleTitle text="最新のブログ" tag="h2" />
-        <BlogArchiveCards posts={loaderData.contents} />
+        <HomeLatestBlogs posts={loaderData.contents} />
       </SectionWrapper>
     </>
   );

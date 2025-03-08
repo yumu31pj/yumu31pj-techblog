@@ -9,9 +9,15 @@
 .archives-entry {
   border: 1px solid color(--c-primary);
   border-radius: 10px;
-  display: block;
-  padding: get_px($space--xxs);
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: get_px($space--xxs);
   width: 100%;
+
+  &:hover {
+    color: color(--c-primary);
+  }
 
   @include media('tb') {
     width: calc((100% - get_px($space--xs)) / 2);

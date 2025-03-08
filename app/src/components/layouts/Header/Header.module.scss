@@ -18,12 +18,17 @@
 }
 
 .header-logo {
-  width: 60%;
-  height: auto;
+  width: auto;
+  height: 100%;
 
   @include media('tb') {
     margin: auto;
     width: 500px;
     height: 72px;
+  }
+
+  & img {
+    width: auto;
+    height: 100%;
   }
 }

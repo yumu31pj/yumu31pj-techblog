@@ -1,0 +1,8 @@
+@use "@globals" as *;
+
+.div-wrapper {
+  margin-top: get_px($space--xs);
+  @include media('tb') {
+    margin-top: get_px($space--s);
+  }
+}

@@ -9,9 +9,13 @@ const BlogArchiveCards = (props: BlogContentsType) => {
   return (
     <div className={styles['archives']}>
       {posts.map((post: BlogContentType, key: number) => (
-        <a className={styles['archives-entry']} key={key} href={`/blogs/${post.id}`}>
-          <h3>{post.title}</h3>
-          <time>{getFormatedDateString(post.updatedAt)}</time>
+        <div className={styles['archives-entry']} key={key}>
+          <a href={`/blogs/${post.id}`}>
+            <h3>{post.title}</h3>
+            <time>{getFormatedDateString(post.updatedAt)}</time>
+            {/* 一覧ページではcontent内のhtmlタグを取り除いてパースする */}
+            <p>{removeHtmlTags(post.content)}</p>
+          </a>
           {post.categories && 
             (
               <ul className={styles['entry-categories']}>
@@ -23,8 +27,7 @@ const BlogArchiveCards = (props: BlogContentsType) => {
               </ul>
             )
           }
-          <p>{removeHtmlTags(post.content)}</p>
-        </a>
+        </div>
       ))}
     </div>
   )
