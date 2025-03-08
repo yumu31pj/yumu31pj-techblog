@@ -1,4 +1,11 @@
 @use "sass:map";
+
+// ================
+// Header Sizes
+// ================
+$header-height-sp: 70px;
+$header-height-pc: 120px;
+
 // ================
 // Font Sizes
 // ================
@@ -7,13 +14,19 @@ $font-pc: 18;
 $font--h2: 40;
 $font--h3: 32;
 $font--h4: 24;
+$font--h5: 18;
+$font--h6: 16;
+
+// PCのフォントサイズに対して縮小させる割合を定義
+$font-sp-ration: 0.75;
 
 // space(unit: px)
 $space--xl: 120;    // 8 * 15
 $space--l: 80;     // 8 * 10
 $space--m: 40;     // 8 * 5
 $space--s: 24;     // 8 * 3
-$space--xs: 8;     // 8 * 1
+$space--xs: 16;   // 8 * 2
+$space--xxs: 8;     // 8 * 1
 
 // ================
 // Border Radius

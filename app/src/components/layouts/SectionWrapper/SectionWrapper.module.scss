@@ -1,0 +1,6 @@
+@use "@globals" as *;
+
+.section-wrapper {
+  padding: get_px($space--m) get_px($space--xs);
+  width: 100%;
+}

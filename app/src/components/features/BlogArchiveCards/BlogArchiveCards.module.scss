@@ -1,0 +1,59 @@
+@use "@globals" as *;
+
+.archives {
+  display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: get_px($space--xs);
+}
+.archives-entry {
+  border: 1px solid color(--c-primary);
+  border-radius: 10px;
+  display: block;
+  padding: get_px($space--xxs);
+  width: 100%;
+
+  @include media('tb') {
+    width: calc((100% - get_px($space--xs)) / 2);
+  }
+
+  & h3 {
+    font-size: 2.4rem;
+  }
+
+  & time {
+    display: block;
+    margin-top: get_px($space--xxs);
+  }
+
+  & p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    margin-top: get_px($space--xxs);
+    overflow: hidden;
+  }
+}
+
+.entry-categories {
+  display: flex;
+    justify-content: flex-start;
+    gap: .5em;
+  margin-top: get_px($space--xxs);
+
+  & li {
+    background-color: color(--c-primary);
+    border: 1px solid color(--c-primary);
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding: 0 get_px($space--xxs);
+
+    &:hover {
+      background-color: #fff;
+      color: color(--c-primary);
+    }
+  }
+}

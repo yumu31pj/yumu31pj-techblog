@@ -11,16 +11,20 @@
   "dependencies": {
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.3.0",
+    "html-react-parser": "^5.2.2",
     "isbot": "^5.1.17",
+    "microcms-js-sdk": "^3.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.3.0"
+    "react-router": "^7.3.0",
+    "sanitize-html": "^2.14.0"
   },
   "devDependencies": {
     "@react-router/dev": "^7.3.0",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
+    "@types/sanitize-html": "^2.13.0",
     "react-router-devtools": "^1.1.0",
     "sass": "^1.85.1",
     "typescript": "^5.7.2",

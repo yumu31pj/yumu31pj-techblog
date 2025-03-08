@@ -3,30 +3,11 @@
 // palettes
 // ----------------------------------------------------------------------------
 $black: #061a36;
-$white: #f6f9ff;
-$gray: #727787;
-$beige: #f1f1e6;
-$red: #d56a7e;
-$blue: #2359a1;
-$paleBlue: #8190bb;
+$brand: #2359A1;
 
 $theme-colors: (
-  bg-body: $white,
-  bg-contents: $white,
-  bg-button: $blue,
-  bg-button-text: $white,
-  bg-frame: $blue, // for header and footer
-  bg-frame-text: $white,
-  leading-mark: $white,
-  text: $black,
-  text-in-frame: $white,
-  base: $blue,
-  accent: $red,
-  white: $white,
-  gray: $gray,
-  beige: $beige,
-  shadow: $paleBlue,
-  border: $gray,
+  primary: $brand,
+  font-primary: $black,
 );
 
 // CSS variables生成用のmixin
