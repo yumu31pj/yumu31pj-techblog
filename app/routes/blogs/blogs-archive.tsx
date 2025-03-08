@@ -1,5 +1,4 @@
 import type { Route } from ".react-router/types/app/+types/root";
-import { useParams } from "react-router";
 import BlogArchiveCards from "~/src/components/features/BlogArchiveCards/BlogArchiveCards";
 import Pagination from "~/src/components/features/Pagination/Pagination";
 import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
@@ -23,7 +22,7 @@ export function meta({}: Route.MetaArgs) {
 
 // 投稿データ取得条件
 const endpoint = "blog";
-const perPage = 10;
+const perPage = PerPage;
 
 export async function loader({ params }: Route.LoaderArgs): Promise<{ contents: BlogContentType[] }> {
   const auth = {
@@ -31,8 +30,7 @@ export async function loader({ params }: Route.LoaderArgs): Promise<{ contents: 
     apiKey: process.env.NEXT_PUBLIC_API_KEY || "",
   };
 
-  console.log("params.page " + params.page);
-  const page = params.page ? parseInt(params.page, 10) : 1; // ページ番号を取得
+  const page = params.page ? parseInt(params.page, PerPage) : 1; // ページ番号を取得
   let offset = page - 1;
 
   const apiResponse = await ssf_getBlogContents(endpoint, auth, perPage, offset);
@@ -44,8 +42,6 @@ type Props = {
 };
 
 const BlogsArchive = ({ loaderData }: Props) => {
-  const { page } = useParams();
-  const pageNumber = page ? parseInt(page, 10) : 1;
 
   return (
     <SectionWrapper>

@@ -16,9 +16,7 @@ const ssf_getBlogContents = async (endpoint: string, auth: MicroCMSAuthType, lim
   }
 
   const perPage = limit ? limit : PerPage;
-  const queryOffset = offset ? offset : 0;
-
-  console.log(queryOffset);
+  const queryOffset = offset ? offset * perPage : 0;
   
   const client = getMicroCMSClient(auth.serviceDomain, auth.apiKey);
 
