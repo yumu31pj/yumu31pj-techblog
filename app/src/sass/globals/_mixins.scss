@@ -1,0 +1,14 @@
+@use "sass:map";
+@use './variables/sizes' as s;
+
+@mixin media($breakpoint) {
+  $query: map.get(s.$breakpoints, $breakpoint);
+
+  @if $query != null {
+    @media #{unquote($query)} {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint `#{$breakpoint}` is not defined in the `$breakpoints` map.";
+  }
+}

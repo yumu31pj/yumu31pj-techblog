@@ -1,0 +1,42 @@
+@use 'sass:color';
+
+// palettes
+// ----------------------------------------------------------------------------
+$black: #061a36;
+$white: #f6f9ff;
+$gray: #727787;
+$beige: #f1f1e6;
+$red: #d56a7e;
+$blue: #2359a1;
+$paleBlue: #8190bb;
+
+$theme-colors: (
+  bg-body: $white,
+  bg-contents: $white,
+  bg-button: $blue,
+  bg-button-text: $white,
+  bg-frame: $blue, // for header and footer
+  bg-frame-text: $white,
+  leading-mark: $white,
+  text: $black,
+  text-in-frame: $white,
+  base: $blue,
+  accent: $red,
+  white: $white,
+  gray: $gray,
+  beige: $beige,
+  shadow: $paleBlue,
+  border: $gray,
+);
+
+// CSS variables生成用のmixin
+@mixin export-theme-colors() {
+  @each $key, $color in $theme-colors {
+    --c-#{"#{$key}"}: #{color.red($color)}, #{color.green($color)}, #{color.blue($color)};
+  }
+}
+
+// カスタム関数で色を扱う
+@function color($color_name, $alpha: 1) {
+  @return rgba(var(#{$color_name}), $alpha);
+}

@@ -1,0 +1,5 @@
+@use "../globals/variables/" as var;
+
+:root {
+  @include var.export-theme-colors();
+}

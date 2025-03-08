@@ -1,0 +1,42 @@
+@use "sass:map";
+// ================
+// Font Sizes
+// ================
+$font-sp: 16;
+$font-pc: 18;
+$font--h2: 40;
+$font--h3: 32;
+$font--h4: 24;
+
+// space(unit: px)
+$space--xl: 120;    // 8 * 15
+$space--l: 80;     // 8 * 10
+$space--m: 40;     // 8 * 5
+$space--s: 24;     // 8 * 3
+$space--xs: 8;     // 8 * 1
+
+// ================
+// Border Radius
+// ================
+$radius--l: 40px;
+$radius--m: 24px;
+$radius--s: 8px;
+$radius--round: 50%;
+
+// ================
+// View Sizes
+// ================
+$viewwidth: (
+  'sp': 420, // for mobile = (750px - 320px) + 320px // set the smallest size as 320px
+  'tb': 750, // for tablet Portrait = 375px * 2 
+  'pc': 1200, // for PC
+);
+
+// ================
+// Breakpoints
+// ================
+$breakpoints: (
+  'sp': "screen and (max-width: #{map.get($viewwidth, 'sp')}px)",    // sp only
+  'tb': "screen and (min-width: #{map.get($viewwidth, 'tb')}px)",  
+  'pc': "screen and (min-width: #{map.get($viewwidth, 'pc')}px)",
+) !default;

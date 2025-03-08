@@ -1,0 +1,17 @@
+@use "../../globals/" as *;
+
+.br--sp {
+  display: block;
+
+  @include media('pc') {
+    display: none;
+  }
+}
+
+.br--pc {
+  display: none;
+
+  @include media('pc') {
+    display: block;
+  }
+}
