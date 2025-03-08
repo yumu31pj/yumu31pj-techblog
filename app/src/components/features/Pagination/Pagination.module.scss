@@ -1,0 +1,81 @@
+@use "@globals" as *;
+
+.contentsList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 0 10px;
+  font-size: 1.4rem;
+
+  & li {
+    margin: 0 4px;
+
+    & span {
+      background: #fff;
+      border: 1px solid color(--c-primary);
+      border-radius: 50%;
+      color: color(--c-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      width: 50px;
+      height: 50px;
+    }
+
+    a {
+      &:hover {
+        background: color(--c-primary);
+        color: #fff;
+      }
+    }
+    &.page-dots {
+      margin: -15px;
+      & > span {
+        background: unset;
+        border: none;
+      }
+    }
+  }
+
+  &_active {
+    background: color(--c-primary);
+    color: #fff;
+  
+    & span {
+      display: flex;
+      color: #fff;
+    }
+  }
+}
+
+.move-next, .move-prev {
+  color: color(--c-primary);
+  font-weight: 700;
+  font-size: 2.4rem;
+
+  &:hover {
+    background: color(--c-primary);
+    border-radius: 50%;
+    color: color(--c-primary);
+    display: flex;
+      align-items: center;
+      justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+}
+
+.pagination__count {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.page-active {
+  & > span {
+    background-color: color(--c-primary)!important;
+    color: #fff!important;
+  }
+}

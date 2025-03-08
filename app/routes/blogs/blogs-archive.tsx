@@ -1,14 +1,18 @@
 import type { Route } from ".react-router/types/app/+types/root";
 import { useParams } from "react-router";
 import BlogArchiveCards from "~/src/components/features/BlogArchiveCards/BlogArchiveCards";
+import Pagination from "~/src/components/features/Pagination/Pagination";
 import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
-import { PageInfo, SiteInfo } from "~/src/configs/SiteInfo";
+import { PageInfo, PerPage, SiteInfo } from "~/src/configs/SiteInfo";
 import type { BlogContentType } from "~/src/types/ApiTypes";
 import ssf_getBlogContents from "~/src/utils/microcms/ssf_getBlogContents";
 
-type LoaderData = BlogContentType[];
+type LoaderData = {
+  contents: BlogContentType[];
+  totalCount: number;
+};
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -32,11 +36,11 @@ export async function loader({ params }: Route.LoaderArgs): Promise<{ contents: 
   let offset = page - 1;
 
   const apiResponse = await ssf_getBlogContents(endpoint, auth, perPage, offset);
-  return apiResponse.contents;
+  return apiResponse;
 }
 
 type Props = {
-  loaderData: BlogContentType[];
+  loaderData: LoaderData;
 };
 
 const BlogsArchive = ({ loaderData }: Props) => {
@@ -45,12 +49,19 @@ const BlogsArchive = ({ loaderData }: Props) => {
 
   return (
     <SectionWrapper>
-      <SimpleTitle text={`ブログ一覧 (ページ ${pageNumber})`} tag="h2" />
+      <SimpleTitle text={"ブログ一覧"} tag="h2" />
       {loaderData && (
         <DivContentsWrapper>
-          <BlogArchiveCards posts={loaderData} />
+          <BlogArchiveCards posts={loaderData.contents} />
         </DivContentsWrapper>
       )}
+      <DivContentsWrapper>
+        <Pagination
+          totalCount={loaderData.totalCount}
+          postsPerPage={PerPage}
+          slug={"blogs"}
+        />
+      </DivContentsWrapper>
     </SectionWrapper>
   );
 };
