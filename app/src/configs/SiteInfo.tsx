@@ -36,9 +36,15 @@ export const PageMap = {
     isDisplayedOnFooterNavigation: true
   },
   "library": {
-    pageTitle: "コンポーネント一覧",
+    pageTitle: "コンポーネントギャラリー",
     path: "/library/",
-    description: "コンポーネントライブラリ | " + SiteInfo.siteTitle, 
+    description: "コンポーネントギャラリー | " + SiteInfo.siteTitle, 
+    isDisplayedOnFooterNavigation: true
+  },
+  "showcase": {
+    pageTitle: "コンポーネント紹介",
+    path: "/showcase/",
+    description: "コンポーネント紹介 | " + SiteInfo.siteTitle, 
     isDisplayedOnFooterNavigation: true
   },
 }

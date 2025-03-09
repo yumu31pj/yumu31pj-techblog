@@ -12,7 +12,7 @@
   display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: get_px($space--xxs);
+  padding: get_px($space--xxs);
   width: 100%;
 
   &:hover {

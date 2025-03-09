@@ -18,4 +18,11 @@ export default [
   ...prefix('library', [
     index("routes/library/library-top.tsx"),
   ]),
+  ...prefix('showcase', [
+    index("routes/showcase/showcase-archive.tsx", { id: "showcase" }), // /blogs へのルーティングを追加
+    ...prefix('page', [
+      route(":page?", "routes/showcase/showcase-archive.tsx") // /blogs/page/:page へのルーティング、pageの数字が空白でもいいように?を追加
+    ]),
+    route(":id", "routes/showcase/showcase-single.tsx"),
+  ]),
 ] satisfies RouteConfig;

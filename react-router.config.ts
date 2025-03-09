@@ -18,6 +18,11 @@ export default {
       apiKey: process.env.NEXT_PUBLIC_API_KEY || "",
     };
 
+    const showcaseAuth = {
+      serviceDomain: process.env.NEXT_PUBLIC_SERVICE_DOMAIN_SHOWCASE || "",
+      apiKey: process.env.NEXT_PUBLIC_API_KEY_SHOWCASE || "",
+    }
+
     
     // ブログの総投稿数を取得
     const blogTotalCount = await getTotalPages('blog', auth);
@@ -38,6 +43,16 @@ export default {
       return Array.from({ length: totalPages }, (_, i) => `/blogs/category/${category.id}/page/${i + 1}`);
     });
 
+     // showcaseの総投稿数を取得
+     const showcaseTotalCount = await getTotalPages('showcase', showcaseAuth);
+     const showCaseTotalPages = Math.ceil(showcaseTotalCount / PerPage);
+     // ページ数の番号を[1, 2, 3, 4, 5]のように配列に入れ事前レンダリングしてSSGで生成
+     const showcasePages = Array.from({ length: showCaseTotalPages }, (_, i) => i + 1);
+     // showcaseのIDを全て取得して配列に格納
+     // returnの中でmapで回してページを事前レンダリングして生成
+     const showcaseIds:string[] = await getAllContentIds('showcase', showcaseAuth);
+ 
+
     return [
       "/",
       "/blogs",
@@ -45,6 +60,10 @@ export default {
       ...blogIds.map((id) => `/blogs/${id}`),
       ...categoryCounts.map((category) => `/blogs/category/${category.id}`), // カテゴリページを追加
       ...categoryPages, // カテゴリのページネーションを追加
+      "/library",
+      "/showcase",
+      ...showcasePages.map((page) => `/showcase/page/${page}`),
+      ...showcaseIds.map((id) => `/showcase/${id}`),
     ];
   },
 } satisfies Config;

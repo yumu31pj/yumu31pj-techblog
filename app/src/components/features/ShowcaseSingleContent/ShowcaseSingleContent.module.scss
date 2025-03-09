@@ -1,0 +1,101 @@
+@use "@globals" as *;
+
+.showcase-single {
+}
+
+.showcase-single-category-date {
+  margin-top: get_px($space--xxs);
+}
+
+.showcase-single-category {
+  display: flex;
+    justify-content: flex-start;
+    gap: .5em;
+  margin-top: get_px($space--xxs);
+
+  & li {
+    border: 1px solid color(--c-primary);
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: color(--c-primary);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding: 0 get_px($space--xxs);
+
+    &:hover {
+      background-color: #fff;
+      color: color(--c-primary);
+    }
+  }
+}
+.showcase-single-detailbox {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: get_px($space--s);
+
+  @include media('tb') {
+    flex-direction: row;
+  }
+}
+
+.showcase-single-image {
+  width: 30%;
+  @include media('sp') {
+    width: 100%;
+  }
+}
+
+.showcase-single-details {
+  width: calc(100% - 30% - get_px($space--s));
+  @include media('sp') {
+    width: 100%
+  }
+}
+.showcase-single-howto-container {
+  margin-top: get_px($space--s);
+
+}
+.showcase-single-howto {
+  background: #ccc;
+  font-size: 1.4rem;
+  padding: get_px($space--xs);
+}
+
+.showcase-single-item-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: get_px($space--xs);
+}
+
+.showcase-single-props {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  & dt, & dd {
+    border: 1px solid color(--c-primary);
+    padding: get_px($space--xxs);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+}
+.col-dt {
+  background-color: color(--c-primary);
+  color: #fff;
+  min-width: 7%;
+}
+
+.col-dd {
+  &--1 { min-width: 20%; }
+  &--2 { min-width: 20%; }
+  &--3 { min-width: 15%; }
+  &--4 { min-width: 5%; }
+  &--5 { min-width: 25%; }
+}
