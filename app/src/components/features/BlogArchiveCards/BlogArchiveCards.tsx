@@ -21,7 +21,7 @@ const BlogArchiveCards = (props: BlogContentsType) => {
               <ul className={styles['entry-categories']}>
                 {post.categories.map((category: BlogCategoryType, key: number) => (
                   <li key={key}>
-                    <a href={`blog/category/${category.slug}`}>{category.name}</a>
+                    <a href={`/blogs/category/${category.id}`}>{category.name}</a>
                   </li>
                 ))}
               </ul>
