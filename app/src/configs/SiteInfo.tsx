@@ -6,6 +6,8 @@ export const SiteInfo = {
 
 export const PerPage: number = 10;
 
+export const GTMTagID = "GTM-W7CP5MKZ";
+
 
 /** **************************************************
  * PageMap

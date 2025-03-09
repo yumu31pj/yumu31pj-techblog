@@ -7,9 +7,12 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import GTMBody from "~/src/components/features/GTM/GTMBody";
+import GTMHead from "~/src/components/features/GTM/GTMHead";
 import Footer from "~/src/components/layouts/Footer/Footer";
 import Header from "~/src/components/layouts/Header/Header";
 import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
+import { GTMTagID } from "~/src/configs/SiteInfo";
 import type { Route } from "./+types/root";
 import "./src/sass/styles.scss";
 
@@ -34,8 +37,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <GTMHead id={GTMTagID} />
       </head>
       <body>
+        <GTMBody id={GTMTagID} />
         <Header />  
         <MainContainer>
           {children}
@@ -69,7 +74,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main>
-    </main>
+    <>
+    </>
   );
 }
