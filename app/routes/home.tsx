@@ -26,6 +26,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 
   const apiResponse = await ssf_getBlogContents(endpoint, auth, perPage);
 
+  // ページネーション用に全てのコンテンツIDを取得
   const ids = await getAllContentIds(endpoint, auth);
   console.log('ids: ' + ids);
 

@@ -8,16 +8,20 @@ import { LinkButton } from "~/src/components/parts/buttons/LinkButton/LinkiButto
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import type { BlogContentType } from "~/src/types/ApiTypes";
 import { getFormatedDateString } from "~/src/utils/getFormatedDateString";
-import getAllContentIds from "~/src/utils/microcms/getAllContentIds";
+import getPaginationContents from "~/src/utils/microcms/getPaginationContents";
 import ssf_getContentByID from "~/src/utils/microcms/ssf_getContentsByID";
 
 type LoaderDataType = {
   content: BlogContentType;
-  blogIds: string[];
   prevContent?: { id: string; title: string };
   nextContent?: { id: string; title: string };
 };
 
+/**
+ * 
+ * @param param0 : paramsはURLパラメータの動的部分 (このページでは/blogs/xxxのxxxx部分)
+ * @returns 
+ */
 export const loader = async ({
   params,
 }: Route.LoaderArgs): Promise<LoaderDataType> => {
@@ -28,43 +32,21 @@ export const loader = async ({
   };
   const contentId = params.id || "";
 
+  // 投稿コンテンツを取得
   const response: BlogContentType = await ssf_getContentByID(
     endpoint,
     auth,
     contentId
   );
-  const blogIds: string[] = await getAllContentIds(endpoint, auth);
 
-  const currentIndex = blogIds.indexOf(contentId);
-  const prevId =
-    currentIndex > 0 ? blogIds[currentIndex - 1] : null;
-  const nextId =
-    currentIndex < blogIds.length - 1
-      ? blogIds[currentIndex + 1]
-      : null;
-
-  let prevContent = undefined;
-  let nextContent = undefined;
-
-  if (prevId) {
-    const prevResponse: BlogContentType = await ssf_getContentByID(
-      endpoint,
-      auth,
-      prevId
-    );
-    prevContent = { id: prevId, title: prevResponse.title };
-  }
-
-  if (nextId) {
-    const nextResponse: BlogContentType = await ssf_getContentByID(
-      endpoint,
-      auth,
-      nextId
-    );
-    nextContent = { id: nextId, title: nextResponse.title };
-  }
-
-  return { content: response, blogIds, prevContent, nextContent };
+  // ページネーション用の次と前のコンテンツIDとタイトルを取得
+  const { prevContent, nextContent } = await getPaginationContents(
+    contentId,
+    endpoint,
+    auth
+  );
+  
+  return { content: response, prevContent, nextContent };
 };
 
 type Props = {
