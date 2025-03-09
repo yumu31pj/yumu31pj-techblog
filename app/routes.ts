@@ -15,4 +15,7 @@ export default [
       ])
     ]),
   ]),
+  ...prefix('library', [
+    index("routes/library/library-top.tsx"),
+  ]),
 ] satisfies RouteConfig;

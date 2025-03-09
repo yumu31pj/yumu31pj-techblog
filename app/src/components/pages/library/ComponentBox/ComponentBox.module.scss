@@ -1,0 +1,32 @@
+@use "@globals" as *;
+.component-box-container {
+  display: flex;
+    flex-direction: column;
+    gap: get_px($space--s);
+
+  @include media('tb') {
+    flex-direction: row;
+      justify-content: space-between;
+  }
+}
+
+.component-box-display {
+  width: 100%;
+  
+  @include media('tb') {
+    width: 40%;
+  }
+}
+
+.component-box-detail {
+  width: 100%;
+
+  @include media('tb') {
+    width: calc((100% - 40% - get_px($space--s)));
+  }
+
+  & a {
+    color: color(--c-primary);
+    text-decoration: underline;
+  }
+}

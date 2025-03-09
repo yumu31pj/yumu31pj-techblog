@@ -11,3 +11,20 @@ export type LinkButtonProps = {
   type?: 'flip' | '3d' | 'label' | 'moving-border'
   isExternal?: boolean;
 }
+
+// Images
+export type PictureProps = {
+  pictureItem: {
+    srcSP: string;
+    srcSPWebp?: string;
+    srcPC?: string;
+    srcPCWebp?: string;
+    widthSP?: number;
+    heightSP?: number;
+    widthPC?: number;
+    heightPC?: number;
+    altText: string;
+    isLazy?: boolean;
+    breakpoint?: number
+  }
+}

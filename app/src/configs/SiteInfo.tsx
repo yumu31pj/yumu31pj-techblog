@@ -35,4 +35,10 @@ export const PageMap = {
     description: "ブログ一覧 | " + SiteInfo.siteTitle, 
     isDisplayedOnFooterNavigation: true
   },
+  "library": {
+    pageTitle: "コンポーネント一覧",
+    path: "/library/",
+    description: "コンポーネントライブラリ | " + SiteInfo.siteTitle, 
+    isDisplayedOnFooterNavigation: true
+  },
 }

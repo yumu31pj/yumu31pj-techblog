@@ -1,0 +1,7 @@
+.picture {
+  & img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+  }
+}
