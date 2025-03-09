@@ -1,13 +1,7 @@
 import type { Route } from ".react-router/types/app/+types/root";
-import parse from "html-react-parser";
-import PaginationDetail from "~/src/components/features/PaginationDetail/PaginationDetail";
-import ButtonWrapper from "~/src/components/layouts/ButtonWrapper/ButtonWrapper";
-import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
+import BlogSingleContent from "~/src/components/features/BlogSingleContent/BlogSingleContent";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
-import { LinkButton } from "~/src/components/parts/buttons/LinkButton/LinkiButton";
-import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import type { BlogContentType } from "~/src/types/ApiTypes";
-import { getFormatedDateString } from "~/src/utils/getFormatedDateString";
 import getPaginationContents from "~/src/utils/microcms/getPaginationContents";
 import ssf_getContentByID from "~/src/utils/microcms/ssf_getContentsByID";
 
@@ -64,25 +58,15 @@ const BlogsSingle = ({ loaderData }: Props) => {
 
   return (
     <SectionWrapper>
-      <DivContentsWrapper>
-        <SimpleTitle tag="h2" text={loaderData.content.title} />
-        <time>{getFormatedDateString(loaderData.content.updatedAt)}</time>
-        <div>{parse(loaderData.content.content)}</div>
-      </DivContentsWrapper>
-      <DivContentsWrapper>
-        <PaginationDetail
-          path="/blogs"
-          prev={loaderData.prevContent}
-          next={loaderData.nextContent}
-        />
-        <ButtonWrapper marginTop="m">
-          <LinkButton
-            linkText={"ブログ一覧へ"}
-            linkTo={"/blogs/"}
-            type={"flip"}
-          />
-        </ButtonWrapper>
-      </DivContentsWrapper>
+      <BlogSingleContent
+        post={loaderData.content}
+        prevContent={loaderData.prevContent}
+        nextContent={loaderData.nextContent}
+        archiveInfo={{
+          linkText: "ブログ一覧へ",
+          linkTo: "/blogs/"
+        }}
+      />
     </SectionWrapper>
   );
 };
