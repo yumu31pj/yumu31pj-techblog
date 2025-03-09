@@ -1,11 +1,12 @@
-import { useParams } from "react-router";
 import type { PaginationType } from "~/src/components/features/Pagination/PaginationType";
 import styles from './Pagination.module.scss';
 
-const Pagination = (props: PaginationType) => {
-  const { totalCount, slug, postsPerPage } = props;
-  const { page } = useParams();
-  const pageNumber = page ? parseInt(page, 10) : 1;
+interface PaginationProps extends PaginationType {
+  pageNumber: number;
+}
+
+const Pagination = (props: PaginationProps) => {
+  const { totalCount, slug, postsPerPage, pageNumber } = props;
 
   const pageNum = Math.ceil(totalCount / postsPerPage);
   const pageList = Array.from({ length: pageNum }, (_, index) => index + 1);
@@ -62,7 +63,7 @@ const Pagination = (props: PaginationType) => {
                 </li>
               ) : (
                 <li key={index}>
-                  <a href={`/${slug}/page/${data}`}>
+                  <a href={`${slug}/page/${data}`}>
                     <span>{data}</span>
                   </a>
                 </li>

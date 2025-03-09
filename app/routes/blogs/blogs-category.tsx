@@ -5,7 +5,7 @@ import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivC
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import { PageMap, PerPage, SiteInfo } from "~/src/configs/SiteInfo";
-import type { BlogCategoryType, BlogContentType } from "~/src/types/ApiTypes"; // BlogCategoryType をインポート
+import type { BlogCategoryType, BlogContentType } from "~/src/types/ApiTypes";
 import getBlogCategory from "~/src/utils/microcms/getBlogCategory";
 import ssf_getBlogContents from "~/src/utils/microcms/ssf_getBlogContents";
 
@@ -13,6 +13,7 @@ type LoaderData = {
   contents: BlogContentType[];
   totalCount: number;
   categoryInfo: BlogCategoryType | null;
+  page: number;
 };
 
 export function meta({}: Route.MetaArgs) {
@@ -22,12 +23,11 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-// 投稿データ取得条件
 const endpoint = "blog";
 const perPage = PerPage;
 const categoryEndpoint = "blog_categories";
 
-export async function loader({ params }: Route.LoaderArgs): Promise<LoaderData> { // loader の戻り値を修正
+export async function loader({ params }: Route.LoaderArgs): Promise<LoaderData> {
   const auth = {
     serviceDomain: process.env.NEXT_PUBLIC_SERVICE_DOMAIN || "",
     apiKey: process.env.NEXT_PUBLIC_API_KEY || "",
@@ -35,17 +35,18 @@ export async function loader({ params }: Route.LoaderArgs): Promise<LoaderData> 
 
   const categoryId = params.category || "";
 
-  const page = params.page ? parseInt(params.page, PerPage) : 1; // ページ番号を取得
+  const page = params.page ? parseInt(params.page, 10) : 1;
   let offset = page - 1;
 
   const apiResponse = await ssf_getBlogContents(endpoint, auth, perPage, offset, categoryId);
 
-  const categoryInfo = categoryId ? await getBlogCategory(categoryEndpoint, auth, categoryId) : null; // categoryId が存在する場合のみ getBlogCategory を呼び出す
+  const categoryInfo = categoryId ? await getBlogCategory(categoryEndpoint, auth, categoryId) : null;
 
   return {
     contents: apiResponse.contents,
     totalCount: apiResponse.totalCount,
     categoryInfo: categoryInfo,
+    page: page,
   };
 }
 
@@ -54,9 +55,11 @@ type Props = {
 };
 
 const BlogsCategory = ({ loaderData }: Props) => {
+  const slug = loaderData.categoryInfo ? `/blogs/category/${loaderData.categoryInfo.id}` : "/blogs";
+
   return (
     <SectionWrapper>
-      <SimpleTitle text={loaderData.categoryInfo ? loaderData.categoryInfo.name + "のブログ一覧" : "ブログ一覧"} tag="h2" /> {/* categoryInfo.name を表示 */}
+      <SimpleTitle text={loaderData.categoryInfo ? loaderData.categoryInfo.name + "のブログ一覧" : "ブログ一覧"} tag="h2" />
       {loaderData && (
         <DivContentsWrapper>
           <BlogArchiveCards posts={loaderData.contents} />
@@ -66,7 +69,8 @@ const BlogsCategory = ({ loaderData }: Props) => {
         <Pagination
           totalCount={loaderData.totalCount}
           postsPerPage={PerPage}
-          slug={"blogs"}
+          slug={slug}
+          pageNumber={loaderData.page}
         />
       </DivContentsWrapper>
     </SectionWrapper>
