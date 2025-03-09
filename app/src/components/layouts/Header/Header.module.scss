@@ -3,29 +3,24 @@
 .header {
   background-color: #fff;
   border-bottom: 1px solid color(--c-primary);
-  padding: get_px($space--xs) 0 get_px($space--xs) get_px($space--xs);
+  padding: get_px($space--xs);
   opacity: .9;
+  text-align: center;
   width: 100%;
   height: $header-height-sp;
   position: fixed;  
   top: 0;
   left: 0;
 
-  @include media('tb') {
-    padding: get_px($space--s) 0;
-    height: $header-height-pc;
+  @include media ('tb') {
+    padding-left: 0;
   }
 }
 
 .header-logo {
-  width: auto;
+  margin: auto;
+  width: 500px;
   height: 100%;
-
-  @include media('tb') {
-    margin: auto;
-    width: 500px;
-    height: $header-height-sp;
-  }
 
   & img {
     width: auto;
