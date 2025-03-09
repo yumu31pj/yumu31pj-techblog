@@ -12,8 +12,13 @@
   margin: get_px($space--m) auto 0;
   padding: get_px($space--s) 0;
 
+  
   @include media('tb') {
     justify-content: space-between;
+  }
+  
+  &--first {
+    justify-content: flex-end;
   }
 }
 

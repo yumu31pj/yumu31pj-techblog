@@ -1,5 +1,6 @@
 export const SiteInfo = {
   siteTitle: "yumu31pj Tech Blog",
+  siteUrl: "https://blog.yumu31pj.tech/",
   description: "React, React Router, Next.js"
 }
 

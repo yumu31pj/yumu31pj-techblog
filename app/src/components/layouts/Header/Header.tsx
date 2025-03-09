@@ -2,6 +2,7 @@ import { SiteInfo } from "~/src/configs/SiteInfo";
 import styles from "./Header.module.scss";
 
 const Header = () => {
+  
   return (
     <header id="header" className={styles['header']}>
       <a href="/">

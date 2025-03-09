@@ -18,7 +18,7 @@ const PaginationSingle = (props: PaginationSingleType) => {
 
   return (
     <>
-        <ul className={styles['pagination-single']}>
+        <ul className={`${styles['pagination-single']} ${!prev && styles['pagination-single--first']}`}>
           {prev && (
             <li className={styles['pagination-single__prev']}>
               <a className={`${styles['pagination-single__title']} ${styles['pagination-single__title--prev']}`} href={`${path}/${prev.id}`}>{prev.title}</a>

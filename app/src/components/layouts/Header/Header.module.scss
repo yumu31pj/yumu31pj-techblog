@@ -7,7 +7,7 @@
   opacity: .9;
   width: 100%;
   height: $header-height-sp;
-  position: fixed;
+  position: fixed;  
   top: 0;
   left: 0;
 
@@ -24,7 +24,7 @@
   @include media('tb') {
     margin: auto;
     width: 500px;
-    height: 72px;
+    height: $header-height-sp;
   }
 
   & img {
