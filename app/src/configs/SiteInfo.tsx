@@ -5,9 +5,31 @@ export const SiteInfo = {
 
 export const PerPage: number = 10;
 
-export const PageInfo = {
-  blogArchive: {
+
+/** **************************************************
+ * PageMap
+ ************************************************** */
+
+export type PageMapType = {
+  [key: string]: {
+    pageTitle: string;
+    path: string;
+    description: string;
+    isDisplayedOnFooterNavigation: boolean;
+  };
+};
+
+export const PageMap = {
+  "HOME": {
+    pageTitle: "HOME",
+    path: "/",
+    description: SiteInfo.siteTitle,
+    isDisplayedOnFooterNavigation: true
+  },
+  "blogArchive": {
     pageTitle: "ブログ一覧",
-    description: SiteInfo.description
-  }
+    path: "/blogs/",
+    description: "ブログ一覧 | " + SiteInfo.siteTitle, 
+    isDisplayedOnFooterNavigation: true
+  },
 }

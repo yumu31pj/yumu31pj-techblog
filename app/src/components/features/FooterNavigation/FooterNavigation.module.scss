@@ -1,0 +1,29 @@
+@use "@globals" as *;
+.footer-navigation {
+  
+}
+.footer-navigation__items {
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5em;
+  
+  & li {
+    position: relative;
+
+    &:not(:first-child) {
+      padding-left: .5em;
+    }
+
+    &:not(:first-child)::after {
+      background-color: color(--c-primary);
+      content: '';
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

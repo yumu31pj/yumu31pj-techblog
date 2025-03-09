@@ -4,7 +4,7 @@ import Pagination from "~/src/components/features/Pagination/Pagination";
 import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
-import { PageInfo, PerPage, SiteInfo } from "~/src/configs/SiteInfo";
+import { PageMap, PerPage, SiteInfo } from "~/src/configs/SiteInfo";
 import type { BlogCategoryType, BlogContentType } from "~/src/types/ApiTypes"; // BlogCategoryType をインポート
 import getBlogCategory from "~/src/utils/microcms/getBlogCategory";
 import ssf_getBlogContents from "~/src/utils/microcms/ssf_getBlogContents";
@@ -17,8 +17,8 @@ type LoaderData = {
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: PageInfo.blogArchive.pageTitle + " | " + SiteInfo.siteTitle },
-    { name: "description", content: PageInfo.blogArchive.description },
+    { title: PageMap.blogArchive.pageTitle + " | " + SiteInfo.siteTitle },
+    { name: "description", content: PageMap.blogArchive.description },
   ];
 }
 

@@ -20,8 +20,6 @@ const ssf_getBlogContents = async (endpoint: string, auth: MicroCMSAuthType, lim
   
   const client = getMicroCMSClient(auth.serviceDomain, auth.apiKey);
 
-  console.log(category);
-
   let response = [];
 
   if (category) {

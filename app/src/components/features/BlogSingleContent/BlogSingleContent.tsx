@@ -28,7 +28,7 @@ const BlogSingleContent = (props: BlogSingleContentProps) => {
         {post.categories && (
           <ul className={styles['single-category']}>
             {post.categories.map((category: BlogCategoryType, key: number) => (
-              <li><a href={`/blogs/category/${category.id}`}>{category.name}</a></li>
+              <li key={key}><a href={`/blogs/category/${category.id}`}>{category.name}</a></li>
             ))}
           </ul>
         )}

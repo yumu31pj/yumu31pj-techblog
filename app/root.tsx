@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import Footer from "~/src/components/layouts/Footer/Footer";
 import Header from "~/src/components/layouts/Header/Header";
 import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import type { Route } from "./+types/root";
@@ -39,6 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <MainContainer>
           {children}
         </MainContainer>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

@@ -1,0 +1,13 @@
+@use "@globals" as *;
+
+.footer {
+  background-color: color(--c-primary);
+  color: #fff;
+  padding: get_px($space--xs) get_px($space--xxs);
+  width: 100%;
+}
+.copyright {
+  font-size: 1.2rem;
+  margin-top: get_px($space--xs);
+  text-align: center;
+}

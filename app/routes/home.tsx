@@ -28,7 +28,6 @@ export async function loader({ params }: Route.LoaderArgs) {
 
   // ページネーション用に全てのコンテンツIDを取得
   const ids = await getAllContentIds(endpoint, auth);
-  console.log('ids: ' + ids);
 
   return apiResponse.contents;
 }
