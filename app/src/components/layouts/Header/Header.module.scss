@@ -19,8 +19,12 @@
 
 .header-logo {
   margin: auto;
-  width: 500px;
+  width: auto;
   height: 100%;
+  
+  @include media('tb') {
+    width: 500px;
+  }
 
   & img {
     width: auto;
