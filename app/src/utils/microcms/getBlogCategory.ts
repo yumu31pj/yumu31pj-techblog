@@ -8,7 +8,7 @@ import { getMicroCMSClient } from "~/src/utils/microcms/getMicroCMSClient";
  * @param id : 投稿ID
  * @returns 
  */
-const ssf_getContentByID = async (endpoint: string, auth: MicroCMSAuthType, id: string) => {
+const getBlogCategory = async (endpoint: string, auth: MicroCMSAuthType, id: string) => {
   const client = getMicroCMSClient(auth.serviceDomain, auth.apiKey);
 
   const response = await client.get({
@@ -19,4 +19,4 @@ const ssf_getContentByID = async (endpoint: string, auth: MicroCMSAuthType, id: 
   return response;
 }
 
-export default ssf_getContentByID;
+export default getBlogCategory;
