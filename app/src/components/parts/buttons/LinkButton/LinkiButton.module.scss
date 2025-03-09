@@ -1,0 +1,194 @@
+@use "@globals" as *;
+
+.link-button {
+  background-color: color(--c-primary);
+  display: block;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+  padding: get_px($space--xs);
+  width: 300px;
+
+  & span {
+    color: #fff;
+    z-index: 100;
+  }
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid color(--c-primary);
+    color: color(--c-primary);
+
+    & span {
+      color: color(--c-primary);
+    }
+  }
+
+  &--flip {
+    border: 1px solid color(--c-primary);
+    overflow: visible;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      border-top: 1px solid #fff;
+      border-right: 1px solid #fff;
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      right: get_px($space--xs);
+      transform: rotate(45deg) translateY(-50%);
+      z-index: 100;
+    }
+    
+    &::after {
+      background-color: #fff;
+      content: "";
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all .3s ease;
+      z-index: 10;
+    }
+    
+    &:hover {
+      transition: all .3s ease;
+
+      &::before {
+        border-color: color(--c-primary);
+      }
+
+      &::after {
+        background-color: #fff;
+        width: 100%;
+        z-index: 10;
+      }
+  
+      & span {
+        color: color(--c-primary);
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+
+  &--3d {
+    background-color: #fff;
+    border: 1px solid color(--c-primary);
+    box-shadow: 0px 3px color(--c-primary);
+    color: color(--c-primary);
+    padding: 15px 30px;
+    text-align: center;
+
+    & span {
+      color: color(--c-primary);
+    }
+
+    &:hover {
+      box-shadow: none;
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  &--label {
+    background: color(--c-primary);
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 20px;
+    width: unset;
+  
+    &:hover {
+      background-color: #fff;
+      border: 1px solid color(--c-primary);
+      color: color(--c-primary)
+    }
+  
+    @include media('tb') {
+      font-size: 1.6rem;
+    }
+  }
+
+  &--moving-border {
+    background: #fff;
+    border: 1px solid #fff;
+    color: color(--c-primary);
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      border: none;
+    }
+
+    &::before,
+    &::after,
+    & span::before,
+    & span::after {
+      content: "";
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid color(--c-primary);
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    // top border
+    &::before {
+      top: 0;
+      left: 0;
+      animation: bottom-border-animation .5s linear 0s forwards;
+    }
+
+    @keyframes bottom-border-animation {
+      0% {width: 0; height: 1px;}
+      100% {width: 100%;}
+    }
+
+    // right border
+    &::after {
+      top: 0;
+      right: 0;
+      animation: right-border-animation .5s linear .5s forwards;
+    }
+
+    @keyframes right-border-animation {
+      0% {height: 0; width: 1px;}
+      100% {height: 100%;}
+    }
+
+    // bottom border
+    & span::before {
+      bottom: 0;
+      right: 0;
+      animation: bottom-border-animation .5s linear 1s forwards;
+    }
+
+    @keyframes bottom-border-animation {
+      0% {width: 0; height: 1px;}
+      100% {width: 100%;}
+    }
+
+    // left border
+    & span::after {
+      bottom: 0;
+      left: 0;
+      animation: left-border-animation .5s linear 1.5s forwards;
+    }
+
+    @keyframes left-border-animation {
+      0% {height: 0; width: 1px;}
+      100% {height: 100%;}
+    }
+  }
+
+  
+}
