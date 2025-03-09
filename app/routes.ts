@@ -9,10 +9,10 @@ export default [
     ]),
     route(":id", "routes/blogs/blogs-single.tsx"), // /blogs/:id へのルーティング
     ...prefix('category', [
-      route(":category", "routes/blogs/blogs-category.tsx", { id: "blogs-category" }), // ルートIDを明示的に指定
+      route(":category", "routes/blogs/blogs-category.tsx", { id: "blogs-category" }),
       ...prefix('page', [
-        route(":page?", "routes/blogs/blogs-category.tsx", { id: "blogs-category-page" }) // ルートIDを明示的に指定
+        route(":page?", "routes/blogs/blogs-category.tsx", { id: "blogs-category-page" })
       ])
-    ])
+    ]),
   ]),
 ] satisfies RouteConfig;

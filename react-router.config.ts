@@ -2,6 +2,7 @@
 
 import type { Config } from "@react-router/dev/config";
 import { PerPage } from "./app/src/configs/SiteInfo";
+import { getAllBlogCategories } from "./app/src/utils/microcms/getAllBlogCategories";
 import getAllContentIds from "./app/src/utils/microcms/getAllContentIds";
 import getTotalPages from "./app/src/utils/microcms/getTotalPages";
 
@@ -27,11 +28,23 @@ export default {
     // returnの中でmapで回してページを事前レンダリングして生成
     const blogIds:string[] = await getAllContentIds('blog', auth);
 
+    // カテゴリ一覧と各カテゴリの投稿数を取得
+    const categoryCounts = await getAllBlogCategories(auth);
+    console.log("- - - - - - - - - - - categoryCounts - - - - - - - - - - - :", categoryCounts);
+
+    // カテゴリごとのページネーションを生成
+    const categoryPages = categoryCounts.flatMap((category) => {
+      const totalPages = Math.ceil(category.count / PerPage);
+      return Array.from({ length: totalPages }, (_, i) => `/blogs/category/${category.id}/page/${i + 1}`);
+    });
+
     return [
       "/",
       "/blogs",
       ...blogPages.map((page) => `/blogs/page/${page}`),
       ...blogIds.map((id) => `/blogs/${id}`),
+      ...categoryCounts.map((category) => `/blogs/category/${category.id}`), // カテゴリページを追加
+      ...categoryPages, // カテゴリのページネーションを追加
     ];
   },
 } satisfies Config;
