@@ -6,7 +6,7 @@ on:
       - main  # mainブランチにpushされたときに実行
   workflow_dispatch:
   repository_dispatch:
-    types: [blogpost, newspost]  # Webhookが通知されたときに実行
+    types: [blogpost, newspost, showcasepost]  # Webhookが通知されたときに実行
 
 jobs:
   deploy:
