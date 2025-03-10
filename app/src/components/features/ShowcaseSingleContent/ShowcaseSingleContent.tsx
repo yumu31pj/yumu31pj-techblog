@@ -47,44 +47,54 @@ const ShowcaseSingleContent = (props: ShowcaseSingleContentProps) => {
         </div>
         
         {post.props && (
-              <>
-                <h3 className={styles["showcase-single-item-title"]}>props</h3>
-                <dl className={styles["showcase-single-props"]}>
-                  {post.props.map((item, key: number) => (
-                    <div className={styles["showcase-single-props__inner"]} key="key">
-                      <dt className={`${styles['col-dt']} ${styles['col-dt--1']}`}>論理名</dt>
-                      <dd className={`${styles['col-dd']} ${styles['col-dd--1']}`}>{item.logicalname}</dd>
-                      <dt className={`${styles['col-dt']} ${styles['col-dt--2']}`}>物理名</dt>
-                      <dd className={`${styles['col-dd']} ${styles['col-dd--2']}`}>{item.physicalname}</dd>
-                      <dt className={`${styles['col-dt']} ${styles['col-dt--3']}`}>型</dt>
-                      <dd className={`${styles['col-dd']} ${styles['col-dd--3']}`}>{item.type}</dd>
-                      <dt className={`${styles['col-dt']} ${styles['col-dt--4']}`}>必須</dt>
-                      <dd className={`${styles['col-dd']} ${styles['col-dd--4']}`}>{item.required ? "◯" : "☓"}</dd>
-                      <dt className={`${styles['col-dt']} ${styles['col-dt--5']}`}>備考</dt> 
-                      <dd className={`${styles['col-dd']} ${styles['col-dd--5']}`}>{item.description}</dd>
-                      {item.subprops && (
-                        <div className={styles['showcase-single-props--sub']}>
-                          {item.subprops.map((subItem, subKey: number) => (
-                            <div key={subKey} className={styles["showcase-single-props__inner--sub"]}>
-                              <dt className={`${styles['col-dt']} ${styles['col-dt--1']}`}>論理名</dt>
-                              <dd className={`${styles['col-dd']} ${styles['col-dd--1']}`}>{subItem.logicalname}</dd>
-                              <dt className={`${styles['col-dt']} ${styles['col-dt--2']}`}>物理名</dt>
-                              <dd className={`${styles['col-dd']} ${styles['col-dd--2']}`}>{subItem.physicalname}</dd>
-                              <dt className={`${styles['col-dt']} ${styles['col-dt--3']}`}>型</dt>
-                              <dd className={`${styles['col-dd']} ${styles['col-dd--3']}`}>{item.type}</dd>
-                              <dt className={`${styles['col-dt']} ${styles['col-dt--4']}`}>必須</dt>
-                              <dd className={`${styles['col-dd']} ${styles['col-dd--4']}`}>{subItem.required}</dd>
-                              <dt className={`${styles['col-dt']} ${styles['col-dt--5']}`}>備考</dt>
-                              <dd className={`${styles['col-d4']} ${styles['col-dd--5']}`}>{subItem.description}</dd>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </dl>
-              </>
-            )}
+          <>
+            <h3 className={styles["showcase-single-item-title"]}>props</h3>
+            <table className={styles["showcase-props-table"]}>
+              <colgroup>
+                <col className="col--20p" />
+                <col className="col--20p" />
+                <col className="col--15p" />
+                <col className="col--5p" />
+                <col className="col--40p" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>論理名</th><th>物理名</th><th>型</th><th>必須</th><th>備考</th>
+                </tr>
+              </thead>
+              <tbody>
+                {post.props.map((item, key: number) =>(
+                  <>
+                    <tr>
+                      <td>{item.logicalname}</td>
+                      <td>{item.physicalname}</td>
+                      <td>{item.type}</td>
+                      <td>{item.required ? "◯" : "☓"}</td>
+                      <td>{item.description}</td>
+                    </tr>
+                    {item.subprops && item.subprops.map((subItem, key: number) => (
+                      <tr>
+                        <td className={styles["subprops"]}>{subItem.logicalname}</td>
+                        <td className={styles["subprops"]}>{subItem.physicalname}</td>
+                        <td className={styles["subprops"]}>{subItem.type}</td>
+                        <td className={styles["subprops"]}>{subItem.required ? "◯" : "☓"}</td>
+                        <td className={styles["subprops"]}>{subItem.description}</td>
+                      </tr>
+                    ))}
+                  </>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
+        {post.source && (
+          <>
+            <h3 className={styles["showcase-single-item-title"]}>Code</h3>
+            <div className={styles["showcase-single-item-source"]}>
+              {parse(post.source)}
+            </div>
+          </>
+        )}
        
       </DivContentsWrapper>
       <DivContentsWrapper>

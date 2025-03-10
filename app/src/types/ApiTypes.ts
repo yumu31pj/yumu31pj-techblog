@@ -51,4 +51,5 @@ export type ShowCaseContentType = {
     width: string;
     height: string;
   }
+  source?: string;
 }
