@@ -88,12 +88,12 @@ const ShowcaseSingleContent = (props: ShowcaseSingleContentProps) => {
           </>
         )}
         {post.source && (
-          <>
+          <div className={styles["showcase-single-item-source-wrapper"]}>
             <h3 className={styles["showcase-single-item-title"]}>Code</h3>
             <div className={styles["showcase-single-item-source"]}>
               {parse(post.source)}
             </div>
-          </>
+          </div>
         )}
        
       </DivContentsWrapper>
