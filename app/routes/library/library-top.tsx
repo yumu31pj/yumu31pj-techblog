@@ -31,6 +31,7 @@ const LibraryTop = () => {
           />
         }
         explanation="pictureタグをコンポーネントしたものです。propsで属性を渡すことでpictureタグを毎回書く手間を省くためのものです。<br>画面幅を広げたり縮めたりして画像が変わることを確認して下さい。"
+        linkTo="/showcase/picture"
         
       />
 

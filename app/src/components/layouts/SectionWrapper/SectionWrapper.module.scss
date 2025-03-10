@@ -3,4 +3,8 @@
 .section-wrapper {
   padding: get_px($space--m) get_px($space--xs);
   width: 100%;
+
+  &:not(:first-of-type) {
+    padding: get_px($space--xl) get_px($space--xs);
+  }
 }

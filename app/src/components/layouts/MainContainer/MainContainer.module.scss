@@ -3,7 +3,7 @@
 .main-container {
   margin-top: $header-height-sp;
   @include media('tb') {
-    margin: $header-height-pc auto 0;
+    margin: $header-height-sp auto 0;
     max-width: 1100px;
   }
 }

@@ -36,20 +36,25 @@
 
   @include media('tb') {
     flex-direction: row;
+    align-items: flex-start;
   }
 }
 
 .showcase-single-image {
-  width: 30%;
+  width: 100%;
+  object-fit: cover;
+
   @include media('sp') {
-    width: 100%;
+    width: 30%;
+    object-fit: contain;
   }
 }
 
 .showcase-single-details {
-  width: calc(100% - 30% - get_px($space--s));
-  @include media('sp') {
-    width: 100%
+  width: 100%;
+
+  @include media('tb') {
+    width: calc(100% - 30% - get_px($space--s));
   }
 }
 .showcase-single-howto-container {
@@ -57,9 +62,12 @@
 
 }
 .showcase-single-howto {
-  background: #ccc;
-  font-size: 1.4rem;
-  padding: get_px($space--xs);
+  font-size: 1.2rem;
+  & pre {
+    background: #ccc;
+    padding: get_px($space--xs);
+    white-space: pre-wrap;
+  }
 }
 
 .showcase-single-item-title {
