@@ -9,8 +9,9 @@ function getPaths(dir, basePath = "") {
   const items = fs.readdirSync(dir, { withFileTypes: true });
 
   let lastModified = null;
+  let hasIndexHtml = items.some((item) => item.name === "index.html");
 
-  if (items.some((item) => item.name === "index.html")) {
+  if (hasIndexHtml) {
     const indexPath = path.join(dir, "index.html");
     lastModified = fs.statSync(indexPath).mtime.toISOString();
     urls.push({ path: basePath || "/", lastmod: lastModified });
@@ -21,14 +22,10 @@ function getPaths(dir, basePath = "") {
       const subDirPath = path.join(dir, item.name);
       const subPaths = getPaths(subDirPath, `${basePath}/${item.name}`);
 
-      // フォルダの最終更新日を取得（index.htmlがない場合はフォルダ自体）
-      let folderLastModified = fs.statSync(subDirPath).mtime.toISOString();
+      // `subPaths` に有効な URL がある場合のみ追加
       if (subPaths.length > 0) {
-        folderLastModified = subPaths[0].lastmod; // 子ディレクトリの最初のlastmodを継承
+        urls = urls.concat(subPaths);
       }
-
-      urls.push({ path: `${basePath}/${item.name}`, lastmod: folderLastModified });
-      urls = urls.concat(subPaths);
     }
   }
 
@@ -37,7 +34,8 @@ function getPaths(dir, basePath = "") {
 
 const urls = getPaths(DIST_DIR);
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+if (urls.length > 0) {
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${urls
     .map(
@@ -52,6 +50,8 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     .join("\n")}
 </urlset>`;
 
-fs.writeFileSync(path.join(DIST_DIR, "sitemap.xml"), sitemap, "utf8");
-
-console.log("✅ sitemap.xml を生成しました！");
+  fs.writeFileSync(path.join(DIST_DIR, "sitemap.xml"), sitemap, "utf8");
+  console.log("[SUCCESS] sitemap.xml を生成しました！");
+} else {
+  console.log("[FAILURE] sitemap.xml を生成しませんでした（有効なページがありません）");
+}
