@@ -1,0 +1,28 @@
+@use "@globals" as *;
+.calendar-title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.calendar {
+  margin-top: get_px($space--xs);
+  width: 100%;
+
+  & thead {
+    border-bottom: 1px solid color(--c-primary);
+  }
+
+  & th, & td {
+    font-size: 1.4rem;
+    padding: get_px($space--xxs) get_px($space--xs);
+    text-align: center;
+    width: calc(100% / 7);
+  }
+}
+
+.sun {
+  color: #CD5C5C;
+}
+.sat {
+  color: color(--c-primary);
+}

@@ -4,10 +4,12 @@
 // ----------------------------------------------------------------------------
 $black: #061a36;
 $brand: #2359A1;
+$soft-red: #CD5C5C;
 
 $theme-colors: (
   primary: $brand,
   font-primary: $black,
+  accent: $soft-red,
 );
 
 // CSS variables生成用のmixin

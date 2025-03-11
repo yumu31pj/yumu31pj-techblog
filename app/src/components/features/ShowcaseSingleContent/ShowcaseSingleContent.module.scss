@@ -114,4 +114,12 @@
   & code {
     font-size: 1.2rem;
   }
+
+  & p {
+    margin-top: get_px($space--s);
+  }
+  
+  & p + pre {
+    margin-top: get_px($space--xs);
+  }
 }

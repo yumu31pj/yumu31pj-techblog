@@ -1,3 +1,4 @@
+import Calendar from "~/src/components/features/Calendar/Calendar";
 import ResizableBox from "~/src/components/features/ResizableBox/ResizableBox";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import ComponentBox from "~/src/components/pages/library/ComponentBox/ComponentBox";
@@ -43,6 +44,16 @@ const LibraryTop = () => {
         }
         explanation="ユーザー操作で要素のサイズを変更できるコンポーネントです"
         linkTo="/showcase/resizablebox"
+      />
+
+      {/* Calendar */}
+      <ComponentBox
+        title={"Calendar"}
+        component={
+          <Calendar year={new Date().getFullYear()} month={new Date().getMonth()} />
+        }
+        explanation="指定した月のカレンダーを返すコンポーネントです"
+        linkTo="/showcase/calendar"
       />
 
     </SectionWrapper>
