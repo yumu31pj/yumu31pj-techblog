@@ -33,7 +33,7 @@ const Calendar = (props: CalendarProps) => {
                   {weeks.map((day, index) => (
                     <td
                       key={index}
-                      className={`${index == 0 && styles['sun']} ${index == 6 && styles['sat']}`}
+                      className={`${index == 0 ? styles['sun'] : index == 6 ? styles['sat'] : ""}`}
                     >
                       {day}
                     </td>
