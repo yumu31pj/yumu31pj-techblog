@@ -19,6 +19,7 @@ export type PageMapType = {
     path: string;
     description: string;
     isDisplayedOnFooterNavigation: boolean;
+    isExternal?: boolean;
   };
 };
 
@@ -47,4 +48,11 @@ export const PageMap = {
     description: "コンポーネント紹介 | " + SiteInfo.siteTitle, 
     isDisplayedOnFooterNavigation: true
   },
+  "github": {
+    pageTitle: "GitHub",
+    path: "https://blog.yumu31pj.tech/",
+    description: "yumu31pjのGitHub | " + SiteInfo.siteTitle, 
+    isDisplayedOnFooterNavigation: true,
+    isExternal: false
+  }
 }

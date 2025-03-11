@@ -13,7 +13,7 @@ const FooterNavigation = (props: FooterNavigationProps) => {
         {Object.keys(links).map((key) => {
           const link = links[key];
           if (link.isDisplayedOnFooterNavigation) {
-            return <li key={key}><a href={link.path}>{link.pageTitle}</a></li>;
+            return <li key={key}><a href={link.path}>{link.pageTitle} {link.isExternal ? 'target="_blank' : undefined}</a></li>;
           }
           return null;
         })}
