@@ -11,7 +11,6 @@ import GTMBody from "~/src/components/features/GTM/GTMBody";
 import GTMHead from "~/src/components/features/GTM/GTMHead";
 import Footer from "~/src/components/layouts/Footer/Footer";
 import Header from "~/src/components/layouts/Header/Header";
-import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import { GTMTagID } from "~/src/configs/SiteInfo";
 import type { Route } from "./+types/root";
 import "./src/sass/styles.scss";
@@ -42,9 +41,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <GTMBody id={GTMTagID} />
         <Header />  
-        <MainContainer>
+        {/* <MainContainer> */}
           {children}
-        </MainContainer>
+        {/* </MainContainer> */}
         <Footer />
         <ScrollRestoration />
         <Scripts />

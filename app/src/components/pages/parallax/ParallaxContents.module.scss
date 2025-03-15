@@ -1,0 +1,73 @@
+@use "@globals" as *;
+.parallax-container {
+  width: 100vw;
+  height: 100%;
+}
+
+.parallax-bg {
+  display: flex;
+    align-items: flex-start;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: get_px($space--m);
+  width: 100%;
+  height: 100vh;
+
+  &--1st {
+    background-image: url('/images/samples/bg_parallax_1.jpg');
+    justify-content: flex-end;
+  }
+  &--2nd {
+    background-image: url('/images/samples/bg_parallax_2.jpg');
+    justify-content: flex-start;
+  }
+  &--3rd {
+    background-image: url('/images/samples/bg_parallax_1.jpg');
+    justify-content: flex-end;
+  }
+  &--4th {
+    background-image: url('/images/samples/bg_parallax_2.jpg');
+    justify-content: flex-start;
+  }
+  &--5th {
+    background-image: url('/images/samples/bg_parallax_1.jpg');
+    justify-content: flex-end;
+  }
+}
+
+.parallax-text {
+  color: #fff;
+  font-size: 2.4rem;
+  writing-mode: vertical-lr;
+}
+
+.parallax-contents {
+  background-color: color(--c-primary);
+  color: #fff;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  
+  &--bg-white {
+    background-color: #fff;
+    color: color(--c-primary);
+  }
+    
+  & p {
+    font-size: 2.4rem;
+    font-weight: 700;
+    opacity: 0;  // スクロールされて描画されるまでは表示しない
+    transform: translateY(25vh); // 初期の位置を20px下にずらす
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  &.show {
+    & p {
+      opacity: 1; 
+      transform: translateY(0); // 本来の高さに戻す
+    }
+  }
+}

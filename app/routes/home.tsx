@@ -1,3 +1,4 @@
+import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import HomeLatestBlogs from "~/src/components/pages/home/HomeLatestBlogs/HomeLatestBlogs";
 import HomeLatestShowcase from "~/src/components/pages/home/HomeLatestShowcase/HomeLatestShowcase";
 import { SiteInfo } from "~/src/configs/SiteInfo";
@@ -53,12 +54,12 @@ export async function loader({ params }: Route.LoaderArgs) {
 const Home = ({loaderData,}: Route.ComponentProps) => {
 
   return (
-    <>
+    <MainContainer>
       <HomeLatestBlogs posts={loaderData.apiResponse.contents} />
       
       <HomeLatestShowcase posts={loaderData.apiResponseShowcase.contents} />
-    </>
-  );
+    </MainContainer>
+  )
 }
 
 export default Home;

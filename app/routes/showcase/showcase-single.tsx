@@ -1,5 +1,6 @@
 import type { Route } from ".react-router/types/app/+types/root";
 import ShowcaseSingleContent from "~/src/components/features/ShowcaseSingleContent/ShowcaseSingleContent";
+import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import type { ShowCaseContentType } from "~/src/types/ApiTypes";
 import getPaginationContents from "~/src/utils/microcms/getPaginationContents";
@@ -52,17 +53,19 @@ const ShowcaseSingle = ({ loaderData }: Props) => {
   }
 
   return (
-    <SectionWrapper>
-      <ShowcaseSingleContent
-        post={loaderData.content}
-        prevContent={loaderData.prevContent}
-        nextContent={loaderData.nextContent}
-        archiveInfo={{
-          linkText: "コンテンツ紹介一覧へ",
-          linkTo: "/showcase/"
-        }}
-      />
-    </SectionWrapper>
+    <MainContainer>
+      <SectionWrapper>
+        <ShowcaseSingleContent
+          post={loaderData.content}
+          prevContent={loaderData.prevContent}
+          nextContent={loaderData.nextContent}
+          archiveInfo={{
+            linkText: "コンテンツ紹介一覧へ",
+            linkTo: "/showcase/"
+          }}
+        />
+      </SectionWrapper>
+    </MainContainer>
   )
 }
 

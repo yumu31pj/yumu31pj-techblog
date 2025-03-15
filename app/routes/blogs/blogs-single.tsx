@@ -1,5 +1,6 @@
 import type { Route } from ".react-router/types/app/+types/root";
 import BlogSingleContent from "~/src/components/features/BlogSingleContent/BlogSingleContent";
+import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import type { BlogContentType } from "~/src/types/ApiTypes";
 import getPaginationContents from "~/src/utils/microcms/getPaginationContents";
@@ -50,24 +51,28 @@ type Props = {
 const BlogsSingle = ({ loaderData }: Props) => {
   if (!loaderData) {
     return (
-      <SectionWrapper>
-        <p>現在準備中です。</p>
-      </SectionWrapper>
+      <MainContainer>
+        <SectionWrapper>
+          <p>現在準備中です。</p>
+        </SectionWrapper>
+      </MainContainer>
     );
   }
 
   return (
-    <SectionWrapper>
-      <BlogSingleContent
-        post={loaderData.content}
-        prevContent={loaderData.prevContent}
-        nextContent={loaderData.nextContent}
-        archiveInfo={{
-          linkText: "ブログ一覧へ",
-          linkTo: "/blogs/"
-        }}
-      />
-    </SectionWrapper>
+    <MainContainer>
+      <SectionWrapper>
+        <BlogSingleContent
+          post={loaderData.content}
+          prevContent={loaderData.prevContent}
+          nextContent={loaderData.nextContent}
+          archiveInfo={{
+            linkText: "ブログ一覧へ",
+            linkTo: "/blogs/"
+          }}
+        />
+      </SectionWrapper>
+    </MainContainer>
   );
 };
 

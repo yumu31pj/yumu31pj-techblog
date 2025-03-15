@@ -1,4 +1,4 @@
-import { type RouteConfig, index, prefix, route } from "@react-router/dev/routes";
+import { type RouteConfig, index, layout, prefix, route } from "@react-router/dev/routes";
 
 export default [
   index("routes/home.tsx"),
@@ -25,4 +25,10 @@ export default [
     ]),
     route(":id", "routes/showcase/showcase-single.tsx"),
   ]),
+  // parallax配下はレイアウトを変更するためlayoutを指定
+  layout("src/components/pages/parallax/ParallaxContentsLayout.tsx", [
+    ...prefix("parallax", [
+      index('routes/parallax/parallax-sample.tsx'),
+    ])
+  ])
 ] satisfies RouteConfig;

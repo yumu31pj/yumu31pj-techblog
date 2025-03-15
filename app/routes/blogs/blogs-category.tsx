@@ -2,6 +2,7 @@ import type { Route } from ".react-router/types/app/+types/root";
 import BlogArchiveCards from "~/src/components/features/BlogArchiveCards/BlogArchiveCards";
 import Pagination from "~/src/components/features/Pagination/Pagination";
 import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
+import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import { PageMap, PerPage, SiteInfo } from "~/src/configs/SiteInfo";
@@ -55,21 +56,23 @@ type Props = {
 
 const BlogsCategory = ({ loaderData }: Props) => {
   return (
-    <SectionWrapper>
-      <SimpleTitle text={loaderData.categoryInfo ? loaderData.categoryInfo.name + "のブログ一覧" : "ブログ一覧"} tag="h2" /> {/* categoryInfo.name を表示 */}
-      {loaderData && (
+    <MainContainer>
+      <SectionWrapper>
+        <SimpleTitle text={loaderData.categoryInfo ? loaderData.categoryInfo.name + "のブログ一覧" : "ブログ一覧"} tag="h2" /> {/* categoryInfo.name を表示 */}
+        {loaderData && (
+          <DivContentsWrapper>
+            <BlogArchiveCards posts={loaderData.contents} />
+          </DivContentsWrapper>
+        )}
         <DivContentsWrapper>
-          <BlogArchiveCards posts={loaderData.contents} />
+          <Pagination
+            totalCount={loaderData.totalCount}
+            postsPerPage={PerPage}
+            slug={"blogs"}
+          />
         </DivContentsWrapper>
-      )}
-      <DivContentsWrapper>
-        <Pagination
-          totalCount={loaderData.totalCount}
-          postsPerPage={PerPage}
-          slug={"blogs"}
-        />
-      </DivContentsWrapper>
-    </SectionWrapper>
+      </SectionWrapper>
+    </MainContainer>
   );
 };
 

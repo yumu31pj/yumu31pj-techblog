@@ -1,4 +1,5 @@
 import type { Route } from ".react-router/types/app/+types/root";
+import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import ShowCaseContents from "~/src/components/pages/showcase/ShowCaseContents/ShowCaseContents";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
@@ -47,11 +48,13 @@ type Props = {
 
 const ShowcaseArchive = ({ loaderData }: Props) => {
   return (
-    <SectionWrapper>
-      <SimpleTitle text="コンポーネント紹介" tag={"h2"} />
-      <ShowCaseContents posts={loaderData.contents} />
-      {/* {JSON.stringify(loaderData)} */}
-    </SectionWrapper>
+    <MainContainer>
+      <SectionWrapper>
+        <SimpleTitle text="コンポーネント紹介" tag={"h2"} />
+        <ShowCaseContents posts={loaderData.contents} />
+        {/* {JSON.stringify(loaderData)} */}
+      </SectionWrapper>
+    </MainContainer>
   )
 }
 
