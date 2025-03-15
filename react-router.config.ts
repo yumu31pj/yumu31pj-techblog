@@ -61,6 +61,7 @@ export default {
       ...categoryCounts.map((category) => `/blogs/category/${category.id}`), // カテゴリページを追加
       ...categoryPages, // カテゴリのページネーションを追加
       "/library",
+      "/parallax",
       "/showcase",
       ...showcasePages.map((page) => `/showcase/page/${page}`),
       ...showcaseIds.map((id) => `/showcase/${id}`),
