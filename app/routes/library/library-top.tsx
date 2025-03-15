@@ -70,7 +70,7 @@ const LibraryTop = () => {
               } 
             }/>
           }
-          explanation="シンプルなParallaxページのサンプルです。<br />サンプル―ページは<a href='/parallax'>こちら</a>から"
+          explanation="シンプルなParallaxページのサンプルです。<br />サンプルページは<a href='/parallax'>こちら</a>から"
         />
 
       </SectionWrapper>
