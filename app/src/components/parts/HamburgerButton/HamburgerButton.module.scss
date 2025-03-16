@@ -1,12 +1,12 @@
 @use "@globals" as *;
 
 .hamburger-button {
-  position: relative;
   width: $header-height-sp;
   height: $header-height-sp;
+  position: relative;
 
   &[aria-expanded="true"] > .hamburger-button__line--top {
-    transform: translate(0, 0) rotate(-45deg);
+    transform: translate(-50%, 0) rotate(-45deg);
   }
 
   &[aria-expanded="true"] > .hamburger-button__line--middle {
@@ -14,29 +14,30 @@
   }
 
   &[aria-expanded="true"] > .hamburger-button__line--bottom {
-    transform: translate(0, 0) rotate(45deg);
+    transform: translate(-50%, 0) rotate(45deg);
   }
 }
 
 .hamburger-button__line {
   background-color: color(--c-primary);
+  margin-left: auto;
+  margin-right: auto;
   width: 60%;
   height: 2px;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
   transition: all .3s ease;
 
   &--top {
-    transform: translate(0, calc(-1 * get_px($space--xxs)));
+    transform: translate(-50%, calc(-1 * get_px($space--xxs)));
   }
   &--middle {
-    transform: translate(0, 0)
+    transform: translate(-50%, 0)
   }
   &--bottom {
-    transform: translate(0, get_px($space--xxs));
+    transform: translate(-50%, get_px($space--xxs));
   }
 
 }

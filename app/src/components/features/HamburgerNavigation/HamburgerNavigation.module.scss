@@ -1,0 +1,26 @@
+@use "@globals" as *;
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger__menu-container {
+  background-color: color(--c-primary);
+  color: #fff;
+  margin-top: $header-height-sp;
+  padding: get_px($space--m);
+  overflow-y: scroll;
+  width: 100vw;
+  height: calc(100vh - $header-height-sp);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: all .6s;
+  transform: translateX(100%);
+  z-index: 100;
+
+  &--open {
+    transform: translateX(0);
+  }
+}

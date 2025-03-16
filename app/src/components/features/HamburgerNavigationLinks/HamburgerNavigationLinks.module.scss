@@ -1,0 +1,18 @@
+@use "@globals" as *;
+
+.hamburger-main-links {
+
+}
+.hamburger-main-links__items {
+  & li {
+    margin-top: get_px($space--xs);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+}

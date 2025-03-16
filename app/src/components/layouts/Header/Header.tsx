@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from "react";
-import { SiteInfo } from "~/src/configs/SiteInfo";
+import { HamburgerNavigation } from "~/src/components/features/HamburgerNavigation/HamburgerNavigation";
+import { HamburgerNavigationLinks } from "~/src/components/features/HamburgerNavigationLinks/HamburgerNavigationLinks";
+import { PageMap, SiteInfo } from "~/src/configs/SiteInfo";
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -46,14 +48,21 @@ const Header = () => {
       id="header" 
       className={`${styles['header']} ${showHeader ? styles.scrolled : styles.hidden}`}
     >
-      <a href="/">
-        <h1 className={styles['header-logo']}>
-          <picture>
-            <source srcSet="/images/common/logo.webp" width={"500"} height={"72"} />
-            <img src="/images/commmon/logo.png" alt={SiteInfo.siteTitle} width="500" height="72" />
-          </picture>
-        </h1>
-      </a>
+      <div className={styles['header-container']}>
+        <a href="/">
+          <h1 className={styles['header-logo']}>
+            <picture>
+              <source srcSet="/images/common/logo.webp" width={"500"} height={"72"} />
+              <img src="/images/commmon/logo.png" alt={SiteInfo.siteTitle} width="500" height="72" />
+            </picture>
+          </h1>
+        </a>
+        <div className={styles['hamburger-navigation-container']}>
+          <HamburgerNavigation>
+            <HamburgerNavigationLinks links={PageMap} />
+          </HamburgerNavigation>
+        </div>
+      </div>
     </header>
   )
 }

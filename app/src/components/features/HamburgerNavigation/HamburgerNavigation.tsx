@@ -1,8 +1,8 @@
 import { HamburgerButton } from "~/src/components/parts/HamburgerButton/HamburgerButton";
-import useToggleIsHamburgerOpen from "~/src/hooks/useToggleIsHamburgerOpen";
-import styles from "./Hamburger.module.scss";
+import useToggleIsHamburgerOpen from "~/src/hooks/useToggleIsOpen";
+import styles from "./HamburgerNavigation.module.scss";
 
-export const Hamburger = ({children}: {children: React.ReactNode}) => {
+export const HamburgerNavigation = ({children}: {children: React.ReactNode}) => {
 
   const [isHamburgerOpen, toggleIsHamburgerOpen] = useToggleIsHamburgerOpen(false); 
 
@@ -12,7 +12,7 @@ export const Hamburger = ({children}: {children: React.ReactNode}) => {
         isHamburgerOpen={isHamburgerOpen}
         toggleIsHamburgerOpen={toggleIsHamburgerOpen}
       />
-      <div className={styles['hamburger__menu-container']}>
+      <div className={`${styles['hamburger__menu-container']} ${isHamburgerOpen ? styles['hamburger__menu-container--open'] : undefined}`}>
         {children}
       </div>
     </div>

@@ -3,9 +3,7 @@
 .header {
   background-color: #fff;
   border-bottom: 1px solid color(--c-primary);
-  padding: get_px($space--xs);
   opacity: .9;
-  text-align: center;
   width: 100%;
   height: $header-height-sp;
   position: fixed;  
@@ -28,6 +26,13 @@
   }
 }
 
+.header-container {
+  padding: get_px($space--xs);
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
 .header-logo {
   margin: auto;
   width: auto;
@@ -41,4 +46,10 @@
     width: auto;
     height: 100%;
   }
+}
+
+.hamburger-navigation-container {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

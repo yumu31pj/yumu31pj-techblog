@@ -1,6 +1,5 @@
 import Calendar from "~/src/components/features/Calendar/Calendar";
 import ResizableBox from "~/src/components/features/ResizableBox/ResizableBox";
-import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
 import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import ComponentBox from "~/src/components/pages/library/ComponentBox/ComponentBox";
@@ -8,11 +7,11 @@ import { HamburgerButton } from "~/src/components/parts/HamburgerButton/Hamburge
 import Picture from "~/src/components/parts/images/Picture/Picture";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import { PageMap } from "~/src/configs/SiteInfo";
-import useToggleOpen from "~/src/hooks/useToggleIsHamburgerOpen";
+import useToggleIsOpen from "~/src/hooks/useToggleIsOpen";
 
 const LibraryTop = () => {
 
-  const [isOpen, toggleOpen] = useToggleOpen(false);
+  const [isOpen, toggleIsOpen] = useToggleIsOpen(false);
 
   return (
     <MainContainer>
@@ -79,10 +78,17 @@ const LibraryTop = () => {
           explanation="シンプルなParallaxページのサンプルです。<br />サンプルページは<a href='/parallax'>こちら</a>から"
         />
 
-        {/* Hamburger */}
-        <DivContentsWrapper>
-          <HamburgerButton isHamburgerOpen={isOpen} toggleIsHamburgerOpen={toggleOpen} />
-        </DivContentsWrapper>
+        {/* HamburgerButton */}
+        <ComponentBox
+          title="Hamburger Button"
+          component={
+            <div style={{marginTop: '16px'}}>
+              <HamburgerButton isHamburgerOpen={isOpen} toggleIsHamburgerOpen={toggleIsOpen} />
+            </div>
+          }
+          explanation="ハンバーガーメニューのハンバーガーボタンコンポーネントです"
+          linkTo="/showcase/hamburger-button"
+        />
 
       </SectionWrapper>
     </MainContainer>
