@@ -1,0 +1,42 @@
+@use "@globals" as *;
+
+.hamburger-button {
+  position: relative;
+  width: $header-height-sp;
+  height: $header-height-sp;
+
+  &[aria-expanded="true"] > .hamburger-button__line--top {
+    transform: translate(0, 0) rotate(-45deg);
+  }
+
+  &[aria-expanded="true"] > .hamburger-button__line--middle {
+    opacity: 0;
+  }
+
+  &[aria-expanded="true"] > .hamburger-button__line--bottom {
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+.hamburger-button__line {
+  background-color: color(--c-primary);
+  width: 60%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all .3s ease;
+
+  &--top {
+    transform: translate(0, calc(-1 * get_px($space--xxs)));
+  }
+  &--middle {
+    transform: translate(0, 0)
+  }
+  &--bottom {
+    transform: translate(0, get_px($space--xxs));
+  }
+
+}

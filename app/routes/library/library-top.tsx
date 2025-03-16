@@ -1,13 +1,19 @@
 import Calendar from "~/src/components/features/Calendar/Calendar";
 import ResizableBox from "~/src/components/features/ResizableBox/ResizableBox";
+import DivContentsWrapper from "~/src/components/layouts/DivContentsWrapper/DivContentsWrapper";
 import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
 import ComponentBox from "~/src/components/pages/library/ComponentBox/ComponentBox";
+import { HamburgerButton } from "~/src/components/parts/HamburgerButton/HamburgerButton";
 import Picture from "~/src/components/parts/images/Picture/Picture";
 import SimpleTitle from "~/src/components/parts/titles/SimpleTitle/SimpleTitle";
 import { PageMap } from "~/src/configs/SiteInfo";
+import useToggleOpen from "~/src/hooks/useToggleIsHamburgerOpen";
 
 const LibraryTop = () => {
+
+  const [isOpen, toggleOpen] = useToggleOpen(false);
+
   return (
     <MainContainer>
       <SectionWrapper>
@@ -72,6 +78,11 @@ const LibraryTop = () => {
           }
           explanation="シンプルなParallaxページのサンプルです。<br />サンプルページは<a href='/parallax'>こちら</a>から"
         />
+
+        {/* Hamburger */}
+        <DivContentsWrapper>
+          <HamburgerButton isHamburgerOpen={isOpen} toggleIsHamburgerOpen={toggleOpen} />
+        </DivContentsWrapper>
 
       </SectionWrapper>
     </MainContainer>
