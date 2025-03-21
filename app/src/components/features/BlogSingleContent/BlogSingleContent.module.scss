@@ -1,6 +1,10 @@
 @use "@globals" as *;
 
 .single {
+  & a {
+    color: color(--c-primary);
+    text-decoration: underline;
+  }
 }
 
 .single-date {
@@ -9,8 +13,8 @@
 
 .single-category {
   display: flex;
-    justify-content: flex-start;
-    gap: .5em;
+  justify-content: flex-start;
+  gap: .5em;
   margin-top: get_px($space--xxs);
 
   & li {
@@ -41,18 +45,22 @@
       margin-top: get_px($space--m);
     }
   }
+
   & h3 {
     font-size: get_px($font--h3);
     margin-top: get_px($space--s);
 
   }
+
   & h4 {
     font-size: get_px($font--h4);
     margin-top: get_px($space--s);
   }
+
   & h5 {
     font-size: get_px($font--h5);
   }
+
   & h6 {
     font-size: get_px($font--h6);
   }
