@@ -1,7 +1,7 @@
 export const SiteInfo = {
-  siteTitle: "yumu31pj Tech Blog",
+  siteTitle: "yumu31pj Tech Blog - Reactを中心にした技術ブログ・個人的メモ",
   siteUrl: "https://blog.yumu31pj.tech/",
-  description: "React, React Router, Next.js"
+  description: "React, React Router, Next.js、などのフロントエンド技術を中心にした技術ブログや個人的に見返すためのメモとして徒然なるままに書いています。",
 }
 
 export const PerPage: number = 10;
