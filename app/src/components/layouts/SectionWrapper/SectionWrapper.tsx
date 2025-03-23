@@ -1,8 +1,16 @@
 import styles from "./SectionWrapper.module.scss";
 
-const SectionWrapper = ( {children}: {children: React.ReactNode } ) => {
+type SectionWrapperProps = {
+  paddingTop? : "none";
+  children: React.ReactNode;
+}
+
+const SectionWrapper = ( props: SectionWrapperProps ) => {
+  const {paddingTop, children} = props;
+  const baseClass = 'section-wrapper';
+  const modifierClass = paddingTop ? baseClass + '--pt-' + paddingTop : '';
   return (
-    <section className={styles['section-wrapper']}>
+    <section className={`${styles[baseClass]} ${styles[modifierClass]}`}>
       {children}
     </section>
   )

@@ -9,7 +9,7 @@ import type { BlogContentsType } from "~/src/types/ApiTypes";
 const HomeLatestBlogs = (props: BlogContentsType) => {
   const {posts} = props;
   return (
-    <SectionWrapper>
+    <SectionWrapper paddingTop="none">
       <SimpleTitle text="最新のブログ" tag="h2" />
       <DivContentsWrapper>
         <BlogArchiveCards

@@ -62,7 +62,7 @@ export const PageMap = {
   },
   "github": {
     pageTitle: "GitHub",
-    path: "https://blog.yumu31pj.tech/",
+    path: "https://github.com/yumu31pj",
     description: "yumu31pjのGitHub | " + SiteInfo.siteTitle, 
     isDisplayedOnHamburgerNavigation: false,
     isDisplayedOnFooterNavigation: true,

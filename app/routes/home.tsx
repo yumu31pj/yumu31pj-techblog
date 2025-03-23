@@ -1,4 +1,5 @@
 import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
+import { HomeIntroduction } from "~/src/components/pages/home/HomeIntroduction/HomeIntroduction";
 import HomeLatestBlogs from "~/src/components/pages/home/HomeLatestBlogs/HomeLatestBlogs";
 import HomeLatestShowcase from "~/src/components/pages/home/HomeLatestShowcase/HomeLatestShowcase";
 import { SiteInfo } from "~/src/configs/SiteInfo";
@@ -55,6 +56,7 @@ const Home = ({loaderData,}: Route.ComponentProps) => {
 
   return (
     <MainContainer>
+      <HomeIntroduction />
       <HomeLatestBlogs posts={loaderData.apiResponse.contents} />
       
       <HomeLatestShowcase posts={loaderData.apiResponseShowcase.contents} />

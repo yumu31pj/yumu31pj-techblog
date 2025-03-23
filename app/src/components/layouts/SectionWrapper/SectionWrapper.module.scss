@@ -7,4 +7,8 @@
   &:not(:first-of-type) {
     padding: get_px($space--xl) get_px($space--xs);
   }
+
+  &:not(:first-of-type).section-wrapper--pt-none {
+    padding-top: 0;
+  }
 }
