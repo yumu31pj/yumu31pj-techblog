@@ -2,6 +2,7 @@ import type { Route } from ".react-router/types/app/+types/root";
 import BlogSingleContent from "~/src/components/features/BlogSingleContent/BlogSingleContent";
 import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
 import SectionWrapper from "~/src/components/layouts/SectionWrapper/SectionWrapper";
+import { SiteInfo } from "~/src/configs/SiteInfo";
 import type { BlogContentType } from "~/src/types/ApiTypes";
 import getPaginationContents from "~/src/utils/microcms/getPaginationContents";
 import ssf_getContentByID from "~/src/utils/microcms/ssf_getContentsByID";
@@ -44,9 +45,17 @@ export const loader = async ({
   return { content: response, prevContent, nextContent };
 };
 
+export function meta({ data }: { data: LoaderDataType }) {
+  return [
+    { title: data?.content?.title ? `${data.content.title} | ${SiteInfo.siteTitle}` : SiteInfo.siteTitle },
+  ];
+}
+
 type Props = {
   loaderData: LoaderDataType;
 };
+
+
 
 const BlogsSingle = ({ loaderData }: Props) => {
   if (!loaderData) {
