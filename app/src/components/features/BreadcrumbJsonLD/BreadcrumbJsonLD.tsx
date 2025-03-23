@@ -110,7 +110,7 @@ export const BreadcrumbJsonLD = () => {
         // 既存のパンくず JSON-LD を更新
         existingScript.innerHTML = JSON.stringify(jsonLD);
       } else {
-        // 新規作成
+        // 既存のパンくず JSON-LDがなかったら新規作成
         const script = document.createElement('script');
         script.type = 'application/ld+json';
         script.setAttribute("data-breadcrumb-jsonld", "true");
