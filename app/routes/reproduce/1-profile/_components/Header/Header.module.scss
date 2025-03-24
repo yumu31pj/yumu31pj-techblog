@@ -1,0 +1,26 @@
+.c-header {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding: 10px 15px;
+
+  @media screen and (min-width: 376px) {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 50px 10px 40px;
+    max-width: 950px;
+  }
+}
+
+.c-header-gnav {
+
+}
+.c-header-gnav-list {
+  display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+  
+  & a {
+    font-size: 1.4rem;
+  }
+}

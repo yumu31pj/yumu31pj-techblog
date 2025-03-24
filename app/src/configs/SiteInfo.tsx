@@ -60,6 +60,13 @@ export const PageMap = {
     isDisplayedOnHamburgerNavigation: true,
     isDisplayedOnFooterNavigation: false
   },
+  "reproduce": {
+    pageTitle: "デザインカンプ模写サンプル",
+    path: "/reproduce",
+    description: "デザインカンプ模写サンプルページ | " + SiteInfo.siteTitle, 
+    isDisplayedOnHamburgerNavigation: true,
+    isDisplayedOnFooterNavigation: true
+  },
   "github": {
     pageTitle: "GitHub",
     path: "https://github.com/yumu31pj",

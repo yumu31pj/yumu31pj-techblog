@@ -30,5 +30,20 @@ export default [
     ...prefix("parallax", [
       index('routes/parallax/parallax-sample.tsx'),
     ])
+  ]),
+  layout("routes/reproduce/reproduce-layout.tsx", [
+    ...prefix('reproduce', [
+      index("routes/reproduce/reproduce-top.tsx"),
+      ...prefix('1-profile', [
+        index('routes/reproduce/1-profile/profile-top.tsx'),
+        ...prefix('detail', [
+          index('routes/reproduce/1-profile/detail/profile-detail.tsx'),
+        ])
+      ])
+    ])
   ])
+  // ...prefix('reprofuce') {
+
+  // }
+  
 ] satisfies RouteConfig;

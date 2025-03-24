@@ -1,0 +1,21 @@
+.c-home-sec-title {
+  color: #383E45;
+  display: block;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    background-color: #383E45;
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+}

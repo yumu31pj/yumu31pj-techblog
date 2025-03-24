@@ -1,0 +1,15 @@
+.c-logo {
+  background: #393E46;
+  padding: 10px 20px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+  @media screen and (min-width: 376px) {
+    padding: 10.5px 21.5px;
+  }
+  
+  &__svg {
+    fill: #fff;
+  }
+}

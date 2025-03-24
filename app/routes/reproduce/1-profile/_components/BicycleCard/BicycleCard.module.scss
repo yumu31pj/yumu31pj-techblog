@@ -1,0 +1,22 @@
+.c-bicyle-card {
+
+
+  &__image {
+
+  }
+
+  &__detail {
+    margin-top: 10px;
+    text-align: center;
+
+    & h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+   
+    & p {
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+  }
+}
