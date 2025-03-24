@@ -33,9 +33,6 @@ html {
 body {
   color: color(--c-font-primary);
   font-size: get_px($font-sp);
-  @include media('tb') {
-    font-size: get_px($font-pc);
-  }
   font-weight: 400;
   font-family: 
     'Noto Sans JP', 
@@ -44,6 +41,10 @@ body {
   line-height: 1.6;
   transition: all 0.5s ease-out;
   min-width: 320px;
+  
+  @include media('tb') {
+    font-size: get_px($font-pc);
+  }
 }
 
 dt {

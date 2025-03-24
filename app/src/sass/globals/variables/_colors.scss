@@ -15,7 +15,7 @@ $theme-colors: (
 // CSS variables生成用のmixin
 @mixin export-theme-colors() {
   @each $key, $color in $theme-colors {
-    --c-#{"#{$key}"}: #{color.red($color)}, #{color.green($color)}, #{color.blue($color)};
+    --c-#{"#{$key}"}: #{color.channel($color, "red")}, #{color.channel($color, "green")}, #{color.channel($color, "blue")};
   }
 }
 
