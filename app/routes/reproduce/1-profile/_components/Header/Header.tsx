@@ -3,7 +3,8 @@ import styles from "./Header.module.scss";
 
 export const Header = () => {
   return (
-    <header className={styles["c-header"]}>
+    <div className={styles["c-header"]}>
+    {/* <header className={styles["c-header"]}> */}
       <a href="/reproduce/1-profile">
         <Logo />
       </a>
@@ -13,6 +14,7 @@ export const Header = () => {
           <li><a href="#bicycle">Bicycle</a></li>
         </ul>
       </nav>
-    </header>
+    {/* </header> */}
+    </div>
   )
 }

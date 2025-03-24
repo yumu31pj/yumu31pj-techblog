@@ -38,8 +38,11 @@ export default [
         index('routes/reproduce/1-profile/profile-top.tsx'),
         ...prefix('detail', [
           index('routes/reproduce/1-profile/detail/profile-detail.tsx'),
-        ])
-      ])
+        ]),
+      ]),
+      ...prefix('2-photobook', [
+        index('routes/reproduce/2-photobook/page-photobook.tsx')
+      ]),
     ])
   ])
   // ...prefix('reprofuce') {

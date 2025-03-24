@@ -9,7 +9,7 @@ export const SectionBicycle = () => {
   const bicycleData: BicycleCardProps[] = SectionBicycleContext;
 
   return (
-    <SectionContainer id={"bicyle"} paddingTop={100}>
+    <SectionContainer id={"bicycle"} paddingTop={100}>
       <HomeSectionTitle text="Bicycle" />
       {bicycleData ? (
         <div className={styles['c-articles']}>

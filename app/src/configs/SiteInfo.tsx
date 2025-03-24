@@ -61,9 +61,9 @@ export const PageMap = {
     isDisplayedOnFooterNavigation: false
   },
   "reproduce": {
-    pageTitle: "デザインカンプ模写サンプル",
+    pageTitle: "デザインカンプ模写",
     path: "/reproduce",
-    description: "デザインカンプ模写サンプルページ | " + SiteInfo.siteTitle, 
+    description: "デザインカンプ模写ページ | " + SiteInfo.siteTitle, 
     isDisplayedOnHamburgerNavigation: true,
     isDisplayedOnFooterNavigation: true
   },

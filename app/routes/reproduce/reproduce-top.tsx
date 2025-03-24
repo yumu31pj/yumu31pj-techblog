@@ -7,6 +7,7 @@ const PageReproduceTop = () => {
         <h2 className={styles['c-sec-title']}>カンプ模写リスト</h2>
         <ul className={styles['c-link-list']}>
           <li><a href="/reproduce/1-profile">1. Profile</a></li>
+          <li><a href="/reproduce/2-photobook">2. Photo Book</a></li>
         </ul>
       </section>
       <section>
