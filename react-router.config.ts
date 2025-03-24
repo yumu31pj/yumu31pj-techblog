@@ -67,6 +67,7 @@ export default {
       ...showcaseIds.map((id) => `/showcase/${id}`),
       "/reproduce",
       "/reproduce/1-profile",
+      "/reproduce/1-profile/detail",
     ];
   },
 } satisfies Config;
