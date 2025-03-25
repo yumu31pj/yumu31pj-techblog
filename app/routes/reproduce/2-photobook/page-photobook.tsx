@@ -8,6 +8,8 @@ import { PhotobookIndexContext } from "./_components/SectionPhotobookIndex/Photo
 import { SectionPhotobookIndex } from "./_components/SectionPhotobookIndex/SectionPhotobookIndex";
 import styles from "./page-photobook.module.scss";
 
+// 1.5h
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "デザインカンプ模写: Photobook" },
