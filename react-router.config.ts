@@ -69,6 +69,7 @@ export default {
       "/reproduce/1-profile",
       "/reproduce/1-profile/detail",
       "/reproduce/2-photobook",
+      "/reproduce/3-photobook2",
     ];
   },
 } satisfies Config;
