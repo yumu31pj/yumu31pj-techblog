@@ -1,0 +1,20 @@
+.l-footer {
+  text-align: center;
+  padding: 100px 20px 20px;
+}
+
+.c-footer-navigation {
+  display: flex;
+    justify-content: center;
+    gap: 20px;
+
+  & a {
+    font-size: 1.2rem;
+    text-decoration: underline;
+  }
+}
+
+.c-copyright {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}

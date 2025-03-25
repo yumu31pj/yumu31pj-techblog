@@ -1,0 +1,19 @@
+.c-hero {
+  width: 100%;
+  
+  @media screen and (max-width: 834px) {
+    height: 600px;
+  }
+
+  & img {
+    width: 100%;
+    @media screen and (max-width: 834px) {
+      object-fit: cover;
+      height: 600px;
+    }
+    @media screen and (min-width: 835px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -45,7 +45,10 @@ export default [
       ]),
       ...prefix('3-photobook2', [
         index('routes/reproduce/3-photobook2/page-photobook2.tsx')
-      ])
+      ]),
+      ...prefix('4-recipe', [
+        index('routes/reproduce/4-recipe/page-recipe.tsx')
+      ]),
     ])
   ])
   // ...prefix('reprofuce') {

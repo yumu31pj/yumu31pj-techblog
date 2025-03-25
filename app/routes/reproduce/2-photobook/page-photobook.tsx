@@ -1,4 +1,3 @@
-import { SiteInfo } from "~/src/configs/SiteInfo";
 import type { Route } from "../+types/reproduce-layout";
 import { PhotobookFooter } from "./_components/PhotobookFooter/PhotobookFooter";
 import { PhotobookHeader } from "./_components/PhotobookHeader/PhotobookHeader";
@@ -12,8 +11,8 @@ import styles from "./page-photobook.module.scss";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "デザインカンプ模写: Photobook" },
-    { name: "description", content: SiteInfo.description },
+    { title: "2.Photo Book - デザインカンプ模写" },
+    { name: "description", content: "html, css, sass, React, サンプル" },
   ];
 }
 

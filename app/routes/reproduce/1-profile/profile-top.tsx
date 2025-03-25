@@ -1,4 +1,3 @@
-import { SiteInfo } from "~/src/configs/SiteInfo";
 import type { Route } from "../+types/reproduce-layout";
 import { Footer } from "./_components/Footer/Footer";
 import { Header } from "./_components/Header/Header";
@@ -11,8 +10,8 @@ import styles from "./profile-top.module.scss";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "デザインカンプ模写: Profile" },
-    { name: "description", content: SiteInfo.description },
+    { title: "1.Profile - デザインカンプ模写" },
+    { name: "description", content: "html, css, sass, React, サンプル" },
   ];
 }
 
