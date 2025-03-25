@@ -35,17 +35,26 @@
 }
 
 .header-logo {
-  margin: auto;
   width: auto;
   height: 100%;
+
+  @include media('sp') {
+    text-align: left;
+  }
   
   @include media('tb') {
+    margin: auto;
     width: 500px;
   }
 
   & img {
     width: auto;
     height: 100%;
+
+    @include media('sp') {
+      width: 80%;
+      height: auto;
+    }
   }
 }
 

@@ -6,10 +6,19 @@ const Picture = (props: PictureProps) => {
 
   return (
     <picture className={styles['picture']}>
+      {pictureItem.srcSPWebp && 
+        <source 
+          srcSet={pictureItem.srcSPWebp} 
+          type="image/webp"
+          media={`(max-width: ${pictureItem.breakpoint} px)`}
+          {...(pictureItem.widthSP && { width: pictureItem.widthSP })} 
+          {...(pictureItem.heightSP && { height: pictureItem.heightSP })} 
+        />
+      }
       {pictureItem.srcPCWebp && 
         <source 
           srcSet={pictureItem.srcPCWebp} 
-          media={`(min-width: ${pictureItem.breakpoint}px)`} 
+          media={`(min-width: ${pictureItem.breakpoint && pictureItem.breakpoint + 1}px)`} 
           type="image/webp" 
           {...(pictureItem.widthPC && { width: pictureItem.widthPC })} 
           {...(pictureItem.heightPC && { height: pictureItem.heightPC })} 
@@ -18,18 +27,10 @@ const Picture = (props: PictureProps) => {
       {pictureItem.srcPC && 
         <source 
           srcSet={pictureItem.srcPC} 
-          media={`(min-width: ${pictureItem.breakpoint}px)`} 
+          media={`(min-width: ${pictureItem.breakpoint && pictureItem.breakpoint + 1}px)`} 
           type="image/png"
           {...(pictureItem.widthPC && { width: pictureItem.widthPC })} 
           {...(pictureItem.heightPC && { height: pictureItem.heightPC })} 
-        />
-      }
-      {pictureItem.srcSPWebp && 
-        <source 
-          srcSet={pictureItem.srcSPWebp} 
-          type="image/webp"
-          {...(pictureItem.widthSP && { width: pictureItem.widthSP })} 
-          {...(pictureItem.heightSP && { height: pictureItem.heightSP })} 
         />
       }
       <img 

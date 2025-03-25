@@ -8,6 +8,7 @@ const PageReproduceTop = () => {
         <ul className={styles['c-link-list']}>
           <li><a href="/reproduce/1-profile">1. Profile</a></li>
           <li><a href="/reproduce/2-photobook">2. Photo Book</a></li>
+          <li><a href="/reproduce/3-photobook2">3. Photo Book 2</a></li>
         </ul>
       </section>
       <section>

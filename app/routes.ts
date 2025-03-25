@@ -43,6 +43,9 @@ export default [
       ...prefix('2-photobook', [
         index('routes/reproduce/2-photobook/page-photobook.tsx')
       ]),
+      ...prefix('3-photobook2', [
+        index('routes/reproduce/3-photobook2/page-photobook2.tsx')
+      ])
     ])
   ])
   // ...prefix('reprofuce') {
