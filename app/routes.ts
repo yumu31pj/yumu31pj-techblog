@@ -49,9 +49,9 @@ export default [
       ...prefix('4-recipe', [
         index('routes/reproduce/4-recipe/page-recipe.tsx')
       ]),
-      ...prefix('5-recipe-detail', [
-        index('routes/reproduce/5-recipe-detail/page-recipe-detail.tsx')
-      ]),
+      // ...prefix('5-recipe-detail', [
+      //   index('routes/reproduce/5-recipe-detail/page-recipe-detail.tsx')
+      // ]),
     ])
   ])
   // ...prefix('reprofuce') {

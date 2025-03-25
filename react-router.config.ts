@@ -71,7 +71,7 @@ export default {
       "/reproduce/2-photobook",
       "/reproduce/3-photobook2",
       "/reproduce/4-recipe",
-      "/reproduce/5-recipe-detail"
+      // "/reproduce/5-recipe-detail"
     ];
   },
 } satisfies Config;
