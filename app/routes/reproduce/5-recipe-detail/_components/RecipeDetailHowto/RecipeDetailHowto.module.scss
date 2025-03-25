@@ -1,0 +1,23 @@
+.c-howto {
+  font-size: 1.6rem;
+  counter-reset: counter 0;
+  margin-top: 20px;
+  padding-left: 1.5em;
+
+  & li {
+    border-bottom: 1px dotted #ccc;
+    color: #2B2A27;
+    padding: 6px 0;
+    position: relative;
+
+    &::before {
+      content: counter(counter) ".";
+      counter-increment: counter 1;
+      margin-right: .5em;
+      position: absolute;
+      top: 50%;
+      left: -1.5em;
+      transform: translateY(-50%);
+    }
+  }
+}

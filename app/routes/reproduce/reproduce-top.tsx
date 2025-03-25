@@ -19,6 +19,7 @@ const PageReproduceTop = () => {
           <li><a href="/reproduce/2-photobook">2. Photo Book</a></li>
           <li><a href="/reproduce/3-photobook2">3. Photo Book 2</a></li>
           <li><a href="/reproduce/4-recipe">4. Recipe</a></li>
+          <li><a href="/reproduce/5-recipe-detail">5. Recipe Detail</a></li>
         </ul>
       </section>
       <section className={styles['c-sec']}>

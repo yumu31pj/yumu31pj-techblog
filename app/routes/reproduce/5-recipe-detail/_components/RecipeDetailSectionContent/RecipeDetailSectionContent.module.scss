@@ -1,0 +1,60 @@
+.l-content-container {
+
+  &__inner {
+    @media screen and (min-width: 835px) {
+      display: flex;
+  
+    }
+  }
+}
+
+.c-content-image {
+  @media screen and (max-width: 834px) {
+    min-height: 469px
+  }
+
+  @media screen and (min-width: 835px) {
+    width: 50%;
+    height: 500px;
+  }
+
+  & img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.c-content-detail {
+  @media screen and (max-width: 834px) {
+    padding: 40px 18px 0;
+  }
+
+  @media screen and (min-width: 835px) {
+    padding: 40px 5% 0;
+    width: 50%;
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  &__overview {
+    color: #2B2A27;
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+}
+
+.c-button {
+  text-align: center;
+
+  & a {
+    font-size: 1.4rem;
+    text-align: center;
+    border: 1px solid #2B2A27;
+    display: inline-block;
+    margin-top: 60px;
+    padding: 18px 60px;
+  }
+}

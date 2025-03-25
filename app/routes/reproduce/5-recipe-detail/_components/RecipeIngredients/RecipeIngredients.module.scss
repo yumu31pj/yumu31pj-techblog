@@ -1,0 +1,28 @@
+.c-ingredients {
+  font-size: 1.6rem;
+  margin-top: 20px;
+
+  &__item {
+    border-bottom: 1px dotted #ccc;
+    color: #2B2A27;;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 6px 0;
+    width: 100%;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  & dt {
+    text-align: left;
+    width: 90%;
+  }
+
+  & dd {
+    text-align: right;
+    width: 10%;
+  }
+}
