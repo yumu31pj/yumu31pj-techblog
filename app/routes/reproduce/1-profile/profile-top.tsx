@@ -15,16 +15,18 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const PageProfileTope = () => {
+const PageProfileTop = () => {
   return (
     <div className={styles['l-profile-container']}>
       <Header />
+      <main>
       <Hero />
-      <SectionAbout />
-      <SectionBicycle />
+        <SectionAbout />
+        <SectionBicycle />
+      </main>
       <Footer />
     </div>
   )
 }
 
-export default PageProfileTope;
+export default PageProfileTop;
