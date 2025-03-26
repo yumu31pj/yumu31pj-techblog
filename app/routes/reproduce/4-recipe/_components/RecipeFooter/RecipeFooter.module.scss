@@ -9,12 +9,12 @@
     gap: 20px;
 
   & a {
-    font-size: 1.2rem;
+    font-size: calc(12 / 16 * 1rem);
     text-decoration: underline;
   }
 }
 
 .c-copyright {
-  font-size: 1.2rem;
+  font-size: calc(12 / 16 * 1rem);
   margin-top: 20px;
 }

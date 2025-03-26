@@ -1,3 +1,7 @@
 .l-recipe-detail {
   font-family: "Helvetica Neue", Arial, "Hiragino Sans", Meiryo, sans-serif;
+
+  & dt {
+    font-weight: 500;
+  }
 }

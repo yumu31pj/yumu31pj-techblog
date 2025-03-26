@@ -19,9 +19,11 @@ export function meta({}: Route.MetaArgs) {
 const PageRecipe = () => {
   return (
     <div className={styles['l-page-recipe']}>
-      <RecipeHero pictureItem={RecipeHeroContexts.pictureItem}/>
-      <RecipeSectionIntroduction />
-      <RecipeSectionRecipes recipeItems={RecipeListContexts.recipeItems}/>
+      <main>
+        <RecipeHero pictureItem={RecipeHeroContexts.pictureItem}/>
+        <RecipeSectionIntroduction />
+        <RecipeSectionRecipes recipeItems={RecipeListContexts.recipeItems}/>
+      </main>
       <RecipeFooter navigationItem={RecipeNavigationContexts.navigationItem}/>
     </div>
   )

@@ -17,8 +17,10 @@ export function meta({}: Route.MetaArgs) {
 const PageRecipeDetail = () => {
   return (
     <div className={styles['l-recipe-detail']}>
-      <RecipeDetailSectionContent sectionItem={RecipeDetailContentContexts.sectionItem} />
-      <RecipeFooter navigationItem={RecipeNavigationContexts.navigationItem} />
+      <main>
+        <RecipeDetailSectionContent sectionItem={RecipeDetailContentContexts.sectionItem} />
+        <RecipeFooter navigationItem={RecipeNavigationContexts.navigationItem} />
+      </main>
     </div>
   )
 }
