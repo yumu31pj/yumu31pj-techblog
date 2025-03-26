@@ -55,6 +55,9 @@ export default [
       ...prefix('6-brand', [
         index('routes/reproduce/6-brand/page-brand.tsx')
       ]),
+      ...prefix('7-portfolio', [
+        index('routes/reproduce/7-portfolio/page-portfolio.tsx')
+      ]),
     ])
   ])
   // ...prefix('reprofuce') {
