@@ -12,9 +12,9 @@ const MainContainer = (props: MainContainerProps) => {
   const modifierClass = type ? baseClass + "--" + type : baseClass + "--centered"
 
   return (
-    <div className={`${styles[baseClass]} ${styles[modifierClass]}`}>
+    <main className={`${styles[baseClass]} ${styles[modifierClass]}`}>
       {children}
-    </div>
+    </main>
   )
 }
 

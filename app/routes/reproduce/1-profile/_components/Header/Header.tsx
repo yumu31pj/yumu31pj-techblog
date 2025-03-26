@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <div className={styles["c-header"]}>
     {/* <header className={styles["c-header"]}> */}
-      <a href="/reproduce/1-profile">
+      <a href="/reproduce/">
         <Logo />
       </a>
       <nav className={styles["c-header-gnav"]}>

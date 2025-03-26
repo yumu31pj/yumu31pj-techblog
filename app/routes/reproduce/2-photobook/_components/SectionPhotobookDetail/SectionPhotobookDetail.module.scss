@@ -3,17 +3,17 @@
   margin-right: auto;
   padding: 60px 0 115px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     padding-left: 40px;
     padding-right: 40px;
   }
 
-  @media screen and (min-width: 421px) {
+  @media screen and (min-width: 1025px) {
     max-width: 600px;
   }
 
   &__title {
-    font-size: 1.8rem;
+    font-size: calc(18 / 16 * 1rem);
     font-weight: 700;
   }
 
@@ -22,7 +22,7 @@
 .c-detail-container {
   margin-top: 10px;
   
-  @media screen and (min-width: 421px) {
+  @media screen and (min-width: 1025px) {
     display: flex;
       justify-content: space-between;
       gap: 60px;
@@ -34,26 +34,27 @@
 
 .c-detail-img {
 
-    @media screen and (min-width: 421px) {
+    @media screen and (min-width: 1025px) {
       width: 270px;
     }
   
   & img {
     width: 100%;
+    height: auto;
   }
 
 }
 
 .c-detail-info {
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) {
     margin-top: 25px;
   }
 
-  @media screen and (min-width: 421px) {
+  @media screen and (min-width: 1025px) {
     width: calc((100% - 270px) - 1vw);
   }
   & h3 {
-    font-size: 1.8rem;
+    font-size: calc(18 / 16 * 1rem);
   }
   & dl {
     border-top: 1px solid #DEDEDE;
@@ -61,7 +62,7 @@
     display: flex;
       flex-wrap: wrap;
       gap: 20px;
-    font-size: 1.4rem;
+    margin-top: 20px;
     padding: 16px 0;
 
     & dt {
@@ -73,12 +74,10 @@
     }
   }
   & p {
-    font-size: 1.4rem;
     padding: 20px 0 25px;
   }
 
   & a {
-    font-size: 1.4rem;
     position: relative;
 
     &::after {

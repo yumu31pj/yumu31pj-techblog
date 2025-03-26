@@ -20,9 +20,11 @@ const PagePhotobook = () => {
   return (
     <div className={styles["l-photobook-container"]}>
       <PhotobookHeader />
-      <PhotobookHero />
-      <SectionPhotobookIndex indexItems={PhotobookIndexContext.indexItems} />
-      <SectionPhotobookDetail />
+      <main className={styles['l-photobook-main-container']}>
+        <PhotobookHero />
+        <SectionPhotobookIndex indexItems={PhotobookIndexContext.indexItems} />
+        <SectionPhotobookDetail />
+      </main>
       <PhotobookFooter />
     </div>
   )

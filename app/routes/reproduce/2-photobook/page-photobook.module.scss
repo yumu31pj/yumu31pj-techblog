@@ -1,8 +1,6 @@
 .l-photobook-container {
   background-color: #F4F9FF;
   max-width: unset;
-
-  & * {
-    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
-  }
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
+  font-size: calc(14 / 16 * 1rem);
 }

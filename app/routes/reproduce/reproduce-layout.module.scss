@@ -1,8 +1,9 @@
 .l-reproduce-container {
-  margin: 100px 0;
-  max-width: unset;
-
-  & * {
-    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
-  }
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
 }
+
+/*
+.5rem: 8px
+.9rem: 14.4px
+1rem: 16px
+*/

@@ -3,10 +3,10 @@ import styles from "./Photobook2Header.module.scss";
 
 export const Photobook2Header = () => {
   return (
-    <div id="header" className={styles['c-header']}>
-    {/* <header id="header"> */}
-      <Photobook2Logo />
-    {/* </header> */}
-    </div>
+    <header id="header" className={styles['c-header']}>
+      <a href="/reproduce">
+        <Photobook2Logo />
+      </a>
+    </header>
   )
 }

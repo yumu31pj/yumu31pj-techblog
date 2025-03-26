@@ -1,6 +1,9 @@
-import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
-
 import { Outlet } from "react-router";
+import MainContainer from "~/src/components/layouts/MainContainer/MainContainer";
+import "../../../sass/styles.scss";
+import Footer from "../../layouts/Footer/Footer";
+import Header from "../../layouts/Header/Header";
+
 
 /**
  * 
@@ -8,9 +11,13 @@ import { Outlet } from "react-router";
  */
 const ParallaxContentsLayout = () => {
   return (
-    <MainContainer type={"fullWidth"}>
-      <Outlet />
-    </MainContainer>
+    <>
+      <Header />
+      <MainContainer type={"fullWidth"}>
+        <Outlet />
+      </MainContainer>
+      <Footer />
+    </>
   )
 }
 

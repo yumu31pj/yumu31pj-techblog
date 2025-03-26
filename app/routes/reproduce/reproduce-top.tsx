@@ -23,7 +23,7 @@ const PageReproduceTop = () => {
         </ul>
       </section>
       <section className={styles['c-sec']}>
-        <p>このページの模写のデザイン還付は<a href="https://code-jump.com/xd-public/" target="_blank" rel="noopener noreferer">Codejump</a>に掲載されているFigmaデータを使わせていただいています。</p>
+        <p>このページの模写のデザインカンプは<a href="https://code-jump.com/xd-public/" target="_blank" rel="noopener noreferer">Codejump</a>に掲載されているFigmaデータを使わせていただいています。</p>
       </section>
     </main>
   )

@@ -40,7 +40,7 @@ export const BreadcrumbJsonLD = () => {
 
   useEffect(() => {
     const pagePath = location.pathname;
-    console.log("pagePath", pagePath);
+    // console.log("pagePath", pagePath);
 
     const newList: { "@type": string; position: number; name: string; item: string; }[] = [];
 

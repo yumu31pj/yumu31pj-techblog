@@ -9,9 +9,9 @@ const PageProfileDetail = () => {
       <section id="detail" className={styles["c-detail"]}>
         <div className={styles['c-detail__image']}>
           <picture>
-            <source srcSet="/images/reproduce/1-profile/detail/detail_sp.webp" type="image/webp" media="(max-width: 375px)" />
-            <source srcSet="/images/reproduce/1-profile/detail/detail_pc.webp" type="image/webp" media="(min-width: 376px)" />
-            <source srcSet="/images/reproduce/1-profile/detail/detail_pc.png" type="image/png" media="(min-width: 376px)" />
+            <source srcSet="/images/reproduce/1-profile/detail/detail_sp.webp" type="image/webp" media="(max-width: 600px)" />
+            <source srcSet="/images/reproduce/1-profile/detail/detail_pc.webp" type="image/webp" media="(min-width: 601px)" />
+            <source srcSet="/images/reproduce/1-profile/detail/detail_pc.png" type="image/png" media="(min-width: 601px)" />
             <img src="/images/reproduce/1-profile/detail/detail_sp.png" alt="詳細ページのイメージ" width="345" height="228" />
           </picture>
         </div>

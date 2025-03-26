@@ -6,6 +6,7 @@ import { Photobook2SectionDetail } from "./_components/Photobook2SectionDetail/P
 import { Photobook2SectionGallery } from "./_components/Photobook2SectionGallery/Photobook2SectionGallery";
 import { Photobook2SectionIndex } from "./_components/Photobook2SectionIndex/Photobook2SectionIndex";
 import { Photobook2GalleryContext, Photobook2Indexontext } from "./_contexts/Photobook2.contexts";
+import styles from "./page-photobook2.module.scss";
 
 // 画像書き出し、コンポーネント作成、流し込み: 1h
 // CSS: 0.5h
@@ -19,14 +20,16 @@ export function meta({}: Route.MetaArgs) {
 
 const PagePhotobook2 = () => {
   return (
-    <>
+    <div className={styles['l-page-photobook2']}>
       <Photobook2Header />
-      <Photobook2Hero />
-      <Photobook2SectionIndex listItem={Photobook2Indexontext.listItem}/>
-      <Photobook2SectionGallery pictureItems={Photobook2GalleryContext.pictureItems}/>
-      <Photobook2SectionDetail />
+      <main>
+        <Photobook2Hero />
+        <Photobook2SectionIndex listItem={Photobook2Indexontext.listItem}/>
+        <Photobook2SectionGallery pictureItems={Photobook2GalleryContext.pictureItems}/>
+        <Photobook2SectionDetail />
+      </main>
       <Photobook2Footer />
-    </>
+    </div>
   )
 }
 

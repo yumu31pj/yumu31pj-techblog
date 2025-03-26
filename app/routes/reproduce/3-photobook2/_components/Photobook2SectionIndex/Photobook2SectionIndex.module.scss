@@ -1,11 +1,11 @@
 .c-index {
   border: 1px solid #333;
   margin-top: 30px;
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 1024px) {
     padding: 30px 44px 30px 12px;
   }
 
-  @media screen and (min-width: 321px) {
+  @media screen and (min-width: 1025px) {
     text-align: center;
     padding: 30px 18% 30px;
   }

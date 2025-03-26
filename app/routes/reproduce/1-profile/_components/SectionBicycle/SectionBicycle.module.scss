@@ -3,27 +3,32 @@
     flex-wrap: wrap;
   margin-top: 60px;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 600px) {
     row-gap: 30px;
   }
 
-  @media screen and (min-width: 376px) {
+  @media screen and (min-width: 601px) {
     column-gap: 17px;
   }
 
-  @media screen and (min-width: 951px) {
+  @media screen and (min-width: 600px) {
     padding-left: 50px;
     padding-right: 50px;
   }
 
   &__item {
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 600px) {
       width: 100%;
     }
 
-    @media screen and (min-width: 376px) {
+    @media screen and (min-width: 601px) {
       width: calc((100% - 34px) / 3);
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
     }
 
   }

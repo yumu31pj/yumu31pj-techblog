@@ -17,7 +17,7 @@ export type BicycleCardProps = {
 
 export const BicycleCard = (props: BicycleCardProps) => {
   const {imageItem, title, text, linkTo} = props;
-  const breakpoint = 365;
+  const breakpoint = 600;
 
   return (
     <a href={linkTo} className={styles['c-bicyle-card']}>
