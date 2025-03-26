@@ -1,0 +1,12 @@
+.l-main-container {
+  @media screen and (max-width: 767px) {
+    padding: 50px 18px 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 18px 0;
+  }
+}

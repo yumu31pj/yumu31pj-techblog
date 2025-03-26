@@ -1,11 +1,10 @@
-import { SiteInfo } from "~/src/configs/SiteInfo";
 import type { Route } from "../+types/home";
 import styles from "./reproduce-top.module.scss";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "デザインカンプ模写リスト" },
-    { name: "description", content: SiteInfo.description },
+    { name: "description", content: "html, css, sass, React, サンプル" },
   ];
 }
 
@@ -20,6 +19,7 @@ const PageReproduceTop = () => {
           <li><a href="/reproduce/3-photobook2">3. Photo Book 2</a></li>
           <li><a href="/reproduce/4-recipe">4. Recipe</a></li>
           <li><a href="/reproduce/5-recipe-detail">5. Recipe Detail</a></li>
+          <li><a href="/reproduce/6-brand">6. Brand</a></li>
         </ul>
       </section>
       <section className={styles['c-sec']}>

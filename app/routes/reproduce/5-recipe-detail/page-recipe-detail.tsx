@@ -11,7 +11,6 @@ import styles from "./page-recipe-detail.module.scss";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "5.Recipe Detail - デザインカンプ模写" },
-    { name: "description", content: "html, css, sass, React, サンプル" },
   ];
 }
 

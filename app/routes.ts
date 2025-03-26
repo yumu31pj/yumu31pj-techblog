@@ -52,6 +52,9 @@ export default [
       ...prefix('5-recipe-detail', [
         index('routes/reproduce/5-recipe-detail/page-recipe-detail.tsx')
       ]),
+      ...prefix('6-brand', [
+        index('routes/reproduce/6-brand/page-brand.tsx')
+      ]),
     ])
   ])
   // ...prefix('reprofuce') {
