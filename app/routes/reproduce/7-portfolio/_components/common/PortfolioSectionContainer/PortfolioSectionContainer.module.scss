@@ -12,6 +12,12 @@
     max-width: 960px;
   }
 
+  &--mt-40-0 {
+    @media screen and (max-width: 600px) {
+      margin-top: 40px;
+    }
+  }
+
   &--mt-70-130 {
     @media screen and (max-width: 600px) {
       margin-top: 70px;

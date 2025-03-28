@@ -64,6 +64,12 @@ export default [
           ...prefix('about', [
             index('routes/reproduce/7-portfolio/about/page-portfolio-about.tsx')
           ]),
+          ...prefix('news', [
+            index('routes/reproduce/7-portfolio/news/page-portfolio-news.tsx')
+          ]),
+          ...prefix('works', [
+            index('routes/reproduce/7-portfolio/works/archive-portfolio-works.tsx')
+          ]),
         ]),
       ])
     ])

@@ -1,0 +1,23 @@
+.c-news-container {
+  padding-bottom: 240px;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 30px;  
+  }
+
+  @media screen and (min-width: 601px) {
+    padding-top: 65px;
+  }
+}
+
+.c-workbox-container {
+  &:not(:first-of-type) {
+    @media screen and (max-width: 600px) {
+      margin-top: 60px; 
+    }
+    
+    @media screen and (min-width: 601px) {
+      margin-top: 140px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.c-workbox {
+
+  & h3 {
+    font-weight: 700;
+    @media screen and (max-width: 600px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (min-width: 601px) {
+      margin-top: 30px;
+    }
+  }
+
+  &__overview {
+    & p {
+      margin-top: 10px;
+    }
+  }
+
+}

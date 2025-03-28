@@ -5,15 +5,15 @@ export const PortfolioNavigationContexts: PortfolioNavigationProps = {
     linkItems: [
       {
         title: "About",
-        linkTo: "/reproduce/7-portfolio/#about"
+        linkTo: "/reproduce/7-portfolio/about"
       },
       {
         title: "Works",
-        linkTo: "/reproduce/7-portfolio/#works",
+        linkTo: "/reproduce/7-portfolio/works",
       },
       {
         title: "News",
-        linkTo: "/reproduce/7-portfolio/#news",
+        linkTo: "/reproduce/7-portfolio/news",
       },
       {
         title: "Contact",
