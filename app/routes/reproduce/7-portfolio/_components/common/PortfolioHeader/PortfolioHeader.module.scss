@@ -1,0 +1,29 @@
+.c-header {
+  display: flex;
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 55px 10px;
+  }
+
+  @media screen and (min-width: 601px) {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+      margin-right: auto;
+      margin-left: auto;
+    padding: 121px 51px;
+    max-width: 960px;
+  }
+
+  &__logo-container {
+
+  }
+
+  &__navigation {
+    @media screen and (max-width: 600px) {
+      margin-top: 10px;
+    }
+  }
+}

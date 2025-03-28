@@ -1,0 +1,8 @@
+.c-hero {
+  height: 420px;
+
+  & img {
+    object-fit: cover;
+    height: 100%;
+  }
+}

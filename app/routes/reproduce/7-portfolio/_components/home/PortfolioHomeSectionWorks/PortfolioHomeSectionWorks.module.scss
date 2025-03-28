@@ -1,0 +1,27 @@
+.c-works {
+  @media screen and (max-width: 600px) {
+    margin-top: 43px;
+  }
+
+  @media screen and (min-width: 601px) {
+    display: flex;
+      flex-wrap: wrap;
+      gap: 29.8px;
+    margin-top: 68px;
+  }
+
+  & a {
+    display: block;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+
+      &:not(:first-of-type) {
+        margin-top: 23px;
+      }
+    }
+  
+    @media screen and (min-width: 601px) {
+      width: calc((100% - (29.8px * 2)) / 3);
+    }
+  }
+}

@@ -58,9 +58,14 @@ export default [
       ...prefix('6-brand', [
         index('routes/reproduce/6-brand/page-brand.tsx')
       ]),
-      ...prefix('7-portfolio', [
-        index('routes/reproduce/7-portfolio/page-portfolio.tsx')
-      ]),
+      layout("routes/reproduce/7-portfolio/laytout-portfolio.tsx", [
+        ...prefix('7-portfolio', [
+          index('routes/reproduce/7-portfolio/page-portfolio.tsx'),
+          ...prefix('about', [
+            index('routes/reproduce/7-portfolio/about/page-portfolio-about.tsx')
+          ]),
+        ]),
+      ])
     ])
   ])
   // ...prefix('reprofuce') {

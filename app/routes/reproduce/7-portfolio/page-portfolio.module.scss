@@ -1,0 +1,8 @@
+.l-page-portfolio {
+  @media screen and (max-width: 420px) {
+    padding-bottom: 70px;
+  }
+  @media screen and (min-width: 421px) {
+    padding-bottom: 130px;
+  }
+}

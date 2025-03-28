@@ -1,0 +1,35 @@
+.c-news-list {
+  
+  @media screen and (max-width: 600px) {
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 601px) {
+    display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    margin-top: 65px;
+  }
+
+  & li {
+    border-top: 1px solid #C8C8C8;
+    padding: 15px;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: 1px solid #C8C8C8;
+    }
+
+    & a {
+      @media screen and (max-width: 600px) {
+      }
+    
+      @media screen and (min-width: 601px) {
+        display: flex;
+          justify-content: flex-start;
+          gap: 80px;
+      }
+    }
+  }
+
+}
