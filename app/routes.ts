@@ -71,7 +71,10 @@ export default [
             index('routes/reproduce/7-portfolio/works/archive-portfolio-works.tsx')
           ]),
         ]),
-      ])
+      ]),
+      ...prefix('8-store', [
+        index('routes/reproduce/8-store/page-store.tsx')
+      ]),
     ])
   ])
   // ...prefix('reprofuce') {

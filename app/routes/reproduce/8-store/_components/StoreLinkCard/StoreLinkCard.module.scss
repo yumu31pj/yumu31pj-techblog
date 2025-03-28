@@ -1,0 +1,31 @@
+.c-link-card {
+  position: relative;
+}
+
+.c-link-card-infomation {
+  background: #000;
+  color: #fff;
+  opacity: .5;
+  padding: 15px 5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  @media screen and (max-width: 896px) {
+    width: 86%;
+  }
+
+  @media screen and (min-width: 897px) {
+    width: 70%;
+  }
+
+  & h3 {
+    font-size: calc(20 / 16 * 1rem);
+    font-size: 700;
+  }
+
+  & p {
+    margin-top: 2px;
+  }
+}

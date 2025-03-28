@@ -1,0 +1,27 @@
+.l-section-fashion-style {
+  background: url("/images/reproduce/8-store/fashion_pc.png") no-repeat center top;
+  background-size: cover;
+  height: 520px;
+}
+
+.c-fashion-style-content {
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  
+  @media screen and (max-width: 896px) {
+    padding-top: 35px;
+  }
+
+  @media screen and (min-width: 897px) {
+    padding-top: 60px;
+  }
+
+  & p {
+    margin-top: 20px;
+  }
+}
+
+.c-fashion-style-link {
+  margin-top: 30px;
+}

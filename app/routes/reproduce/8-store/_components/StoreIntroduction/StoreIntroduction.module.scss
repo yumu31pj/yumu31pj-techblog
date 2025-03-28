@@ -1,0 +1,39 @@
+.c-section-introduction {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+
+  &__title {
+
+  }
+
+  &__paragraph {
+    margin-top: 20px;
+  }
+}
+
+.c-cards-container {
+  margin-top: 40px;
+
+  @media screen and (max-width: 896px) {
+    
+  }
+
+  @media screen and (min-width: 897px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__item {
+
+    @media screen and (max-width: 896px) {
+      margin-top: 30px;
+      width: 100%
+    }
+
+    @media screen and (min-width: 897px) {
+      width: calc((100% - 20px) / 2);
+    }
+  }
+}

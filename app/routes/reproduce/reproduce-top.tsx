@@ -21,6 +21,7 @@ const PageReproduceTop = () => {
           <li><a href="/reproduce/5-recipe-detail">5. Recipe Detail</a></li>
           <li><a href="/reproduce/6-brand">6. Brand</a></li>
           <li><a href="/reproduce/7-portfolio">7. Portfolio</a></li>
+          <li><a href="/reproduce/8-store">8. Store</a></li>
         </ul>
       </section>
       <section className={styles['c-sec']}>

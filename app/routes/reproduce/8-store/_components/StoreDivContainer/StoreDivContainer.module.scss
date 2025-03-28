@@ -1,0 +1,14 @@
+.l-div-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  @media screen and (max-width: 896px) {
+
+  }
+
+  @media screen and (min-width: 897px) {
+    max-width: 1200px;
+  }
+}
