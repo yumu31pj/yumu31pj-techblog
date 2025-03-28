@@ -1,0 +1,27 @@
+.c-button-blog {
+  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+  background-color: #fff;
+  border: 1px solid #2359A1;
+  border-radius: 50%;
+  color: #2359A1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  opacity: .8;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+@keyframes floating-y {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
