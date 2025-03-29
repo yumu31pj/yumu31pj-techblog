@@ -1,0 +1,144 @@
+.l-contents-container {
+  padding-bottom: 110px;
+  @media screen and (max-width: 896px) {
+    padding-top: 10px;
+    
+  }
+
+  @media screen and (min-width: 897px) {
+    display: flex;
+      justify-content: space-between;
+    padding-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.c-item-image {
+  @media screen and (min-width: 897px) {
+    width: 50%;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.c-item-detail {
+  @media screen and (max-width: 896px) {
+    padding: 0 16px;
+  }
+  @media screen and (min-width: 897px) {
+    padding-left: 60px;
+    width: 50%;
+  }
+}
+
+.c-item-title {
+  border-top: 1px solid#c3c3c3;
+  border-bottom: 1px solid#c3c3c3;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 20px 0;
+}
+
+.c-item-overview {
+  line-height: 1.9;
+  margin-top: 20px;
+}
+
+.c-item-price {
+  margin-top: 30px;
+}
+
+.c-item-order {
+
+  &__table {
+    margin-top: 30px;
+    width: 100%;
+
+    & th, & td {
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+      border-right: 1px solid #c3c3c3;
+      border-bottom: 1px solid #c3c3c3;
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+    
+    & tbody > tr:last-of-type {
+      & th, & td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  & th {
+    font-weight: 400;
+  }
+}
+
+.c-col-20p {
+  width: 20%;
+}
+.c-col-25p {
+  width: 25p;
+}
+
+select,
+::picker(select) 
+ {
+  -webkit-appearance: base-select;
+  appearance: base-select;
+  width: 100%;
+}
+
+select {
+  position: relative;
+}
+
+::picker(select) {
+  width: 150px;
+  position: absolute;
+  left: 0;
+  bottom: -175px;
+}
+
+.c-select {
+  border: 1px solid #ccc;
+  padding: 5px;
+
+  & option {
+    padding: 0 16px;
+    height: 48px;
+  }
+}
+
+.c-item-order-submit {
+  background-color: #4b4b4b;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  padding: 18px;
+  width: 100%;
+}
+
+.c-size-table {
+  margin-top: 40px;
+  width: 100%;
+
+  & th, & td {
+    border: 1px solid #c3c3c3;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  & th {
+    background-color: #ecebeb;
+    font-weight: 400;
+  }
+}

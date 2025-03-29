@@ -75,6 +75,9 @@ export default [
       ...prefix('8-store', [
         index('routes/reproduce/8-store/page-store.tsx')
       ]),
+      ...prefix('9-ec', [
+        index('routes/reproduce/9-ec/page-ec.tsx')
+      ]),
     ])
   ])
   // ...prefix('reprofuce') {

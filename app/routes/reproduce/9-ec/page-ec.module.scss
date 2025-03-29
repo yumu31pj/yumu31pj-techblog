@@ -1,0 +1,12 @@
+.l-page-ec {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(12 / 16 * 1rem);
+
+  @media screen and (min-width: 897px) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+  } 
+}
