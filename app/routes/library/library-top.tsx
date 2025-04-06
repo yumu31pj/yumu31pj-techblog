@@ -23,19 +23,17 @@ const LibraryTop = () => {
           title={"Picture"}
           component={
             <Picture
-              pictureItem={{
-                srcSP: "/images/samples/750x750.png",
-                srcSPWebp: "/images/samples/750x750.webp",
-                widthSP: 350,
-                heightSP: 350,
-                srcPC: "/images/samples/1200x900.png",
-                srcPCWebp: "/images/samples/1200x900.webp",
-                widthPC: 1200,
-                heightPC: 900,
-                altText: "Picture Component Image",
-                isLazy: true,
-                breakpoint: 751
-              }}
+                srcSP={"/images/samples/750x750.png"}
+                srcSPWebp={"/images/samples/750x750.webp"}
+                widthSP={350}
+                heightSP={350}
+                srcPC={"/images/samples/1200x900.png"}
+                srcPCWebp={"/images/samples/1200x900.webp"}
+                widthPC={1200}
+                heightPC={900}
+                altText={"Picture Component Image"}
+                isLazy={true}
+                breakpoint={75}
             />
           }
           explanation="pictureタグをコンポーネントしたものです。propsで属性を渡すことでpictureタグを毎回書く手間を省くためのものです。<br>画面幅を広げたり縮めたりして画像が変わることを確認して下さい。"
@@ -67,13 +65,11 @@ const LibraryTop = () => {
         <ComponentBox
           title={"Parallax"}
           component={
-            <Picture pictureItem={
-              {
-                srcSP: '/images/library/Parallax.gif',
-                heightSP: 300,
-                altText: 'シンプルなParallaxページのサンプル'
-              } 
-            }/>
+            <Picture 
+                srcSP={'/images/library/Parallax.gif'}
+                heightSP={300}
+                altText={'シンプルなParallaxページのサンプル'}
+            />
           }
           explanation="シンプルなParallaxページのサンプルです。<br />サンプルページは<a href='/parallax'>こちら</a>から"
         />
