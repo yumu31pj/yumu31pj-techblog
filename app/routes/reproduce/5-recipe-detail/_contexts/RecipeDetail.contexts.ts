@@ -48,16 +48,14 @@ export const RecipeDetailContentContexts: RecipeDetailSectionContentProps = {
     title: "ひよこ豆とアボガドのタコス",
     overview: "たっぷりのひよこ豆とレンズ豆にアボガドとトマトを添えて、少しライムを絞ったらおいしいタコスのできあがりです。",
     imageItem: {
-      pictureItem: {
-        srcSP: "/images/reproduce/5-recipe-detail/recipe_detail_1_sp.png",
-        srcSPWebp: "/images/reproduce/5-recipe-detail/recipe_detail_1_sp.webp",
-        srcPC: "/images/reproduce/5-recipe-detail/recipe_detail_1_pc.png",
-        srcPCWebp: "/images/reproduce/5-recipe-detail/recipe_detail_1_pc.webp",
-        widthSP: 375,
-        heightSP: 469,
-        altText: "ひよこ豆とアボガドのタコスのイメージ画像",
-        breakpoint: 834
-      } 
+      srcSP: "/images/reproduce/5-recipe-detail/recipe_detail_1_sp.png",
+      srcSPWebp: "/images/reproduce/5-recipe-detail/recipe_detail_1_sp.webp",
+      srcPC: "/images/reproduce/5-recipe-detail/recipe_detail_1_pc.png",
+      srcPCWebp: "/images/reproduce/5-recipe-detail/recipe_detail_1_pc.webp",
+      widthSP: 375,
+      heightSP: 469,
+      altText: "ひよこ豆とアボガドのタコスのイメージ画像",
+      breakpoint: 834
     },
     ingredients: RecipeDetailIngredientContexts,
     howto: RecipeDetailHowtoContexts

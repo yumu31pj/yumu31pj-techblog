@@ -1,0 +1,44 @@
+.c-home-about {
+  @media screen and (min-width: 901px) {
+    display: flex;
+      justify-content: space-between;
+  }
+
+  &__image {
+    @media screen and (min-width: 901px) {
+      width: 50%;
+      height: 400px;
+
+      & img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__content {
+    @media screen and (max-width: 900px) {
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: 30px;
+    } 
+
+    @media screen and (min-width: 901px) {
+      padding: 180px 70px 0;
+      width:50%;
+    }
+  }
+
+  &__paragraph {
+    line-height: 2.2; // 14p * 2.2 = 30.8
+
+    @media screen and (max-width: 900px) {
+      margin-top: 58px;
+    }
+
+    @media screen and (min-width: 901px) {
+      margin-top: 86px;
+    }
+  }
+}

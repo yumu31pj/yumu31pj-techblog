@@ -1,0 +1,26 @@
+h1.c-marked-title {}
+h2.c-marked-title {}
+h3.c-marked-title {
+  font-weight: 700;
+}
+h4.c-marked-title {}
+h5.c-marked-title {}
+h6.c-marked-title {}
+
+.c-marked-title {
+  padding-left: calc(10px + 8px);
+  position: relative;
+
+  &--hyphen {
+    &::before {
+      background-color: #000;
+      content: "";
+      width: 8px;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

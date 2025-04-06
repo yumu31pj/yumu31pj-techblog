@@ -1,6 +1,6 @@
 import parse from "html-react-parser";
 import Picture from "~/src/components/parts/images/Picture/Picture";
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import { StoreButton, type StoreButtonProps } from "../StoreButton/StoreButton";
 import { StoreSectionTitle } from "../StoreSectionTitle/StoreSectionTitle";
 import styles from "./StoreCardSection.module.scss";
@@ -9,7 +9,7 @@ export type StoreCardSectionProps = {
   contentItem: {
     title: string;
     content: string;
-    imageItem: PictureProps;
+    imageItem: PictureType;
     direction?: "normal" | "reverse";
     buttonItem?: StoreButtonProps;
   }
@@ -23,7 +23,7 @@ export const StoreCardSection = (props: StoreCardSectionProps) => {
   return (
     <section className={`${styles[baseClass]} ${styles[modifierClass]}`}>
       <div className={styles["c-box-image"]}>
-        <Picture pictureItem={contentItem.imageItem.pictureItem} />
+        <Picture {...contentItem.imageItem} />
       </div>
       <div className={styles["c-box-content"]}>
         <div className={styles["c-box-content__title"]}>

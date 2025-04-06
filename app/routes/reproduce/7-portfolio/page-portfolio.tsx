@@ -16,7 +16,7 @@ export function meta({}: Route.MetaArgs) {
 const PagePortfolio = ({children}: {children: React.ReactNode}) => {
   return (
     <div className={styles["l-page-portfolio"]}>
-      <PortfolioHero pictureItem={PortfolioHomeHeroContexts.pictureItem} />
+      <PortfolioHero {...PortfolioHomeHeroContexts} />
       <PortfolioHomeSectionAbout profileItem={PortofolioAboutContexts.profileItem} />
       <PortfolioHomeSectionWorks worksItems={PortfolioWorksContexts.worksItems} />
       <PortfolioHomeSectionNews newsItems={PortofolioNewsContexts.newsItems} />

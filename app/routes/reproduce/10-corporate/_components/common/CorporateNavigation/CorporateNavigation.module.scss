@@ -1,0 +1,14 @@
+.c-navigation {
+
+}
+
+.c-navigation-items {
+  display: flex;
+  gap: 40px;
+
+  @media screen and (max-width: 900px) {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+  }
+}

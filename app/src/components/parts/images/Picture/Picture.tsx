@@ -1,44 +1,55 @@
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import styles from "./Picture.module.scss";
 
-const Picture = (props: PictureProps) => {
-  const {pictureItem} = props;
+const Picture = ({
+  srcSP,
+  srcSPWebp,
+  srcPC,
+  srcPCWebp,
+  widthSP,
+  heightSP,
+  widthPC,
+  heightPC,
+  altText,
+  isLazy = false,
+  breakpoint
+}: PictureType) => {
 
   return (
     <picture className={styles['picture']}>
-      {pictureItem.srcSPWebp && 
+      {srcSPWebp && 
         <source 
-          srcSet={pictureItem.srcSPWebp} 
+          srcSet={srcSPWebp} 
           type="image/webp"
-          media={`(max-width: ${pictureItem.breakpoint} px)`}
-          {...(pictureItem.widthSP && { width: pictureItem.widthSP })} 
-          {...(pictureItem.heightSP && { height: pictureItem.heightSP })} 
+          media={`(max-width: ${breakpoint} px)`}
+          {...(widthSP && { width: widthSP })} 
+          {...(heightSP && { height: heightSP })} 
         />
       }
-      {pictureItem.srcPCWebp && 
+      {srcPCWebp && 
         <source 
-          srcSet={pictureItem.srcPCWebp} 
-          media={`(min-width: ${pictureItem.breakpoint && pictureItem.breakpoint + 1}px)`} 
+          srcSet={srcPCWebp} 
+          media={`(min-width: ${breakpoint && breakpoint + 1}px)`} 
           type="image/webp" 
-          {...(pictureItem.widthPC && { width: pictureItem.widthPC })} 
-          {...(pictureItem.heightPC && { height: pictureItem.heightPC })} 
+          {...(widthPC && { width: widthPC })} 
+          {...(heightPC && { height: heightPC })} 
         />
       }
-      {pictureItem.srcPC && 
+      {srcPC && 
         <source 
-          srcSet={pictureItem.srcPC} 
-          media={`(min-width: ${pictureItem.breakpoint && pictureItem.breakpoint + 1}px)`} 
+          srcSet={srcPC} 
+          media={`(min-width: ${breakpoint && breakpoint + 1}px)`} 
           type="image/png"
-          {...(pictureItem.widthPC && { width: pictureItem.widthPC })} 
-          {...(pictureItem.heightPC && { height: pictureItem.heightPC })} 
+          {...(widthPC && { width: widthPC })} 
+          {...(heightPC && { height: heightPC })} 
         />
       }
       <img 
-        src={pictureItem.srcSP} 
-        {...(pictureItem.widthSP && { width: pictureItem.widthSP })} 
-        {...(pictureItem.heightSP && { height: pictureItem.heightSP })} 
-        alt={pictureItem.altText}
-        loading={pictureItem.isLazy ? "lazy": undefined}
+        src={srcSP} 
+        {...(widthSP && { width: widthSP })} 
+        {...(heightSP && { height: heightSP })} 
+        alt={altText}
+        loading={isLazy ? "lazy": undefined}
       />
     </picture>
   )

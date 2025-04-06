@@ -1,0 +1,57 @@
+.c-company {
+  @media screen and (max-width: 900px) {
+    display: flex;
+      flex-direction: column-reverse;
+  }
+  @media screen and (min-width: 901px) {
+    position: relative;
+  }
+
+  &__image {
+    height: 400px;
+
+    @media screen and (max-width: 900px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (min-width: 901px) {
+      width: 50%;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+      @media screen and (min-width: 901px) {
+      }
+    }
+  }
+
+  &__content {
+    background: #fff;
+
+    @media screen and (max-width: 900px) {
+      padding: 40px 20px;
+    }
+
+    @media screen and (min-width: 901px) {
+      padding: 100px 6.2%;
+      width: 56%;
+    }
+  }
+
+  &__detail-wrapper {
+    @media screen and (max-width: 900px) {
+      padding-top: 58px;
+    }
+
+    @media screen and (min-width: 901px) {
+      margin-top: 86px;
+    }
+  }
+}

@@ -78,6 +78,7 @@ export default {
       "/reproduce/7-portfolio/works",
       "/reproduce/8-store",
       "/reproduce/9-ec",
+      "/reproduce/10-corporate",
     ];
   },
 } satisfies Config;

@@ -1,12 +1,12 @@
 import Picture from "~/src/components/parts/images/Picture/Picture";
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import styles from "./RecipeSectionRecipes.module.scss";
 
 export type RecipeSectionRecipesProps = {
   recipeItems: RecipeSectionRecipeProps[];
 }
 
-type RecipeSectionRecipeProps = PictureProps & {
+type RecipeSectionRecipeProps = PictureType & {
   linkTo: string;
 }
 
@@ -17,7 +17,7 @@ export const RecipeSectionRecipes = (props: RecipeSectionRecipesProps) => {
       <div className={styles['c-recipe-list']}>
         {recipeItems.map((recipe: RecipeSectionRecipeProps, key: number) => (
           <a href={recipe.linkTo} key={key}>
-            <Picture pictureItem={recipe.pictureItem} />
+            <Picture {...recipe} />
           </a>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import parse from "html-react-parser";
 import Picture from "~/src/components/parts/images/Picture/Picture";
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import styles from "./BrandSectionContainer.module.scss";
 
 export type BrandSectionContainerProps = {
@@ -10,7 +10,7 @@ export type BrandSectionContainerProps = {
       direction?: 'normal' | 'reverse';
     },
     contentItem: {
-      imageItem: PictureProps;
+      imageItem: PictureType;
       title: string;
       subtitle: string;
       paragraph: string;
@@ -27,7 +27,7 @@ export const BrandSectionContainer = (props: BrandSectionContainerProps) => {
   return (
     <section id={sectionItem.sectionInfo.id} className={`${styles['l-section']} ${modifierClasss && styles[modifierClasss]}`}>
       <div className={styles['c-sec-image']}>
-        <Picture pictureItem={sectionItem.contentItem.imageItem.pictureItem} />
+        <Picture {...sectionItem.contentItem.imageItem} />
       </div>
       <div className={styles['c-sec-main']}>
         <div className={styles['c-sec-main__title']}>

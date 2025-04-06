@@ -1,0 +1,28 @@
+.c-section-title {
+  position: relative;
+
+  &::after {
+    background-color: #000;
+    content: "";
+    width: 40px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+
+    @media screen and (max-width: 900px) {
+      bottom: -24px;
+    }
+    @media screen and (min-width: 901px) {
+      bottom: -36px;
+    }
+  }
+
+  &__subtitle {
+    font-size: calc(36 / 16 * 1rem);
+  }
+
+  &__title {
+    margin-top: 10px;
+  }
+
+}

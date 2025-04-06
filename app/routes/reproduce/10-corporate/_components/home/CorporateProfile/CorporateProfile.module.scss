@@ -1,0 +1,51 @@
+.c-profile {
+  @media screen and (max-width: 900px) {
+  }
+
+  @media screen and (min-width: 901px) {
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 10px 30px;
+  }
+
+  & dt {
+    font-weight: 400;
+
+    &:not(:first-of-type) {
+      @media screen and (max-width: 900px) {
+        margin-top: 20px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+    }
+
+    @media screen and (min-width: 901px) {
+      width: 15%;
+    }
+  }
+
+  & dd {
+    @media screen and (max-width: 900px) {
+      margin-top: 5px;
+      padding-left: 1em;
+    }
+
+    @media screen and (min-width: 901px) {
+      width: calc(100% - 30px - 15%);
+    }
+
+    & li {
+      &:not(:first-of-type) {
+        @media screen and (max-width: 900px) {
+          margin-top: 5px;
+        }
+    
+        @media screen and (min-width: 901px) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

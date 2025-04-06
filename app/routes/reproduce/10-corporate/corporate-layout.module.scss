@@ -1,0 +1,8 @@
+.l-corporate-container {
+  background-color: #f0f0f0;
+  font-size: calc(14 / 16 * 1rem);
+
+  & * {
+    scroll-behavior: smooth;
+  }
+}

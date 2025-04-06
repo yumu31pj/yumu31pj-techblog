@@ -1,5 +1,5 @@
 import Picture from "~/src/components/parts/images/Picture/Picture";
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import { RecipeDetailHowto, type RecipeDetailHowtoProps } from "../RecipeDetailHowto/RecipeDetailHowto";
 import { RecipeIngredients, type RecipeIngredientsProps } from "../RecipeIngredients/RecipeIngredients";
 import styles from "./RecipeDetailSectionContent.module.scss";
@@ -8,7 +8,7 @@ export type RecipeDetailSectionContentProps = {
   sectionItem: {
     title: string;
     overview: string;
-    imageItem: PictureProps;
+    imageItem: PictureType;
     ingredients: RecipeIngredientsProps;
     howto: RecipeDetailHowtoProps
   }
@@ -20,7 +20,7 @@ export const RecipeDetailSectionContent = (props: RecipeDetailSectionContentProp
     <section className={styles['l-content-container']}>
       <div className={styles['l-content-container__inner']}>      
         <div className={styles['c-content-image']}>
-          <Picture pictureItem={sectionItem.imageItem.pictureItem} />
+          <Picture {...sectionItem.imageItem} />
         </div>
         <div className={styles['c-content-detail']}>
           <h2 className={styles['c-content-detail__title']}>{sectionItem.title}</h2>

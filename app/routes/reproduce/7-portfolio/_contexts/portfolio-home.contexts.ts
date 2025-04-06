@@ -1,19 +1,17 @@
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import type { NewsProps } from "../_components/common/PortfolioNewsList/PortfolioNewsList";
 import type { PortfolioHomeSectionAboutProps } from "../_components/home/PortfolioHomeSectionAbout/PortfolioHomeSectionAbout";
 import type { PortfolioHomeSectionWorksProps } from "../_components/home/PortfolioHomeSectionWorks/PortfolioHomeSectionWorks";
 
-export const PortfolioHomeHeroContexts: PictureProps = {
-  pictureItem: {
-    srcSP: "/images/reproduce/7-portfolio/mv_sp.png",
-    srcSPWebp: "/images/reproduce/7-portfolio/mv_sp.webp",
-    srcPC: "/images/reproduce/7-portfolio/mv_pc.png",
-    srcPCWebp: "/images/reproduce/7-portfolio/mv_pc.webp",
-    widthSP: 375,
-    heightSP: 420,
-    altText: "Portfolioメイン画像",
-    breakpoint: 600
-  }
+export const PortfolioHomeHeroContexts: PictureType = {
+  srcSP: "/images/reproduce/7-portfolio/mv_sp.png",
+  srcSPWebp: "/images/reproduce/7-portfolio/mv_sp.webp",
+  srcPC: "/images/reproduce/7-portfolio/mv_pc.png",
+  srcPCWebp: "/images/reproduce/7-portfolio/mv_pc.webp",
+  widthSP: 375,
+  heightSP: 420,
+  altText: "Portfolioメイン画像",
+  breakpoint: 600
 }
 
 export const PortofolioAboutContexts: PortfolioHomeSectionAboutProps = {
@@ -33,91 +31,79 @@ export const PortfolioWorksContexts: PortfolioHomeSectionWorksProps = {
   worksItems: [
     {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/7-portfolio/works1_sp.png",
-          srcSPWebp: "/images/reproduce/7-portfolio/works1_sp.webp",
-          srcPC: "/images/reproduce/7-portfolio/works1_pc.png",
-          srcPCWebp: "/images/reproduce/7-portfolio/works1_pc.webp",
-          widthSP: 375,
-          heightSP: 420,
-          altText: "Portfolioメイン画像",
-          breakpoint: 600
-        }
+        srcSP: "/images/reproduce/7-portfolio/works1_sp.png",
+        srcSPWebp: "/images/reproduce/7-portfolio/works1_sp.webp",
+        srcPC: "/images/reproduce/7-portfolio/works1_pc.png",
+        srcPCWebp: "/images/reproduce/7-portfolio/works1_pc.webp",
+        widthSP: 375,
+        heightSP: 420,
+        altText: "Portfolioメイン画像",
+        breakpoint: 600
       },
       linkTo: "#"
     },
     {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/7-portfolio/works2_sp.png",
-          srcSPWebp: "/images/reproduce/7-portfolio/works2_sp.webp",
-          srcPC: "/images/reproduce/7-portfolio/works2_pc.png",
-          srcPCWebp: "/images/reproduce/7-portfolio/works2_pc.webp",
-          widthSP: 375,
-          heightSP: 420,
-          altText: "Portfolioメイン画像",
-          breakpoint: 600
-        }
+        srcSP: "/images/reproduce/7-portfolio/works2_sp.png",
+        srcSPWebp: "/images/reproduce/7-portfolio/works2_sp.webp",
+        srcPC: "/images/reproduce/7-portfolio/works2_pc.png",
+        srcPCWebp: "/images/reproduce/7-portfolio/works2_pc.webp",
+        widthSP: 375,
+        heightSP: 420,
+        altText: "Portfolioメイン画像",
+        breakpoint: 600
       },
       linkTo: "#"
     },
     {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/7-portfolio/works3_sp.png",
-          srcSPWebp: "/images/reproduce/7-portfolio/works3_sp.webp",
-          srcPC: "/images/reproduce/7-portfolio/works3_pc.png",
-          srcPCWebp: "/images/reproduce/7-portfolio/works3_pc.webp",
-          widthSP: 375,
-          heightSP: 420,
-          altText: "Portfolioメイン画像",
-          breakpoint: 600
-        }
+        srcSP: "/images/reproduce/7-portfolio/works3_sp.png",
+        srcSPWebp: "/images/reproduce/7-portfolio/works3_sp.webp",
+        srcPC: "/images/reproduce/7-portfolio/works3_pc.png",
+        srcPCWebp: "/images/reproduce/7-portfolio/works3_pc.webp",
+        widthSP: 375,
+        heightSP: 420,
+        altText: "Portfolioメイン画像",
+        breakpoint: 600
       },
       linkTo: "#"
     },
     {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/7-portfolio/works4_sp.png",
-          srcSPWebp: "/images/reproduce/7-portfolio/works4_sp.webp",
-          srcPC: "/images/reproduce/7-portfolio/works4_pc.png",
-          srcPCWebp: "/images/reproduce/7-portfolio/works4_pc.webp",
-          widthSP: 375,
-          heightSP: 420,
-          altText: "Portfolioメイン画像",
-          breakpoint: 600
-        }
+        srcSP: "/images/reproduce/7-portfolio/works4_sp.png",
+        srcSPWebp: "/images/reproduce/7-portfolio/works4_sp.webp",
+        srcPC: "/images/reproduce/7-portfolio/works4_pc.png",
+        srcPCWebp: "/images/reproduce/7-portfolio/works4_pc.webp",
+        widthSP: 375,
+        heightSP: 420,
+        altText: "Portfolioメイン画像",
+        breakpoint: 600
       },
       linkTo: "#"
     },
     {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/7-portfolio/works5_sp.png",
-          srcSPWebp: "/images/reproduce/7-portfolio/works5_sp.webp",
-          srcPC: "/images/reproduce/7-portfolio/works5_pc.png",
-          srcPCWebp: "/images/reproduce/7-portfolio/works5_pc.webp",
-          widthSP: 375,
-          heightSP: 420,
-          altText: "Portfolioメイン画像",
-          breakpoint: 600
-        }
+        srcSP: "/images/reproduce/7-portfolio/works5_sp.png",
+        srcSPWebp: "/images/reproduce/7-portfolio/works5_sp.webp",
+        srcPC: "/images/reproduce/7-portfolio/works5_pc.png",
+        srcPCWebp: "/images/reproduce/7-portfolio/works5_pc.webp",
+        widthSP: 375,
+        heightSP: 420,
+        altText: "Portfolioメイン画像",
+        breakpoint: 600
       },
       linkTo: "#"
     },
     {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/7-portfolio/works6_sp.png",
-          srcSPWebp: "/images/reproduce/7-portfolio/works6_sp.webp",
-          srcPC: "/images/reproduce/7-portfolio/works6_pc.png",
-          srcPCWebp: "/images/reproduce/7-portfolio/works6_pc.webp",
-          widthSP: 375,
-          heightSP: 420,
-          altText: "Portfolioメイン画像",
-          breakpoint: 600
-        }
+        srcSP: "/images/reproduce/7-portfolio/works6_sp.png",
+        srcSPWebp: "/images/reproduce/7-portfolio/works6_sp.webp",
+        srcPC: "/images/reproduce/7-portfolio/works6_pc.png",
+        srcPCWebp: "/images/reproduce/7-portfolio/works6_pc.webp",
+        widthSP: 375,
+        heightSP: 420,
+        altText: "Portfolioメイン画像",
+        breakpoint: 600
       },
       linkTo: "#"
     }

@@ -78,6 +78,12 @@ export default [
       ...prefix('9-ec', [
         index('routes/reproduce/9-ec/page-ec.tsx')
       ]),
+      layout("routes/reproduce/10-corporate/corporate-layout.tsx", [
+        ...prefix('10-corporate', [
+          index('routes/reproduce/10-corporate/page-corporate.tsx')
+        ]),
+      ])
+      
     ])
   ])
   // ...prefix('reprofuce') {

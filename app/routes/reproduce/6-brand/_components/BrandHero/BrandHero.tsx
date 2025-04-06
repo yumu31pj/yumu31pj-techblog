@@ -1,13 +1,12 @@
 import Picture from "~/src/components/parts/images/Picture/Picture";
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import styles from "./BrandHero.module.scss";
 
-export const BrandHero = (props: PictureProps) => {
-  const { pictureItem } = props;
+export const BrandHero = (imageItem: PictureType) => {
 
   return (
     <div className={styles['c-hero']}>
-      <Picture pictureItem={pictureItem} />
+      <Picture {...imageItem} />
     </div>
   )
 }

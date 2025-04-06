@@ -1,0 +1,22 @@
+.c-news-item {
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__category-link,
+  &__category  {
+    background-color: #000;
+    color: #fff;
+    font-size: calc(12 / 14 * 1rem);
+    padding: 3px 6px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 16px;
+  }
+
+}

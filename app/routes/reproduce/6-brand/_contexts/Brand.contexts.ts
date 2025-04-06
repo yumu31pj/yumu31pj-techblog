@@ -1,18 +1,16 @@
-import type { PictureProps } from "~/src/types/PartsProps.types";
+import type { PictureType } from "~/src/types/PartsProps.types";
 import type { BrandGlobalNavigationProps } from "../_components/BrandGlobalNavigation/BrandGlobalNavigation";
 import type { BrandSectionContainerProps } from "../_components/BrandSectionContainer/BrandSectionContainer";
 
-export const BrandHeroContexts: PictureProps = {
-  pictureItem: {
-    srcSP: "/images/reproduce/6-brand/mv_sp.png",
-    srcSPWebp: "/images/reproduce/6-brand/mv_sp.webp",
-    srcPC: "/images/reproduce/6-brand/mv_pc.png",
-    srcPCWebp: "/images/reproduce/6-brand/mv_pc.webp",
-    widthSP: 339,
-    heightSP: 339,
-    altText: "Brandのイメージ画像",
-    breakpoint: 767
-  }
+export const BrandHeroContexts: PictureType = {
+  srcSP: "/images/reproduce/6-brand/mv_sp.png",
+  srcSPWebp: "/images/reproduce/6-brand/mv_sp.webp",
+  srcPC: "/images/reproduce/6-brand/mv_pc.png",
+  srcPCWebp: "/images/reproduce/6-brand/mv_pc.webp",
+  widthSP: 339,
+  heightSP: 339,
+  altText: "Brandのイメージ画像",
+  breakpoint: 767
 }
 
 export const BrandNavigationContexts: BrandGlobalNavigationProps = {
@@ -31,16 +29,14 @@ export const BrandConceptContexts: BrandSectionContainerProps = {
     },
     contentItem: {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/6-brand/concept_sp.png",
-          srcPCWebp: "/images/reproduce/6-brand/concept_sp.webp",
-          srcPC: "/images/reproduce/6-brand/concept_pc.png",
-          srcSPWebp: "/images/reproduce/6-brand/concept_pc.webp",
-          widthSP: 339,
-          heightSP: 339,
-          altText: "ブランドコンセプトのイメージ画像",
-          breakpoint: 767
-        }
+        srcSP: "/images/reproduce/6-brand/concept_sp.png",
+        srcPCWebp: "/images/reproduce/6-brand/concept_sp.webp",
+        srcPC: "/images/reproduce/6-brand/concept_pc.png",
+        srcSPWebp: "/images/reproduce/6-brand/concept_pc.webp",
+        widthSP: 339,
+        heightSP: 339,
+        altText: "ブランドコンセプトのイメージ画像",
+        breakpoint: 767
       },
       title: "私たちの考えるジュエリーとは",
       subtitle: "Concept",
@@ -58,16 +54,14 @@ export const BrandWorkContexts: BrandSectionContainerProps = {
     },
     contentItem: {
       imageItem: {
-        pictureItem: {
-          srcSP: "/images/reproduce/6-brand/work_sp.png",
-          srcPCWebp: "/images/reproduce/6-brand/work_sp.webp",
-          srcPC: "/images/reproduce/6-brand/work_pc.png",
-          srcSPWebp: "/images/reproduce/6-brand/work_pc.webp",
-          widthSP: 339,
-          heightSP: 339,
-          altText: "ブランドこだわり理由のイメージ画像",
-          breakpoint: 767
-        }
+        srcSP: "/images/reproduce/6-brand/work_sp.png",
+        srcPCWebp: "/images/reproduce/6-brand/work_sp.webp",
+        srcPC: "/images/reproduce/6-brand/work_pc.png",
+        srcSPWebp: "/images/reproduce/6-brand/work_pc.webp",
+        widthSP: 339,
+        heightSP: 339,
+        altText: "ブランドこだわり理由のイメージ画像",
+        breakpoint: 767
       },
       title: "ハンドメイドにこだわる理由",
       subtitle: "Work",

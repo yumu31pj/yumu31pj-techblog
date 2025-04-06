@@ -3,6 +3,12 @@ export type TitleProps = {
   tag: "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
+export type LinkItemType = {
+  title: string;
+  linkTo: string;
+  isExternal?: boolean;
+}
+
 
 // Buttons
 export type LinkButtonProps = {
@@ -13,18 +19,16 @@ export type LinkButtonProps = {
 }
 
 // Images
-export type PictureProps = {
-  pictureItem: {
-    srcSP: string;
-    srcSPWebp?: string;
-    srcPC?: string;
-    srcPCWebp?: string;
-    widthSP?: number;
-    heightSP?: number;
-    widthPC?: number;
-    heightPC?: number;
-    altText: string;
-    isLazy?: boolean;
-    breakpoint?: number
-  }
+export type PictureType = {
+  srcSP: string;
+  srcSPWebp?: string;
+  srcPC?: string;
+  srcPCWebp?: string;
+  widthSP?: number;
+  heightSP?: number;
+  widthPC?: number;
+  heightPC?: number;
+  altText: string;
+  isLazy?: boolean;
+  breakpoint?: number
 }
